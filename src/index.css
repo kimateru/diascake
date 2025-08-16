@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@theme {
+    --color-main-brown: #2b221b;
+    --color-main-white: #f7f2ed;
+}
+
+.main-container {
+    @apply max-w-[1500px] mx-auto;
+}
+
+/* Hide Swiper's default navigation arrows; we only use custom buttons */
+.swiper-button-prev,
+.swiper-button-next {
+    display: none !important;
+}
