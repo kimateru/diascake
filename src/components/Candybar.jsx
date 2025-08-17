@@ -5,6 +5,7 @@ import { Navigation, Scrollbar } from 'swiper/modules';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import CandybarCard from './CandybarCard';
 import CandybarModal from './CandybarModal';
+import SectionHeader from './SectionHeader';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -36,16 +37,11 @@ const Candybar = memo(() => {
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-10 items-start">
           {/* Left text column */}
           <div className="lg:col-span-1">
-            <p className="uppercase tracking-widest text-sm text-gray-600 mb-4">{t('candybar.badge', 'Our summer menu')}</p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 leading-tight">
-              {t('candybar.title', "There's no sweetness quite like late summer.")}
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed">
-              {t(
-                'candybar.subtitle',
-                'Meniul nostru sezonier evidențiază aromele vibrante ale ingredientelor de sezon. Bucură-te de selecția noastră ușoară și luminoasă.'
-              )}
-            </p>
+            <SectionHeader
+              badge={t('candybar.badge', 'Our summer menu')}
+              title={t('candybar.title', "There's no sweetness quite like late summer.")}
+              subtitle={t('candybar.subtitle', 'Meniul nostru sezonier evidențiază aromele vibrante ale ingredientelor de sezon. Bucură-te de selecția noastră ușoară și luminoasă.')}
+            />
           </div>
 
           {/* Right slider */}

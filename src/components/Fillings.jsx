@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Scrollbar } from 'swiper/modules';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import CTAButton from './CTAButton';
+import SectionHeader from './SectionHeader';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -21,18 +22,14 @@ const Fillings = memo(() => {
   return (
     <section className="py-16 bg-main-white" id="Fillings">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-10 items-start">
+        <div className="grid grid-cols-1 gap-10 items-start">
           {/* Left text column */}
           <div className="lg:col-span-1">
-            <p className="uppercase tracking-widest text-sm text-gray-600 mb-4">{t('candybar.badge')}</p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-6 leading-tight">
-              {t('fillings.title')}
-            </h2>
-            <p className="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed">
-              {t(
-                'fillings.subtitle'
-              )}
-            </p>
+            <SectionHeader
+              badge={t('fillings.badge')}
+              title={t('fillings.title')}
+              subtitle={t('fillings.subtitle')}
+            />
           </div>
         </div>
       </div>

@@ -63,6 +63,7 @@ const resources = {
             // Fillings section
             fillings: {
                 title: "Наши Восхитительные Начинки",
+                badge: "Начинки",
                 subtitle: "Откройте для себя уникальные вкусы наших премиальных тортов",
                 navigation: {
                     previous: "Предыдущий",
@@ -189,6 +190,81 @@ const resources = {
                         price: 35
                     }
                 }
+            },
+            // Partner Projects section
+            partnerProjects: {
+                title: "Партнерские проекты",
+                subtitle: "Сотрудничество с лучшими",
+                description: "Мы гордимся партнерством с ведущими компаниями и организациями. Наши совместные проекты создают незабываемые впечатления и высококачественные продукты для особых мероприятий.",
+                cta: "Связаться с нами"
+            },
+            // Wedding Cakes section
+            weddingCakes: {
+                title: "Свадебные торты",
+                badge: "Свадебные торты",
+                subtitle: "Создайте волшебство вашего особенного дня",
+                description: "Наши свадебные торты созданы с любовью и вниманием к каждой детали. От элегантных классических дизайнов до современных художественных шедевров - мы воплотим торт вашей мечты.",
+                galleryTitle: "Наша коллекция свадебных тортов",
+                cta: "Заказать свадебный торт",
+                gallery: {
+                    classic: "Классические торты",
+                    modern: "Современные дизайны",
+                    floral: "Цветочные композиции",
+                    elegant: "Элегантные варианты"
+                }
+            },
+            // Birthday Cakes section
+            birthdayCakes: {
+                title: "Торты на день рождения",
+                badge: "Торты на заказ",
+                subtitle: "Сделайте каждый день рождения особенным",
+                description: "Яркие, веселые и вкусные торты для празднования дня рождения. От детских праздников до взрослых торжеств.",
+                features: {
+                    themes: "Тематические дизайны",
+                    sizes: "Любые размеры",
+                    quick: "Быстрое изготовление"
+                },
+                cta: "Заказать торт"
+            },
+            // Footer section
+            footer: {
+                ctaTitle: "Создайте незабываемые моменты",
+                ctaSubtitle: "с нашими премиальными тортами и десертами",
+                allRightsReserved: "© 2024 Dias Cake. Все права защищены.",
+                socialMedia: {
+                    facebook: "Фейсбук",
+                    instagram: "Инстаграм", 
+                    tiktok: "ТикТок"
+                }
+            },
+            // Contacts section
+            contacts: {
+                subtitle: "Dias Cakes",
+                title: "Контакты",
+                description: "Вы можете связаться с нами по телефону, 7 дней в неделю, с 9:00 до 17:00. Вы можете написать нам 24/7 на адрес электронной почты.",
+                phone: "Телефон",
+                phoneNumber: "Звоните: +373 68 85 88 55",
+                email: "Электронная почта",
+                emailAddress: "Пишите: diascakes@gmail.com",
+                address: "Производство",
+                addressText: "Посетите: Бд. Куза Водэ 49/1",
+                socialText: "Кроме того, мы всегда на связи в социальных сетях.",
+                deliveryTitle: "Оплата и доставка",
+                deliverySubtitle: "Ниже вы найдете доступные способы оплаты и доставки.",
+                paymentMethods: "Способы оплаты.",
+                paymentDescription: "Заказы размещаются на сайте diascakes.md, через чат или социальные сети, могут быть получены после следующих действий:",
+                paymentOptions: {
+                    cash: "Наличными курьеру при получении заказа.",
+                    card: "Банковской картой при размещении заказа.",
+                    transfer: "Банковским переводом для физических лиц.",
+                    invoice: "Банковским переводом для юридических лиц с выставлением счета-фактуры."
+                },
+                deliveryMethods: "Способы доставки.",
+                deliveryDescription: "Заказы размещаются на сайте diascakes.md, через чат или социальные сети, могут быть получены после следующих действий:",
+                deliveryOptions: {
+                    pickup: "Самовывоз от производителя. Смотрите адрес здесь.",
+                    courier: "Доставка нашим курьером с холодильной машиной."
+                }
             }
         }
     },
@@ -251,6 +327,7 @@ const resources = {
             // Fillings section
             fillings: {
                 title: "Umpluturile Noastre Delicioase",
+                badge: "Umpluturi",
                 subtitle: "Descoperă gusturile unice ale torturilor noastre premium",
                 navigation: {
                     previous: "Anterior",
@@ -376,6 +453,81 @@ const resources = {
                         description: "",
                         price: 35
                     }
+                }
+            },
+            // Partner Projects section
+            partnerProjects: {
+                title: "Proiecte Parteneri",
+                subtitle: "Colaborări de excepție",
+                description: "Ne mândrim cu parteneriatele noastre cu companii și organizații de top. Proiectele noastre comune creează experiențe memorabile și produse de înaltă calitate pentru evenimente speciale.",
+                cta: "Contactează-ne"
+            },
+            // Wedding Cakes section
+            weddingCakes: {
+                title: "Torturi Nuntă",
+                badge: "Torturi de Nuntă",
+                subtitle: "Creați magia zilei voastre speciale",
+                description: "Torturile noastre de nuntă sunt create cu dragoste și atenție la fiecare detaliu. De la designuri clasice elegante la capodopere artistice moderne - vom realiza tortul visurilor voastre.",
+                galleryTitle: "Colecția noastră de torturi de nuntă",
+                cta: "Comandă tort de nuntă",
+                gallery: {
+                    classic: "Torturi clasice",
+                    modern: "Designuri moderne",
+                    floral: "Compoziții florale",
+                    elegant: "Variante elegante"
+                }
+            },
+            // Birthday Cakes section
+            birthdayCakes: {
+                title: "Torturi de Aniversare",
+                badge: "Torturi la comandă",
+                subtitle: "Faceți fiecare zi de naștere specială",
+                description: "Torturi colorate, vesele și delicioase pentru sărbătorirea zilei de naștere. De la petreceri pentru copii la celebrări pentru adulți.",
+                features: {
+                    themes: "Designuri tematice",
+                    sizes: "Orice dimensiuni",
+                    quick: "Realizare rapidă"
+                },
+                cta: "Comandă tort"
+            },
+            // Footer section
+            footer: {
+                ctaTitle: "Creează momente de neuitat",
+                ctaSubtitle: "cu torturile și deserturile noastre premium",
+                allRightsReserved: "© 2024 Dias Cake. Toate drepturile rezervate.",
+                socialMedia: {
+                    facebook: "Facebook",
+                    instagram: "Instagram",
+                    tiktok: "TikTok"
+                }
+            },
+            // Contacts section
+            contacts: {
+                subtitle: "Dias Cakes",
+                title: "Contacte",
+                description: "Ne puteți contacta telefonic, 7 zile pe săptămână, de la 9:00 până la 17:00. Ne puteți scrie 24/24 la adresa de email.",
+                phone: "Telefon",
+                phoneNumber: "Sună: +373 68 85 88 55",
+                email: "Email",
+                emailAddress: "Scrie: diascakes@gmail.com",
+                address: "Producerea",
+                addressText: "Vizitează: Bd. Cuza Vodă 49/1",
+                socialText: "În plus, suntem mereu în contact pe rețelele de socializare.",
+                deliveryTitle: "Plata și livrarea",
+                deliverySubtitle: "Mai jos vedeți modalitățile disponibile de plată și livrare.",
+                paymentMethods: "Modalități de plată.",
+                paymentDescription: "Comenzile plasate pe site-ul diascakes.md, prin intermediul chat-ului sau rețelelor sociale, pot fi achitate după cum urmează:",
+                paymentOptions: {
+                    cash: "În numerar la curier, în momentul primirii acesteia.",
+                    card: "Card bancar, în momentul primirii comenzii.",
+                    transfer: "Transfer bancar, pentru persoane fizice.",
+                    invoice: "Transfer bancar, pentru persoane juridice cu oferirea facturii fiscale."
+                },
+                deliveryMethods: "Modalități de livrare.",
+                deliveryDescription: "Comenzile plasate pe site-ul diascakes.md, prin intermediul chat-ului sau rețelelor sociale, pot fi primite după cum urmează:",
+                deliveryOptions: {
+                    pickup: "Ridicare personală, de la producere. Vezi adresa aici.",
+                    courier: "Livrate de către serviciul de curierat propriu, cu mașina frigorifică."
                 }
             }
         }
