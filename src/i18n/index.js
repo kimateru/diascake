@@ -114,7 +114,81 @@ const resources = {
                         description: "Бисквит фисташковый, пропитанный сиропом с фисташковой пастой для более выраженного вкуса, сливочно-сырный крем с фисташковой пастой, малиновой начинкой",
                         price: "680 лей"
                     }
+                }
+            },
+            // Candybar section
+            candybar: {
+                badge: "Кэнди-бар",
+                title: "Вкус, который радует",
+                subtitle: "Каждый десерт приготовлен с заботой и из качественных ингредиентов, для незабываемого удовольствия.Откройте для себя нашу подборку муссов, пирожных и тартов ручной работы, идеально подходящих для особых моментов",
+                navigation: {
+                    previous: "Предыдущий",
+                    next: "Следующий"
+                },
+                readMore: "Подробнее",
+                close: "Закрыть",
+                items: {
+                    moussePlombirCapsuni: {
+                        name: "Мусс Пломбир с клубникой",
+                        description: "Нежный мусс с пюре и джемом из клубники, подается в стаканчике (~100 г). Легкий, освежающий и насыщенно фруктовый вкус.",
+                        price: 38
+                    },
+                    musseMangoMaracuia: {
+                        name: "Мусс Манго-Маракуйя",
+                        description: "Воздушный мусс с ванильными семенами из Мадагаскара, джемом манго и маракуйи – идеальный баланс сладости и кислинки (~100 г).",
+                        price: 38
+                    },
+                    tiramisu: {
+                        name: "Классическое Тирамису",
+                        description: "Нежный крем из маскарпоне с натуральной ванилью, бисквиты, пропитанные кофе, посыпанные какао. Аутентичный итальянский рецепт (~100 г).",
+                        price: 43
+                    },
+                    cakePops: {
+                        name: "Кейк-попс “Картошка”",
+                        description: "Плотный шоколадный десерт в виде батончика, покрытый бельгийским шоколадом (~50 г).",
+                        price: 30
+                    },
+                    cartoscaInghetata: {
+                        name: "“Картошка” в виде мороженого",
+                        description: "Оригинальный десерт “Картошка” в форме мороженого, покрыт бельгийским шоколадом – игривый и насыщенный десерт (~80 г).",
+                        price: 35
+                    },
+                    tarteInAsortiment: {
+                        name: "Ассорти тартов",
+                        description: "Тарт с лимоном: хрустящее тесто с миндальной мукой, запеченный сливочный крем и лимонный курд.\nТарт с сезонными фруктами: заварной ванильный крем, украшен свежими фруктами (~100 г).",
+                        price: 47
+                    },
+                    eclereleChoux: {
+                        name: "Эклеры шуз",
+                        description: "—",
+                        price: 40
+                    },
+                    briose: {
+                        name: "Капкейки",
+                        description: "Ванильный или шоколадный бисквит, покрытый ванильным кремом (~70 г).",
+                        price: 33
+                    },
+                    zefir: {
+                        name: "Зефир",
+                        description: "Пышный зефир из клубничного или яблочного пюре (~60 г).",
+                        price: 28
+                    },
+                    prajituraMusseSemisfera: {
+                        name: "Полусфера-мусс",
+                        description: "Ванильный мусс пломбир, покрытие велюр из какао-масла и шоколада, начинка из манго и маракуйи, на хрустящей песочной основе (~100 г).",
+                        price: 40
+                    },
+                    pavlova: {
+                        name: "Павлова",
+                        description: "Хрустящая безе-основа, крем из маскарпоне с ванилью, фруктовая начинка и украшение сезонными фруктами (~80 г).",
+                        price: 35
+                    },
+                    macarons: {
+                        name: "Макаронс",
+                        description: "Классическое миндальное пирожное с разнообразными начинками.",
+                        price: 35
                     }
+                }
             }
         }
     },
@@ -228,7 +302,81 @@ const resources = {
                         description: "Blaturi cu fistic plus însiropate cu pasta de fistic pentru gust mai pronunțat, crema de brînză și pastă de fistic, insert de zmeura",
                         price: "680 lei"
                     }
+                }
+            },
+            // Candybar section
+            candybar: {
+                badge: "Candybar",
+                title: "Gustul care te răsfață",
+                subtitle: "Fiecare desert este făcut cu grijă și ingrediente de calitate, pentru un răsfăț de neuitat.Descoperă selecția noastră de prăjituri, mousse-uri și tartine artizanale, perfecte pentru momentele speciale.",
+                navigation: {
+                    previous: "Anterior",
+                    next: "Următorul"
+                },
+                readMore: "Detalii",
+                close: "Închide",
+                items: {
+                    moussePlombirCapsuni: {
+                        name: "Mousse Plombir căpșuni",
+                        description: "Crema musse cu Pireu de căpșuni, gem de căpșuni, în pahar de aproximativ 100 gr",
+                        price: 38
+                    },
+                    musseMangoMaracuia: {
+                        name: "Musse mango maracuia",
+                        description: "Până cota cu semințe de vanilie din Madagascar, gem de Mango și maracuia, în pahar de aproximativ 100gr",
+                        price: 38
+                    },
+                    tiramisu: {
+                        name: "Tiramisu",
+                        description: "Cremă fina cu mascarpone si semințe de vanilie, pișcoturi îmbibate cu cafea, acoperirea cu cacao ~100gr",
+                        price: 43
+                    },
+                    cakePops: {
+                        name: "Cake pops",
+                        description: "Prăjitură \"Cartoșca\" acoperirea cu ciocolata belgiana ~50 gr",
+                        price: 30
+                    },
+                    cartoscaInghetata: {
+                        name: "Cartosca înghețată",
+                        description: "Prăjitură Cartoșca în formă de înghețată, acoperirea cu ciocolata belgiana ~80 gr",
+                        price: 35
+                    },
+                    tarteInAsortiment: {
+                        name: "Tarte în asortiment",
+                        description: "Tarta cu lamiie: crema coapta de unt si faina de migdale si crema curs de lămâie\nTarta cu fructe de sezon: crema fiarta de vanilie si decor fructe de sezon ~100gr",
+                        price: 47
+                    },
+                    eclereleChoux: {
+                        name: "Eclerele choux",
+                        description: "Aluat de ecler acoperit cu craqelin, crema de vanilie si caramelă, decor crema ganache de ciocolata alba belgiana ~80gr",
+                        price: 40
+                    },
+                    briose: {
+                        name: "Brioșe",
+                        description: "Chec cu vanilie sau cacao, acoperit cu crema de vanilie ~70 gr",
+                        price: 33
+                    },
+                    zefir: {
+                        name: "Zefir",
+                        description: "Zefire pufoase din Pireu de căpșuni sau mere ~ 60 gr",
+                        price: 28
+                    },
+                    prajituraMusseSemisfera: {
+                        name: "Prăjitură musse semisferă",
+                        description: "Musse plombir cu vanilie, acoperirea velur din unt de cacao si ciocolata, inserția de mango si maracuja, baza din biscuit30 sfărâmicios ~100 gr",
+                        price: 40
+                    },
+                    pavlova: {
+                        name: "Pavlova",
+                        description: "Baza din bezea, crema de mascarpone si vanilie, inserție de fructe, decor fructe de sezon ~80 gr",
+                        price: 35
+                    },
+                    macarons: {
+                        name: "Macarons",
+                        description: "",
+                        price: 35
                     }
+                }
             }
         }
     }
