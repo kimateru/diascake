@@ -108,6 +108,13 @@ const Footer = memo(() => {
               {t('navbar.birthdayCakes')}
             </button>
             <button
+              onClick={() => scrollToSection('BentoCakes')}
+              className="text-center lg:text-right text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+              type="button"
+            >
+              {t('navbar.bentoCakes')}
+            </button>
+            <button
               onClick={() => scrollToSection('Contacts')}
               className="text-center lg:text-right text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
               type="button"

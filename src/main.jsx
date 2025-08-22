@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import './i18n'
 import App from './App.jsx'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 // Set initial HTML lang attribute with proper fallback logic
 const getInitialLanguage = () => {
@@ -22,6 +24,17 @@ const getInitialLanguage = () => {
 
 const initialLanguage = getInitialLanguage();
 document.documentElement.lang = initialLanguage;
+
+// Initialize AOS with performance optimizations
+AOS.init({
+  duration: 600, // Faster animations for better performance
+  easing: 'ease-out', // Simpler easing for better performance
+  once: true, // Only animate once
+  offset: 150, // Larger offset for earlier triggering
+  delay: 0, // No delay
+  throttleDelay: 99, // Throttle scroll events for performance
+  debounceDelay: 50, // Debounce resize events
+});
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

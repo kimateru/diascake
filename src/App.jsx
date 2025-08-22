@@ -13,6 +13,7 @@ const Candybar = () => import('./components/Candybar');
 const PartnerProjects = () => import('./components/PartnerProjects');
 const WeddingsCakes = () => import('./components/WeddingsCakes');
 const BirthdayCakes = () => import('./components/BirthdayCakes');
+const BentoCakes = () => import('./components/BentoCakes');
 const Contacts = () => import('./components/Contacts');
 
 function LazySection({ loader, fallback }) {
@@ -57,6 +58,7 @@ function App() {
           <LazySection loader={PartnerProjects} fallback={<Loading message="Loading Projects..." />} />
           <LazySection loader={WeddingsCakes} fallback={<Loading message="Loading Wedding Cakes..." />} />
           <LazySection loader={BirthdayCakes} fallback={<Loading message="Loading Birthday Cakes..." />} />
+          <LazySection loader={BentoCakes} fallback={<Loading message="Loading Bento Cakes..." />} />
           <LazySection loader={Contacts} fallback={<Loading message="Loading Contacts..." />} />
         </main>
 

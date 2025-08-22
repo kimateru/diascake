@@ -13,6 +13,7 @@ const resources = {
                 partnerProjects: "Партнерские проекты",
                 weddingCakes: "Свадебные торты",
                 birthdayCakes: "Торты на день рождения",
+                bentoCakes: "Бенто торты",
                 contacts: "Контакты",
                 callUs: "Позвоните нам",
                 openMenu: "Открыть меню навигации",
@@ -32,6 +33,8 @@ const resources = {
                     browseWeddingCakes: "Просмотрите наши красивые свадебные торты",
                     viewBirthdayCakes: "Посмотреть раздел тортов на день рождения",
                     exploreBirthdayCakes: "Изучите нашу коллекцию тортов на день рождения",
+                    viewBentoCakes: "Посмотреть раздел бенто тортов",
+                    exploreBentoCakes: "Изучите нашу коллекцию бенто тортов",
                     viewContacts: "Посмотреть нашу контактную информацию",
                     getInTouch: "Свяжитесь с нами",
                     callUsAt: "Позвоните нам по номеру 07857647",
@@ -206,6 +209,8 @@ const resources = {
                 description: "Наши свадебные торты созданы с любовью и вниманием к каждой детали. От элегантных классических дизайнов до современных художественных шедевров - мы воплотим торт вашей мечты.",
                 galleryTitle: "Наша коллекция свадебных тортов",
                 cta: "Заказать свадебный торт",
+                ctaTitle: "Готовы создать торт для вашего особенного дня?",
+                ctaDescription: "Свяжитесь с нами для персональной консультации. Мы обсудим все детали и создадим идеальный торт для вашего особенного дня.",
                 gallery: {
                     classic: "Классические торты",
                     modern: "Современные дизайны",
@@ -225,6 +230,37 @@ const resources = {
                     quick: "Быстрое изготовление"
                 },
                 cta: "Заказать торт"
+            },
+            // Bento Cakes section
+            bentoCakes: {
+                title: "Бенто торты",
+                badge: "Мини торты",
+                subtitle: "Идеальные порции для особых моментов",
+                description: "Бенто торты - это новая тенденция в мире кондитерских изделий. Компактные, стильные и невероятно вкусные мини-торты, идеально подходящие для индивидуального наслаждения или небольших празднований.",
+                galleryTitle: "Наша коллекция бенто тортов",
+                perfectFor: "Идеально для особых моментов",
+                ctaTitle: "Готовы попробовать бенто торт?",
+                ctaDescription: "Закажите свой персональный бенто торт уже сегодня. Мы создадим для вас идеальную порцию счастья с уникальным дизайном и невероятным вкусом.",
+                features: {
+                    personal: "Персональный размер",
+                    personalDesc: "Идеальная порция для одного человека",
+                    trendy: "Модный дизайн",
+                    trendyDesc: "Современные и стильные композиции",
+                    quick: "Быстрое приготовление",
+                    quickDesc: "Готов за 24 часа",
+                    custom: "Индивидуальный подход",
+                    customDesc: "Уникальный дизайн под ваши пожелания"
+                },
+                gallery: {
+                    classic: "Классический стиль",
+                    birthday: "День рождения",
+                    floral: "Цветочный дизайн",
+                    chocolate: "Шоколадный",
+                    fruit: "Фруктовый",
+                    elegant: "Элегантный",
+                    colorful: "Яркий",
+                    themed: "Тематический"
+                }
             },
             // Footer section
             footer: {
@@ -277,6 +313,7 @@ const resources = {
                 partnerProjects: "Proiecte Parteneri",
                 weddingCakes: "Torturi Nuntă",
                 birthdayCakes: "Torturi Aniversare",
+                bentoCakes: "Torturi Bento",
                 contacts: "Contacte",
                 callUs: "Sunați-ne",
                 openMenu: "Deschide meniul de navigare",
@@ -296,6 +333,8 @@ const resources = {
                     browseWeddingCakes: "Răsfoiește torturile noastre frumoase de nuntă",
                     viewBirthdayCakes: "Vezi secțiunea torturi de aniversare",
                     exploreBirthdayCakes: "Explorează colecția noastră de torturi de aniversare",
+                    viewBentoCakes: "Vezi secțiunea torturi bento",
+                    exploreBentoCakes: "Explorează colecția noastră de torturi bento",
                     viewContacts: "Vezi informațiile noastre de contact",
                     getInTouch: "Ia legătura cu noi",
                     callUsAt: "Sunați-ne la 07857647",
@@ -470,6 +509,8 @@ const resources = {
                 description: "Torturile noastre de nuntă sunt create cu dragoste și atenție la fiecare detaliu. De la designuri clasice elegante la capodopere artistice moderne - vom realiza tortul visurilor voastre.",
                 galleryTitle: "Colecția noastră de torturi de nuntă",
                 cta: "Comandă tort de nuntă",
+                ctaTitle: "Gata să creați tortul pentru ziua ta specială?",
+                ctaDescription: "Comandați tortul dvs. personal de nuntă astăzi. Vom crea pentru dvs. porția perfectă de fericire cu un design unic și un gust incredibil.",
                 gallery: {
                     classic: "Torturi clasice",
                     modern: "Designuri moderne",
@@ -489,6 +530,37 @@ const resources = {
                     quick: "Realizare rapidă"
                 },
                 cta: "Comandă tort"
+            },
+            // Bento Cakes section
+            bentoCakes: {
+                title: "Torturi Bento",
+                badge: "Mini Torturi",
+                subtitle: "Porții perfecte pentru momente speciale",
+                description: "Torturile Bento sunt noua tendință în lumea produselor de cofetărie. Compacte, stilate și incredibil de gustoase, aceste mini-torturi sunt perfecte pentru plăcerea individuală sau sărbători mici.",
+                galleryTitle: "Colecția noastră de torturi Bento",
+                perfectFor: "Perfect pentru momente speciale",
+                ctaTitle: "Gata să încercați un tort Bento?",
+                ctaDescription: "Comandați tortul dvs. personal Bento astăzi. Vom crea pentru dvs. porția perfectă de fericire cu un design unic și un gust incredibil.",
+                features: {
+                    personal: "Mărime personală",
+                    personalDesc: "Porția perfectă pentru o persoană",
+                    trendy: "Design la modă",
+                    trendyDesc: "Compoziții moderne și stilate",
+                    quick: "Preparare rapidă",
+                    quickDesc: "Gata în 24 de ore",
+                    custom: "Abordare individuală",
+                    customDesc: "Design unic după dorințele dvs."
+                },
+                gallery: {
+                    classic: "Stil clasic",
+                    birthday: "Zi de naștere",
+                    floral: "Design floral",
+                    chocolate: "Ciocolată",
+                    fruit: "Fructe",
+                    elegant: "Elegant",
+                    colorful: "Colorat",
+                    themed: "Tematic"
+                }
             },
             // Footer section
             footer: {

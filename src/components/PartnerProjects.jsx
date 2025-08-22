@@ -7,10 +7,10 @@ const PartnerProjects = memo(() => {
 
   return (
     <section className="py-16 bg-main-white relative" id="PartnerProjects">
-      <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative">
+      <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative" data-aos="fade-up">
         
         {/* Main content block - centered white card */}
-        <div className="relative bg-white py-[110px] px-8 md:p-12 lg:p-16 max-w-6xl mx-auto flex flex-col items-center justify-center">
+        <div className="relative bg-white py-[110px] px-8 md:p-12 lg:p-16 max-w-6xl mx-auto flex flex-col items-center justify-center" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-semibold text-gray-900 mb-4 text-center">
             {t('partnerProjects.title')}
           </h2>

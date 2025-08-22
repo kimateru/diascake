@@ -157,6 +157,17 @@ const Navbar = memo(() => {
               {t('navbar.birthdayCakes')}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </button>
+            <button
+              onClick={() => scrollToSection('BentoCakes')}
+              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
+              aria-label={t('navbar.ariaLabels.viewBentoCakes')}
+              title={t('navbar.ariaLabels.exploreBentoCakes')}
+              type="button"
+              role="menuitem"
+            >
+              {t('navbar.bentoCakes')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
+            </button>
           </div>
 
 
@@ -288,36 +299,47 @@ const Navbar = memo(() => {
                    {t('navbar.weddingCakes')}
                    <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
                  </button>
-                 <button
-                   ref={el => navLinksRef.current[4] = el}
-                   onClick={() => scrollToSection('BirthdayCakes')}
-                   className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
-                   aria-label={t('navbar.ariaLabels.viewBirthdayCakes')}
-                   type="button"
-                   role="menuitem"
-                 >
-                   {t('navbar.birthdayCakes')}
-                   <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-                 </button>
-                 <button
-                   ref={el => navLinksRef.current[5] = el}
-                   onClick={() => scrollToSection('Contacts')}
-                   className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
-                   aria-label={t('navbar.ariaLabels.viewContacts')}
-                   type="button"
-                   role="menuitem"
-                 >
-                   {t('navbar.contacts')}
-                   <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-                 </button>
+                                 <button
+                  ref={el => navLinksRef.current[4] = el}
+                  onClick={() => scrollToSection('BirthdayCakes')}
+                  className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
+                  aria-label={t('navbar.ariaLabels.viewBirthdayCakes')}
+                  type="button"
+                  role="menuitem"
+                >
+                  {t('navbar.birthdayCakes')}
+                  <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
+                </button>
+                <button
+                  ref={el => navLinksRef.current[5] = el}
+                  onClick={() => scrollToSection('BentoCakes')}
+                  className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
+                  aria-label={t('navbar.ariaLabels.viewBentoCakes')}
+                  type="button"
+                  role="menuitem"
+                >
+                  {t('navbar.bentoCakes')}
+                  <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
+                </button>
+                <button
+                  ref={el => navLinksRef.current[6] = el}
+                  onClick={() => scrollToSection('Contacts')}
+                  className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
+                  aria-label={t('navbar.ariaLabels.viewContacts')}
+                  type="button"
+                  role="menuitem"
+                >
+                  {t('navbar.contacts')}
+                  <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
+                </button>
               </nav>
             </div>
 
-                         {/* Footer with Phone */}
-             <div
-               ref={el => navLinksRef.current[6] = el}
-               className="px-6 py-6 border-t border-gray-200"
-             >
+                                     {/* Footer with Phone */}
+            <div
+              ref={el => navLinksRef.current[7] = el}
+              className="px-6 py-6 border-t border-gray-200"
+            >
                <a
                  href="tel:+3737857647"
                  className="flex items-center justify-center w-full text-center bg-main-brown text-white py-4 text-lg font-medium tracking-wider transition duration-200 hover:bg-opacity-90"

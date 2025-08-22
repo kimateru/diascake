@@ -36,16 +36,16 @@ const Candybar = memo(() => {
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-10 items-start">
           {/* Left text column */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1" data-aos="fade-right">
             <SectionHeader
-              badge={t('candybar.badge', 'Our summer menu')}
-              title={t('candybar.title', "There's no sweetness quite like late summer.")}
-              subtitle={t('candybar.subtitle', 'Meniul nostru sezonier evidențiază aromele vibrante ale ingredientelor de sezon. Bucură-te de selecția noastră ușoară și luminoasă.')}
+              badge={t('candybar.badge')}
+              title={t('candybar.title')}
+              subtitle={t('candybar.subtitle')}
             />
           </div>
 
           {/* Right slider */}
-          <div className="relative w-full lg:col-span-2">
+          <div className="relative w-full lg:col-span-2" data-aos="fade-left">
             <Swiper
               modules={[Navigation, Scrollbar]}
               spaceBetween={24}

@@ -10,11 +10,7 @@ const BirthdayCakes = memo(() => {
   const birthdayGallery = [
     {
       id: 1,
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-    },
-    {
-      id: 2,
-      image: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+      image: 'https://www.vegkit.com/wp-content/uploads/sites/2/2024/05/vanilla_bday_cake_1.jpg'
     },
   ];
 
@@ -41,13 +37,13 @@ const BirthdayCakes = memo(() => {
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Header Section */}
-        <div className="mb-12">
+        <div className="mb-12" data-aos="fade-up">
           <SectionHeader
-            badge="Торты на заказ"
+            badge={t('birthdayCakes.badge')}
             title={t('birthdayCakes.title')}
             subtitle={t('birthdayCakes.subtitle')}
           />
-          <p className="text-gray-700 max-w-2xl leading-relaxed mt-4">
+          <p className="text-gray-700 max-w-2xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
             {t('birthdayCakes.description')}
           </p>
         </div>
@@ -56,7 +52,7 @@ const BirthdayCakes = memo(() => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           
           {/* Left: Features */}
-          <div>
+          <div data-aos="fade-right">
             <div className="space-y-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-4">
@@ -80,10 +76,10 @@ const BirthdayCakes = memo(() => {
           </div>
 
           {/* Right: Gallery */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1">
             {birthdayGallery.map((cake) => (
               <div key={cake.id} className="group relative overflow-hidden rounded-lg">
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="overflow-hidden h-[400px]">
                   <img
                     src={cake.image}
                     alt="Birthday cake"
@@ -91,7 +87,6 @@ const BirthdayCakes = memo(() => {
                     loading="lazy"
                   />
                 </div>
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
             ))}
           </div>

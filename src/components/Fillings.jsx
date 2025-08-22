@@ -20,12 +20,15 @@ const Fillings = memo(() => {
   const swiperRef = useRef(null);
 
   return (
-    <section className="py-16 bg-main-white" id="Fillings">
+    <section className="py-16 bg-main-brown text-white" id="Fillings">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="grid grid-cols-1 gap-10 items-start">
           {/* Left text column */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1" data-aos="fade-up">
             <SectionHeader
+              textColor="text-white"
+              badgeColor="text-white/80"
+              subtitleColor="text-white/90"
               badge={t('fillings.badge')}
               title={t('fillings.title')}
               subtitle={t('fillings.subtitle')}
@@ -82,7 +85,6 @@ const Fillings = memo(() => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-300" />
                 </div>
 
                 {/* Content */}
@@ -115,7 +117,7 @@ const Fillings = memo(() => {
         <div className="flex justify-center items-center gap-4 mt-8">
           <button
             ref={prevRef}
-            className="cursor-pointer flex items-center justify-center w-12 h-12 bg-white border-2 border-main-brown text-main-brown hover:bg-main-brown hover:text-white transition-all duration-200 shadow-md hover:shadow-lg"
+            className="cursor-pointer flex items-center justify-center w-12 h-12 bg-white border-2 border-main-brown text-main-brown hover:bg-main-white/70 hover:text-black transition-all duration-200 shadow-md hover:shadow-lg"
             aria-label={t('fillings.navigation.previous')}
           >
             <ChevronLeft className="w-6 h-6 " />
@@ -128,7 +130,7 @@ const Fillings = memo(() => {
 
           <button
             ref={nextRef}
-            className="cursor-pointer flex items-center justify-center w-12 h-12 bg-white border-2 border-main-brown text-main-brown hover:bg-main-brown hover:text-white transition-all duration-200 shadow-md hover:shadow-lg"
+            className="cursor-pointer flex items-center justify-center w-12 h-12 bg-white border-2 border-main-brown text-main-brown hover:bg-main-white/70 hover:text-black transition-all duration-200 shadow-md hover:shadow-lg"
             aria-label={t('fillings.navigation.next')}
           >
             <ChevronRight className="w-6 h-6" />

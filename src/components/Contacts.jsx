@@ -10,7 +10,7 @@ const Contacts = memo(() => {
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Header Section */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <div className="mb-6">
             <img
               src="/logo_beige.png"
@@ -136,9 +136,9 @@ const Contacts = memo(() => {
       </div>
 
       {/* Delivery Information - Full Width */}
-      <div className="bg-white py-16">
+      <div className="bg-white py-16" data-aos="fade-right">
         <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-          <div className="text-center">
+          <div className="text-center" >
             <h3 className="text-3xl md:text-4xl font-semibold text-main-brown mb-4">
               {t('contacts.deliveryTitle')}
             </h3>

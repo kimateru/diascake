@@ -20,14 +20,17 @@ const Header = memo(() => {
         aria-hidden="true"
         role="img"
         aria-label={t('header.ariaLabels.backgroundImage')}
+        data-aos="fade-down"
       />
       
       {/* Content - Aligned with Navbar Container */}
       <div className="relative z-10 w-full">
-        <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12" data-aos="fade-up">
           <div className="text-left max-w-3xl">
             <div className="space-y-6">
-              <h1 className="text-[42px] md:text-7xl font-semibold tracking-wide leading-tight">
+              <h1 
+                className="text-[42px] md:text-7xl font-semibold tracking-wide leading-tight"
+              >
                 <span className="block">{t('header.title')}</span>
               </h1>
               
