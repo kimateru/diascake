@@ -138,7 +138,7 @@ const BentoCakes = memo(() => {
   };
 
   return (
-    <section className="py-12 bg-white" id="BentoCakes">
+    <section className="py-12 bg-main-white" id="BentoCakes">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Header Section */}
         <div className="mb-12" data-aos="fade-up">
@@ -149,6 +149,9 @@ const BentoCakes = memo(() => {
           />
           <p className="text-lg text-gray-700 max-w-2xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
             {t('bentoCakes.description')}
+          </p>
+          <p className="font-semibold text-lg text-gray-900 max-w-2xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
+            {t('bentoCakes.price')}
           </p>
         </div>
 

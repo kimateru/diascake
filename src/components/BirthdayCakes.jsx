@@ -33,7 +33,7 @@ const BirthdayCakes = memo(() => {
   ];
 
   return (
-    <section className="py-12 bg-main-white" id="BirthdayCakes">
+    <section className="py-12 bg-white" id="BirthdayCakes">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Header Section */}

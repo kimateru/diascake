@@ -114,39 +114,6 @@ const Navbar = memo(() => {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </button>
             <button
-              onClick={() => scrollToSection('Candybar')}
-              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
-              aria-label={t('navbar.ariaLabels.viewCandybar')}
-              title={t('navbar.ariaLabels.discoverCandybar')}
-              type="button"
-              role="menuitem"
-            >
-              {t('navbar.candybar')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection('PartnerProjects')}
-              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
-              aria-label={t('navbar.ariaLabels.viewPartnerProjects')}
-              title={t('navbar.ariaLabels.seeCollaborations')}
-              type="button"
-              role="menuitem"
-            >
-              {t('navbar.partnerProjects')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection('WeddingsCakes')}
-              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
-              aria-label={t('navbar.ariaLabels.viewWeddingCakes')}
-              title={t('navbar.ariaLabels.browseWeddingCakes')}
-              type="button"
-              role="menuitem"
-            >
-              {t('navbar.weddingCakes')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-            </button>
-            <button
               onClick={() => scrollToSection('BirthdayCakes')}
               className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
               aria-label={t('navbar.ariaLabels.viewBirthdayCakes')}
@@ -168,6 +135,40 @@ const Navbar = memo(() => {
               {t('navbar.bentoCakes')}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </button>
+            <button
+              onClick={() => scrollToSection('WeddingsCakes')}
+              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
+              aria-label={t('navbar.ariaLabels.viewWeddingCakes')}
+              title={t('navbar.ariaLabels.browseWeddingCakes')}
+              type="button"
+              role="menuitem"
+            >
+              {t('navbar.weddingCakes')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
+            </button>
+            <button
+              onClick={() => scrollToSection('Candybar')}
+              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
+              aria-label={t('navbar.ariaLabels.viewCandybar')}
+              title={t('navbar.ariaLabels.discoverCandybar')}
+              type="button"
+              role="menuitem"
+            >
+              {t('navbar.candybar')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
+            </button>
+            <button
+              onClick={() => scrollToSection('PartnerProjects')}
+              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
+              aria-label={t('navbar.ariaLabels.viewPartnerProjects')}
+              title={t('navbar.ariaLabels.seeCollaborations')}
+              type="button"
+              role="menuitem"
+            >
+              {t('navbar.partnerProjects')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
+            </button>
+          
           </div>
 
 

@@ -65,7 +65,7 @@ const resources = {
             },
             // Fillings section
             fillings: {
-                title: "Наши Восхитительные Начинки",
+                title: "Наши восхитительные начинки",
                 badge: "Начинки",
                 subtitle: "Откройте для себя уникальные вкусы наших премиальных тортов",
                 navigation: {
@@ -123,7 +123,7 @@ const resources = {
             // Candybar section
             candybar: {
                 badge: "Кэнди-бар",
-                title: "Вкус, который радует",
+                title: "Сладкие деликатесы для всех",
                 subtitle: "Каждый десерт приготовлен с заботой и из качественных ингредиентов, для незабываемого удовольствия.Откройте для себя нашу подборку муссов, пирожных и тартов ручной работы, идеально подходящих для особых моментов",
                 navigation: {
                     previous: "Предыдущий",
@@ -237,6 +237,7 @@ const resources = {
                 badge: "Мини торты",
                 subtitle: "Идеальные порции для особых моментов",
                 description: "Бенто торты - это новая тенденция в мире кондитерских изделий. Компактные, стильные и невероятно вкусные мини-торты, идеально подходящие для индивидуального наслаждения или небольших празднований.",
+                price: "Цена Бента торта весом около 500 гр 450 лей, в стоимость входит декор, упаковка, и свечка.Цена Бента торта весом около 1кг гр 850 лей, в стоимость входит декор, упаковка, и свечка",
                 galleryTitle: "Наша коллекция бенто тортов",
                 perfectFor: "Идеально для особых моментов",
                 ctaTitle: "Готовы попробовать бенто торт?",
@@ -357,7 +358,7 @@ const resources = {
                     discoverTreats: "Descoperă torturile și dulciurile noastre delicioase"
                 }
             },
-            // Meta tags and SEO
+            // Meta tags and anivesare
             meta: {
                 title: "Dias Cake - Brutărie Premium | Torturi Nuntă și Aniversare",
                 description: "Dias Cake - brutăria ta premium pentru torturi de nuntă, torturi de aniversare, candy bar și umpluturi unice. Făcut manual cu grijă.",
@@ -365,7 +366,7 @@ const resources = {
             },
             // Fillings section
             fillings: {
-                title: "Umpluturile Noastre Delicioase",
+                title: "Umpluturile noastre delicioase",
                 badge: "Umpluturi",
                 subtitle: "Descoperă gusturile unice ale torturilor noastre premium",
                 navigation: {
@@ -423,7 +424,7 @@ const resources = {
             // Candybar section
             candybar: {
                 badge: "Candybar",
-                title: "Gustul care te răsfață",
+                title: "Delicii dulci pentru toți",
                 subtitle: "Fiecare desert este făcut cu grijă și ingrediente de calitate, pentru un răsfăț de neuitat.Descoperă selecția noastră de prăjituri, mousse-uri și tartine artizanale, perfecte pentru momentele speciale.",
                 navigation: {
                     previous: "Anterior",
@@ -503,8 +504,8 @@ const resources = {
             },
             // Wedding Cakes section
             weddingCakes: {
-                title: "Torturi Nuntă",
-                badge: "Torturi de Nuntă",
+                title: "Torturi de nuntă",
+                badge: "Torturi pentru ocazii speciale",
                 subtitle: "Creați magia zilei voastre speciale",
                 description: "Torturile noastre de nuntă sunt create cu dragoste și atenție la fiecare detaliu. De la designuri clasice elegante la capodopere artistice moderne - vom realiza tortul visurilor voastre.",
                 galleryTitle: "Colecția noastră de torturi de nuntă",
@@ -520,7 +521,7 @@ const resources = {
             },
             // Birthday Cakes section
             birthdayCakes: {
-                title: "Torturi de Aniversare",
+                title: "Torturi de aniversare",
                 badge: "Torturi la comandă",
                 subtitle: "Faceți fiecare zi de naștere specială",
                 description: "Torturi colorate, vesele și delicioase pentru sărbătorirea zilei de naștere. De la petreceri pentru copii la celebrări pentru adulți.",
@@ -537,6 +538,7 @@ const resources = {
                 badge: "Mini Torturi",
                 subtitle: "Porții perfecte pentru momente speciale",
                 description: "Torturile Bento sunt noua tendință în lumea produselor de cofetărie. Compacte, stilate și incredibil de gustoase, aceste mini-torturi sunt perfecte pentru plăcerea individuală sau sărbători mici.",
+                price: "Pretul unui tort Bento de aproximativ 500 gr 450 lei, inclusiv decor, ambalaj și candelă. Pretul unui tort Bento de aproximativ 1 kg 850 lei, inclusiv decor, ambalaj și candelă",
                 galleryTitle: "Colecția noastră de torturi Bento",
                 perfectFor: "Perfect pentru momente speciale",
                 ctaTitle: "Gata să încercați un tort Bento?",

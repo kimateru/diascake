@@ -54,11 +54,11 @@ function App() {
           <Header />
 
           <LazySection loader={Fillings} fallback={<Loading message="Loading Fillings..." />} />
-          <LazySection loader={Candybar} fallback={<Loading message="Loading Candybar..." />} />
-          <LazySection loader={PartnerProjects} fallback={<Loading message="Loading Projects..." />} />
-          <LazySection loader={WeddingsCakes} fallback={<Loading message="Loading Wedding Cakes..." />} />
           <LazySection loader={BirthdayCakes} fallback={<Loading message="Loading Birthday Cakes..." />} />
           <LazySection loader={BentoCakes} fallback={<Loading message="Loading Bento Cakes..." />} />
+          <LazySection loader={WeddingsCakes} fallback={<Loading message="Loading Wedding Cakes..." />} />
+          <LazySection loader={Candybar} fallback={<Loading message="Loading Candybar..." />} />
+          <LazySection loader={PartnerProjects} fallback={<Loading message="Loading Projects..." />} />
           <LazySection loader={Contacts} fallback={<Loading message="Loading Contacts..." />} />
         </main>
 
