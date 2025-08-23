@@ -186,12 +186,12 @@ const Navbar = memo(() => {
             </button>
             <LanguageSwitcher />
             <a 
-              href="tel:+3737857647" 
+              href="tel:+37379426659" 
               className="bg-main-brown px-6 py-2 text-white font-medium text-sm tracking-wider transition duration-200 hover:bg-opacity-90"
               aria-label={t('navbar.ariaLabels.callUsAt')}
               title={t('navbar.ariaLabels.clickToCall')}
             >
-              07857647
+              079426659
             </a>
           </div>
 

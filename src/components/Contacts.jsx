@@ -8,9 +8,9 @@ const Contacts = memo(() => {
   return (
     <section className="pt-16 bg-main-brown" id="Contacts">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        
+
         {/* Header Section */}
-        <div className="text-center mb-16" data-aos="fade-up">
+        <div className="text-center mb-12" data-aos="fade-up">
           <div className="mb-6">
             <img
               src="/logo_beige.png"
@@ -33,67 +33,69 @@ const Contacts = memo(() => {
         </div>
 
         {/* Contact Information */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          
-          {/* Phone */}
-          <div className="text-center">
-            <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 bg-main-brown/10 rounded-full flex items-center justify-center">
-                <Phone className="w-8 h-8 text-white" />
+        <div className="flex flex-col md:flex-row justify-center items-center gap-20 mb-12">
+
+          <div className='flex flex-col md:flex-row items-center justify-center gap-5 md:gap-20'>
+            {/* Phone */}
+            <a href="tel:+37379426659" className="text-center">
+              <div className="flex justify-center">
+                <div className="w-16 h-16 bg-main-brown/10 rounded-full flex items-center justify-center">
+                  <Phone className="w-8 h-8 text-white" />
+                </div>
               </div>
-            </div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              {t('contacts.phone')}
-            </h3>
-            <a
-              href="tel:+37368858855"
-              className="relative text-white hover:text-white transition-colors duration-200 group"
-            >
-              {t('contacts.phoneNumber')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full"></span>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                {t('contacts.phone')}
+              </h3>
+              <p className="text-white hover:text-white transition-colors duration-200 group">{t('contacts.phoneNumber')}</p>
+            </a>
+
+            {/* Email */}
+            <a href="mailto:diascakeshop@gmail.com" className="text-center">
+              <div className="flex justify-center">
+                <div className="w-16 h-16 bg-main-brown/10 rounded-full flex items-center justify-center">
+                  <Mail className="w-8 h-8 text-white" />
+                </div>
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                {t('contacts.email')}
+              </h3>
+              <p className="text-white hover:text-white transition-colors duration-200 group">{t('contacts.emailAddress')}</p>
             </a>
           </div>
 
-          {/* Email */}
-          <div className="text-center">
-            <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 bg-main-brown/10 rounded-full flex items-center justify-center">
-                <Mail className="w-8 h-8 text-white" />
-              </div>
+        </div>
+        {/* Address and working hours */}
+        <div className="mb-5">
+          <div className='flex flex-col items-center justify-center text-center'>
+            <div className='flex items-center justify-center text-center mb-2 gap-4'>
+              <h3 className="text-xl font-semibold text-white">
+                {t('contacts.address')}:
+              </h3>
+              <p className="text-white text-xl font-semibold">
+                Durleşti, Grigore Ureche 10/2
+              </p>
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              {t('contacts.email')}
-            </h3>
-            <a
-              href="mailto:diascakes@gmail.com"
-              className="relative text-white hover:text-white transition-colors duration-200 group"
-            >
-              {t('contacts.emailAddress')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full"></span>
-            </a>
-          </div>
 
-          {/* Address */}
-          <div className="text-center">
-            <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 bg-main-brown/10 rounded-full flex items-center justify-center">
-                <MapPin className="w-8 h-8 text-white" />
-              </div>
+            <div className="w-full max-w-md mx-auto">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22515.294198137417!2d28.74574730330879!3d47.01991097001267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cbd5f619422b07%3A0x9e0f1282890c881e!2zMiwgU3RyYWRhIEdyaWdvcmUgVXJlY2hlIDEwLCBNRC0yMDAzLCBEdXJsZcWfdGksINCc0L7Qu9C00L7QstCw!5e1!3m2!1sru!2s!4v1755971678881!5m2!1sru!2s" width="100%"
+                height="300"
+                allowFullscreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Durlesti Grigore Ureche 10/2"
+                className="rounded-lg"
+              >
+              </iframe>
             </div>
-            <h3 className="text-xl font-semibold text-white mb-2">
-              {t('contacts.address')}
-            </h3>
-            <a
-              href="https://maps.google.com/?q=Bd.+Cuza+Vodă+49/1,+Chișinău,+Moldova"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative text-white hover:text-white transition-colors duration-200 group"
-            >
-              {t('contacts.addressText')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            <div className='mt-4 text-white text-lg space-y-2'>
+              <p>{t('contacts.workingHours')}:</p>
+              <p>{t('contacts.workingHours.weekdays')}</p>
+              <p>{t('contacts.workingHours.weekends')}</p>
+            </div>
           </div>
         </div>
+
 
         {/* Social Media */}
         <div className="text-center mb-16">
@@ -102,7 +104,7 @@ const Contacts = memo(() => {
           </p>
           <div className="flex justify-center space-x-6">
             <a
-              href="https://facebook.com/diascakes"
+              href="https://www.facebook.com/diascakeshop/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-white transition-all duration-200 transform hover:scale-110"
@@ -111,24 +113,13 @@ const Contacts = memo(() => {
               <Facebook className="w-6 h-6" />
             </a>
             <a
-              href="https://instagram.com/diascakes"
+              href="https://www.instagram.com/diascakeshop/?utm_source=qr&igsh=MXhxMGxibGF5cjQ0NA%3D%3D#"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-white transition-all duration-200 transform hover:scale-110"
               aria-label={t('footer.socialMedia.instagram')}
             >
               <Instagram className="w-6 h-6" />
-            </a>
-            <a
-              href="https://tiktok.com/@diascakes"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-white transition-all duration-200 transform hover:scale-110"
-              aria-label={t('footer.socialMedia.tiktok')}
-            >
-              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-.88-.05A6.33 6.33 0 0 0 5.16 20.5a6.33 6.33 0 0 0 10.86-4.43V7.83a8.24 8.24 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.2-.26z"/>
-              </svg>
             </a>
           </div>
         </div>
@@ -148,7 +139,7 @@ const Contacts = memo(() => {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
+
             {/* Payment Methods */}
             <div>
               <h4 className="text-xl font-semibold text-white mb-4">

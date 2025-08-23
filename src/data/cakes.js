@@ -55,3 +55,5 @@ export const cakeFillings = [
       'fillings/test.jpg',
   },
 ];
+
+export default cakeFillings;
