@@ -72,6 +72,12 @@ const resources = {
                     previous: "Предыдущий",
                     next: "Следующий"
                 },
+                weight: "Вес (кг)",
+                guestCount: "Количество гостей",
+                recommendedWeight: "Рекомендуемый вес",
+                orderSummary: "Сводка заказа",
+                totalPrice: "Общая цена",
+                currency: "лей",
                 cakes: {
                     plombirCapsuni: {
                         name: "Клубничный пломбир",
@@ -373,6 +379,12 @@ const resources = {
                     previous: "Anterior",
                     next: "Următorul"
                 },
+                weight: "Greutate (kg)",
+                guestCount: "Numărul de oaspeți",
+                recommendedWeight: "Greutate recomandată",
+                orderSummary: "Sumar comandă",
+                totalPrice: "Preț total",
+                currency: "lei",
                 cakes: {
                     plombirCapsuni: {
                         name: "Plombir căpșuni",

@@ -6,6 +6,7 @@ import './index.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import RangePicker from './components/RangePicker';
 
 // Lazy load heavy sections
 const Fillings = () => import('./components/Fillings');
@@ -47,11 +48,11 @@ function App() {
       <SEOHead />
       <div className="app">
         {/* Navigation */}
-        <Navbar />
+        {/* <Navbar /> */}
 
         {/* Main Content */}
         <main className="main-content">
-          <Header />
+          {/* <Header />
 
           <LazySection loader={Fillings} fallback={<Loading message="Loading Fillings..." />} />
           <LazySection loader={BirthdayCakes} fallback={<Loading message="Loading Birthday Cakes..." />} />
@@ -59,12 +60,15 @@ function App() {
           <LazySection loader={WeddingsCakes} fallback={<Loading message="Loading Wedding Cakes..." />} />
           <LazySection loader={Candybar} fallback={<Loading message="Loading Candybar..." />} />
           <LazySection loader={PartnerProjects} fallback={<Loading message="Loading Projects..." />} />
-          <LazySection loader={Contacts} fallback={<Loading message="Loading Contacts..." />} />
+          <LazySection loader={Contacts} fallback={<Loading message="Loading Contacts..." />} /> */}
         </main>
 
         {/* Footer */}
-        <Footer />
-      </div>
+        {/* <Footer /> */}
+        <div className='mt-[400px]'>
+          <RangePicker />
+        </div>
+    </div>
     </ErrorBoundary>
   );
 }

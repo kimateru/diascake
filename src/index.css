@@ -5,6 +5,10 @@
     --color-main-white: #f7f2ed;
 }
 
+circle[fill="none"] {
+    fill: white !important;
+}
+
 .main-container {
     @apply max-w-[1500px] mx-auto;
 }
