@@ -86,7 +86,7 @@ const Navbar = memo(() => {
           <div className="flex-shrink-0">
             <a 
               href="/" 
-              className="flex items-center" 
+              className="flex items-center gap-1" 
               aria-label={t('navbar.ariaLabels.home')}
               title={t('navbar.ariaLabels.goToHomepage')}
             >
@@ -98,6 +98,7 @@ const Navbar = memo(() => {
                 height="40"
                 loading="eager"
               />
+              <span className="text-main-brown font-semibold text-lg md:hidden">Dia's Cakes</span>
             </a>
           </div>
           {/* Left Navigation */}

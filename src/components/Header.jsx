@@ -1,4 +1,4 @@
-import { memo, useState, useRef } from 'react';
+import { memo, useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -17,9 +17,29 @@ const Header = memo(() => {
   const [selectedCake, setSelectedCake] = useState('');
   const [guestCount, setGuestCount] = useState(0.1);
   const [fillingsSlide, setFillingsSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(true); // Default to mobile-first
   
   const headerRef = useRef(null);
   const swiperRef = useRef(null);
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Update Swiper allowTouchMove when mobile state changes
+  useEffect(() => {
+    if (swiperRef.current) {
+      swiperRef.current.allowTouchMove = isMobile;
+    }
+  }, [isMobile]);
 
   // Swiper event handlers
   const handleSlideChange = (swiper) => {
@@ -74,7 +94,7 @@ const Header = memo(() => {
       </div>
       
       {/* Mobile decorative images */}
-      <div className="lg:hidden flex-shrink-0 px-4 pb-8">
+      <div className="md:hidden flex-shrink-0 px-4 pb-8">
         <div className="flex justify-center items-center space-x-4 mt-8">
           <div className="relative">
             <img 
@@ -92,6 +112,7 @@ const Header = memo(() => {
           </div>
         </div>
       </div>
+
     </div>
   );
 
@@ -406,17 +427,17 @@ const Header = memo(() => {
       
       {/* Decorative images - responsive positioning (only show on desktop for step 1) */}
       {currentStep === 0 && (
-        <div className="hidden lg:block absolute right-0 top-0 h-full w-1/2 pointer-events-none">
-          <div className="relative w-full h-full">
+        <div className="hidden md:block absolute right-0 top-10 h-full w-full pointer-events-none">
+          <div className="w-full h-full flex items-center justify-center">
             <img 
               src="/header/header1.svg" 
               alt="Header decoration 1" 
-              className="absolute top-1/4 right-1/4 w-64 h-64 object-contain opacity-80"
+              className="absolute bottom-13 lg:bottom-1/4 right-1/4 w-52 h-52 object-contain"
             />
             <img 
               src="/header/header2.svg" 
               alt="Header decoration 2" 
-              className="absolute bottom-1/4 right-1/3 w-64 h-64 object-contain opacity-80"
+              className="absolute top-1/17 left-1/3 w-52 h-52 object-contain"
             />
           </div>
         </div>
@@ -433,7 +454,7 @@ const Header = memo(() => {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          allowTouchMove={true}
+          allowTouchMove={isMobile}
           touchRatio={1}
           touchAngle={45}
           threshold={50}

@@ -131,10 +131,7 @@ circle[fill="none"] {
     max-height: 200px !important;
 }
 
-.range-picker-mobile .circular-input {
-    transform: scale(0.8);
-    transform-origin: center;
-}
+
 
 /* Desktop RangePicker - Make it bigger */
 @media (min-width: 769px) {
@@ -143,10 +140,7 @@ circle[fill="none"] {
         max-height: 230px !important;
     }
     
-    .range-picker-mobile .circular-input {
-        transform: scale(1);
-        transform-origin: center;
-    }
+
     
     .range-picker-mobile h3 {
         font-size: 1.5rem !important;
@@ -237,9 +231,7 @@ circle[fill="none"] {
         max-height: 200px !important;
     }
     
-    .range-picker-mobile .circular-input {
-        transform: scale(0.8);
-    }
+
 }
 
 /* Browser compatibility fixes */
@@ -267,6 +259,8 @@ circle[fill="none"] {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+
 
 /* Mobile Header Scroll Fix */
 @media (max-width: 768px) {
