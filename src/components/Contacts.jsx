@@ -89,9 +89,9 @@ const Contacts = memo(() => {
               </iframe>
             </div>
             <div className='mt-4 text-white text-lg space-y-2'>
-              <p>{t('contacts.workingHours')}:</p>
+              {/* <p>{t('contacts.workingHours')}:</p>
               <p>{t('contacts.workingHours.weekdays')}</p>
-              <p>{t('contacts.workingHours.weekends')}</p>
+              <p>{t('contacts.workingHours.weekends')}</p> */}
             </div>
           </div>
         </div>
