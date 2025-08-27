@@ -101,7 +101,7 @@ const Header = memo(() => {
           <div className="flex flex-col lg:flex-row h-full">
             {/* Text Content */}
             <div className="flex-1 flex items-center">
-              <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+              <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12 mt-[100px]">
                 <div className="text-left max-w-3xl">
                   <div className="space-y-6">
                     <h1 className="text-[42px] md:text-7xl font-semibold tracking-wide leading-tight">
@@ -173,7 +173,7 @@ const Header = memo(() => {
               <div className="main-container w-full px-4">
                 <div className="py-6">
                   {/* Mobile title */}
-                  <h2 className="text-2xl font-semibold text-main-brown text-center mb-6">
+                  <h2 className="text-2xl font-semibold text-main-brown text-center mb-6 mt-[100px]">
                     {t('header.chooseFilling') || 'Choose Your Filling'}
                   </h2>
                   
@@ -295,7 +295,7 @@ const Header = memo(() => {
             <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12">
               <div className="text-center w-full max-w-6xl mx-auto">
                 <div className="space-y-8">
-                  <div className="">
+                  <div className="mt-[100px]">
                     <h2 className="text-3xl md:text-4xl font-semibold text-main-brown">
                       {t('header.guestCount') || 'How Many Guests?'}
                     </h2>
