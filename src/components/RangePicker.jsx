@@ -184,15 +184,15 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
             </h3>
             <div className="space-y-3 text-main-brown">
               <div className="flex justify-between">
-                <span>{t(`fillings.cakes.${selectedCake}.name`)}:</span>
+                <span className='font-semibold'>{t(`fillings.cakes.${selectedCake}.name`)}:</span>
                 <span>{t(`fillings.cakes.${selectedCake}.price`)}</span>
               </div>
               <div className="flex justify-between">
-                <span>{t('fillings.guestCount') || 'Guests'}:</span>
+                <span className='font-semibold'>{t('fillings.guestCount') || 'Guests'}:</span>
                 <span>{scaledGuestCount}</span>
               </div>
               <div className="flex justify-between">
-                <span>{t('fillings.recommendedWeight') || 'Recommended Weight'}:</span>
+                <span className='font-semibold'>{t('fillings.recommendedWeight') || 'Recommended Weight'}:</span>
                 <span>{recommendedWeight} kg</span>
               </div>
               <hr className="border-main-brown/20" />
