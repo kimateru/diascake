@@ -203,15 +203,12 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
 
           {/* CTA Button */}
           <div className="text-center mt-8">
-            <button
-              onClick={() => {
-                // Here you can add the order submission logic
-                alert(`${t('header.orderSubmitted') || 'Order submitted!'} ${t(`fillings.cakes.${selectedCake}.name`)} for ${scaledGuestCount} guests - ${totalPrice.toFixed(0)} ${t('fillings.currency') || 'lei'}`);
-              }}
-              className="inline-block bg-main-brown text-white px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-200 border border-main-brown transform hover:-translate-y-0.5 cursor-pointer hover:bg-main-brown/80"
+            <a
+              href={`tel:+40123456789`}
+              className="inline-block bg-main-brown text-white px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-200 border border-main-brown transform hover:-translate-y-0.5 cursor-pointer hover:bg-main-brown/80 text-decoration-none"
             >
               {t('header.orderNow') || 'Order Now'}
-            </button>
+            </a>
           </div>
         </div>
       )}

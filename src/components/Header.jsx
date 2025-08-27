@@ -158,7 +158,7 @@ const Header = memo(() => {
             {/* Mobile Layout */}
             <div className="md:hidden h-full bg-main-white overflow-y-auto">
               {/* Decorative SVG elements */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
                 <svg className="absolute top-0 right-0 w-96 h-96 text-main-brown/10" fill="currentColor" viewBox="0 0 100 100">
                   <circle cx="80" cy="20" r="15" />
                   <circle cx="90" cy="40" r="8" />
@@ -186,7 +186,7 @@ const Header = memo(() => {
                           setSelectedCake(cake.key);
                           goNext();
                         }}
-                        className={`w-full h-[120px] p-0 rounded-lg border-2 transition-all duration-200 text-left flex overflow-hidden ${
+                        className={`w-full h-[160px] p-0 rounded-lg border-2 transition-all duration-200 text-left flex overflow-hidden ${
                           selectedCake === cake.key
                             ? 'border-main-brown bg-main-brown/10 text-main-brown'
                             : 'border-main-brown/20 hover:border-main-brown/50 text-main-brown bg-white hover:bg-main-brown/5'
@@ -197,7 +197,7 @@ const Header = memo(() => {
                           <div className="font-medium text-base leading-tight">
                             {t(`fillings.cakes.${cake.key}.name`)}
                           </div>
-                          <div className="text-xs opacity-80 mt-1 line-clamp-2">
+                          <div className="text-xs opacity-80 mt-1">
                             {t(`fillings.cakes.${cake.key}.description`)}
                           </div>
                           <div className="text-main-brown font-semibold text-sm mt-1">
@@ -223,7 +223,7 @@ const Header = memo(() => {
             {/* Desktop Layout */}
             <div className="hidden md:flex items-center justify-center h-full bg-main-white">
               {/* Decorative SVG elements */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
                 <svg className="absolute top-0 right-0 w-96 h-96 text-main-brown/10" fill="currentColor" viewBox="0 0 100 100">
                   <circle cx="80" cy="20" r="15" />
                   <circle cx="90" cy="40" r="8" />
@@ -291,17 +291,17 @@ const Header = memo(() => {
 
       case 2:
         return (
-          <div className="flex items-center h-full bg-white">
+          <div className="flex items-center justify-center h-full bg-white">
             <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-              <div className="text-left max-w-4xl">
-                <div className="space-y-6">
+              <div className="text-center w-full max-w-6xl mx-auto">
+                <div className="space-y-8">
                   <div className="">
                     <h2 className="text-3xl md:text-4xl font-semibold text-main-brown">
                       {t('header.guestCount') || 'How Many Guests?'}
                     </h2>
                   </div>
                   
-                  <div className="bg-main-white rounded-lg p-8 shadow-lg mt-5">
+                  <div className="bg-main-white rounded-lg w-full">
                     <RangePicker 
                       selectedCake={selectedCake}
                       onGuestCountChange={setGuestCount}
@@ -383,24 +383,24 @@ const Header = memo(() => {
       {/* Navigation buttons - Normal flow, not fixed */}
       <div className="relative z-20 py-4 bg-white border-t border-main-brown/10">
         <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-          <div className="flex items-center space-x-4 justify-center">
+          <div className="flex items-center space-x-2 sm:space-x-4 justify-center">
             {/* Previous button */}
             <button
               onClick={goBack}
               disabled={currentStep === 0 || isTransitioning}
-              className={`px-4 py-2 text-sm font-medium transition-all duration-200 border border-main-brown ${
+              className={`px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-medium transition-all duration-200 border border-main-brown cursor-pointer ${
                 currentStep === 0 || isTransitioning
                   ? 'opacity-50 cursor-not-allowed text-main-brown/50 bg-white'
                   : 'text-main-brown bg-white hover:bg-main-brown hover:text-white'
               }`}
               aria-label="Previous step"
             >
-              ← {t('header.previous') || 'Previous'}
+              <span className="sm:inline">← {t('header.previous') || 'Previous'}</span>
             </button>
 
             {/* Step indicator */}
-            <div className="flex items-center space-x-2">
-              <span className="text-main-brown text-sm font-medium">
+            <div className="flex items-center space-x-1 sm:space-x-2">
+              <span className="text-main-brown text-xs sm:text-sm font-medium">
                 {currentStep + 1} / 3
               </span>
             </div>
@@ -409,14 +409,14 @@ const Header = memo(() => {
             <button
               onClick={goNext}
               disabled={currentStep === 2 || isTransitioning}
-              className={`px-4 py-2 text-sm font-medium transition-all duration-200 border border-main-brown ${
+              className={`px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-medium transition-all duration-200 border border-main-brown cursor-pointer ${
                 currentStep === 2 || isTransitioning
                   ? 'opacity-50 cursor-not-allowed text-main-brown/50 bg-white'
                   : 'text-main-brown bg-white hover:bg-main-brown hover:text-white'
               }`}
               aria-label="Next step"
             >
-              {t('header.next') || 'Next'} →
+              <span className="sm:inline">{t('header.next') || 'Next'} →</span>
             </button>
           </div>
         </div>
