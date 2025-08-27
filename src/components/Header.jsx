@@ -289,30 +289,54 @@ const Header = memo(() => {
           </>
         );
 
-      case 2:
-        return (
-          <div className="flex items-center justify-center h-full bg-white">
-            <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-              <div className="text-center w-full max-w-6xl mx-auto">
-                <div className="space-y-8">
-                  <div className="mt-[100px]">
-                    <h2 className="text-3xl md:text-4xl font-semibold text-main-brown">
-                      {t('header.guestCount') || 'How Many Guests?'}
-                    </h2>
-                  </div>
-                  
-                  <div className="bg-main-white rounded-lg w-full">
-                    <RangePicker 
-                      selectedCake={selectedCake}
-                      onGuestCountChange={setGuestCount}
-                      guestCount={guestCount}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        );
+              case 2:
+          return (
+           <>
+             {/* Mobile Layout */}
+             <div className="md:hidden h-full bg-white flex flex-col overflow-y-auto">
+               <div className="flex-1 min-h-0">
+                 <div className="main-container w-full px-4 py-6">
+                   <div className="text-center space-y-6">
+                     <h2 className="text-xl sm:text-2xl font-semibold text-main-brown">
+                       {t('header.guestCount') || 'How Many Guests?'}
+                     </h2>
+                     
+                     <div className="bg-main-white rounded-lg w-full">
+                       <RangePicker 
+                         selectedCake={selectedCake}
+                         onGuestCountChange={setGuestCount}
+                         guestCount={guestCount}
+                       />
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+
+             {/* Desktop Layout */}
+             <div className="hidden md:flex items-center justify-center h-full bg-white">
+               <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12">
+                 <div className="text-center w-full max-w-6xl mx-auto">
+                   <div className="space-y-8">
+                     <div className="mt-[100px]">
+                       <h2 className="text-3xl md:text-4xl font-semibold text-main-brown">
+                         {t('header.guestCount') || 'How Many Guests?'}
+                       </h2>
+                     </div>
+                     
+                     <div className="bg-main-white rounded-lg w-full">
+                       <RangePicker 
+                         selectedCake={selectedCake}
+                         onGuestCountChange={setGuestCount}
+                         guestCount={guestCount}
+                       />
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </>
+          );
 
       default:
         return null;

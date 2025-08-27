@@ -73,14 +73,15 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
   const totalPrice = calculatePrice();
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[400px] p-6">
+    <div className="range-picker-mobile flex flex-col items-center justify-center min-h-[300px] sm:min-h-[400px] p-4 sm:p-6">
       {/* Guest Count Selection */}
-      <div className="w-full max-w-md mb-8">
-        <h3 className="text-xl font-semibold text-main-brown mb-10 text-center">
+      <div className="w-full max-w-md mb-6 sm:mb-8">
+        <h3 className="text-lg sm:text-xl font-semibold text-main-brown mb-6 sm:mb-10 text-center">
           {t('fillings.guestCount') || 'Number of Guests'}
         </h3>
         <div className="flex flex-col items-center justify-center">
-          <CircularInput value={guestCount} onChange={setGuestCount} radius={radius}>
+          <div className="circular-input">
+            <CircularInput value={guestCount} onChange={setGuestCount} radius={radius}>
             {/* Track and progress */}
             <CircularTrack stroke="#ddd" strokeWidth={8} />
             <CircularProgress stroke="#6b4226" strokeWidth={8} />
@@ -169,15 +170,16 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
                 200/2
               </text>
             </g>
-          </CircularInput>
+            </CircularInput>
+          </div>
         </div>
       </div>
 
       {/* Price Summary */}
       {selectedCake && (
         <div className="w-full max-w-md text-center">
-          <div className="bg-main-brown/10 rounded-lg p-6 border border-main-brown/20">
-            <h3 className="text-lg font-semibold text-main-brown mb-4">
+          <div className="order-summary bg-main-brown/10 rounded-lg p-4 sm:p-6 border border-main-brown/20">
+            <h3 className="text-base sm:text-lg font-semibold text-main-brown mb-3 sm:mb-4">
               {t('fillings.orderSummary') || 'Order Summary'}
             </h3>
             <div className="space-y-3 text-main-brown">
@@ -202,10 +204,10 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
           </div>
 
           {/* CTA Button */}
-          <div className="text-center mt-8">
+          <div className="text-center mt-6 sm:mt-8">
             <a
               href={`tel:+40123456789`}
-              className="inline-block bg-main-brown text-white px-8 py-3 text-sm font-medium tracking-wider uppercase transition-all duration-200 border border-main-brown transform hover:-translate-y-0.5 cursor-pointer hover:bg-main-brown/80 text-decoration-none"
+              className="cta-button inline-block bg-main-brown text-white px-6 sm:px-8 py-2 sm:py-3 text-xs sm:text-sm font-medium tracking-wider uppercase transition-all duration-200 border border-main-brown transform hover:-translate-y-0.5 cursor-pointer hover:bg-main-brown/80 text-decoration-none"
             >
               {t('header.orderNow') || 'Order Now'}
             </a>
