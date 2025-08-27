@@ -204,7 +204,7 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
           </div>
 
           {/* CTA Button */}
-          <div className="text-center mt-6 sm:mt-8">
+          <div className="text-center">
             <a
               href={`tel:+40123456789`}
               className="cta-button inline-block bg-main-brown text-white px-6 sm:px-8 py-2 sm:py-3 text-xs sm:text-sm font-medium tracking-wider uppercase transition-all duration-200 border border-main-brown transform hover:-translate-y-0.5 cursor-pointer hover:bg-main-brown/80 text-decoration-none"

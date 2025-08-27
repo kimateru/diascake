@@ -346,7 +346,7 @@ const Header = memo(() => {
   return (
     <header 
       ref={headerRef}
-      className="relative h-[94dvh] flex flex-col text-main-brown overflow-hidden"
+      className="relative h-[99dvh] flex flex-col text-main-brown overflow-hidden"
       role="banner"
       aria-label={t('header.ariaLabels.heroSection')}
     >

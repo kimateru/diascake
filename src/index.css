@@ -154,18 +154,26 @@ circle[fill="none"] {
     
     .range-picker-mobile .order-summary {
         padding: 1rem !important;
-        font-size: 0.875rem !important;
+        font-size: 0.75rem !important;
     }
     
     .range-picker-mobile .order-summary h3 {
-        font-size: 1rem !important;
+        font-size: 0.875rem !important;
         margin-bottom: 1rem !important;
     }
     
+    .range-picker-mobile .order-summary .space-y-3 {
+        gap: 0.5rem !important;
+    }
+    
+    .range-picker-mobile .order-summary .text-xl {
+        font-size: 1rem !important;
+    }
+    
     .range-picker-mobile .cta-button {
-        padding: 0.75rem 1.5rem !important;
-        font-size: 0.875rem !important;
-        margin-top: 1.5rem !important;
+        padding: 0.5rem 1rem !important;
+        font-size: 0.75rem !important;
+        margin-top: 1rem !important;
     }
 }
 
