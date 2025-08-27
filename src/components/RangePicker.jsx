@@ -11,13 +11,6 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
   const { t } = useTranslation();
   const [guestCount, setGuestCount] = useState(initialGuestCount || 0.1); // 0 - 1
 
-  // Update parent component when guest count changes
-  useEffect(() => {
-    if (onGuestCountChange) {
-      onGuestCountChange(guestCount);
-    }
-  }, [guestCount, onGuestCountChange]);
-
   const min = 2;
   const max = 200;
   const scaledGuestCount = Math.round(min + guestCount * (max - min));
@@ -81,7 +74,16 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
         </h3>
         <div className="flex flex-col items-center justify-center">
           <div className="circular-input">
-            <CircularInput value={guestCount} onChange={setGuestCount} radius={radius}>
+            <CircularInput 
+              value={guestCount} 
+              onChange={(value) => {
+                setGuestCount(value);
+                if (onGuestCountChange) {
+                  onGuestCountChange(value);
+                }
+              }}
+              radius={radius}
+            >
             {/* Track and progress */}
             <CircularTrack stroke="#ddd" strokeWidth={8} />
             <CircularProgress stroke="#6b4226" strokeWidth={8} />

@@ -81,7 +81,7 @@ const Navbar = memo(() => {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-main-white shadow-sm z-50" role="navigation" aria-label={t('navbar.ariaLabels.mainNavigation')}>
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-[60px]">
           {/* Center Logo */}
           <div className="flex-shrink-0">
             <a 

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 import { cakeFillings } from '../data/cakes';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import RangePicker from './RangePicker';
 
 // Import Swiper styles
@@ -98,7 +99,7 @@ const Header = memo(() => {
   const renderStep2 = () => (
     <>
       {/* Mobile Layout */}
-      <div className="step-content md:hidden h-full bg-main-white relative">
+      <div className="step-content md:hidden h-full bg-main-white relative w-full">
         {/* Decorative SVG elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
           <svg className="absolute top-0 right-0 w-96 h-96 text-main-brown/10" fill="currentColor" viewBox="0 0 100 100">
@@ -142,7 +143,7 @@ const Header = memo(() => {
                             setSelectedCake(cake.key);
                             goNext();
                           }}
-                          className={`h-[270px] p-0 rounded-lg border-2 transition-all duration-200 text-left flex flex-col overflow-hidden ${selectedCake === cake.key
+                          className={`h-[250px] p-0 rounded-lg border-2 transition-all duration-200 text-left flex flex-col overflow-hidden ${selectedCake === cake.key
                               ? 'border-main-brown bg-main-brown/10 text-main-brown'
                               : 'border-main-brown/20 hover:border-main-brown/50 text-main-brown bg-white hover:bg-main-brown/5'
                             }`}
@@ -178,7 +179,7 @@ const Header = memo(() => {
                               setSelectedCake(cake.key);
                               goNext();
                             }}
-                            className={`h-[270px] p-0 rounded-lg border-2 transition-all duration-200 text-left flex flex-col overflow-hidden ${selectedCake === cake.key
+                            className={`h-[250px] p-0 rounded-lg border-2 transition-all duration-200 text-left flex flex-col overflow-hidden ${selectedCake === cake.key
                                 ? 'border-main-brown bg-main-brown/10 text-main-brown'
                                 : 'border-main-brown/20 hover:border-main-brown/50 text-main-brown bg-white hover:bg-main-brown/5'
                               }`}
@@ -214,13 +215,13 @@ const Header = memo(() => {
               <button
                 onClick={() => setFillingsSlide(Math.max(0, fillingsSlide - 1))}
                 disabled={fillingsSlide === 0}
-                className={`px-3 py-2 text-sm border border-main-brown rounded transition-all duration-200 ${
+                className={`px-7 py-2 text-sm border border-main-brown rounded transition-all duration-200 ${
                   fillingsSlide === 0
                     ? 'opacity-50 cursor-not-allowed text-main-brown/50 bg-white'
                     : 'text-main-brown bg-white hover:bg-main-brown hover:text-white'
                 }`}
               >
-                ←
+                <ChevronLeft className='w-4 h-4'/>
               </button>
               
               {/* Slide indicator */}
@@ -238,13 +239,13 @@ const Header = memo(() => {
               <button
                 onClick={() => setFillingsSlide(Math.min(Math.ceil(cakeFillings.length / 4) - 1, fillingsSlide + 1))}
                 disabled={fillingsSlide >= Math.ceil(cakeFillings.length / 4) - 1}
-                className={`px-3 py-2 text-sm border border-main-brown rounded transition-all duration-200 ${
+                className={`px-7 py-2 text-sm border border-main-brown rounded transition-all duration-200 ${
                   fillingsSlide >= Math.ceil(cakeFillings.length / 4) - 1
                     ? 'opacity-50 cursor-not-allowed text-main-brown/50 bg-white'
                     : 'text-main-brown bg-white hover:bg-main-brown hover:text-white'
                 }`}
               >
-                →
+                <ChevronRight className='w-4 h-4'/>
               </button>
             </div>
           </div>
