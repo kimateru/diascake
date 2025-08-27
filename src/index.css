@@ -229,3 +229,37 @@ circle[fill="none"] {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+/* Mobile Header Scroll Fix */
+@media (max-width: 768px) {
+    /* Prevent mobile browser UI from affecting height */
+    header[role="banner"] {
+        min-height: 100vh !important;
+        max-height: 100vh !important;
+        height: 100vh !important;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Ensure stable scrolling container */
+    header[role="banner"] > div[ref] {
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        overscroll-behavior: contain;
+    }
+    
+    /* Prevent viewport height jumps from browser UI */
+    header[role="banner"] * {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+/* Desktop keeps dynamic viewport */
+@media (min-width: 769px) {
+    header {
+        height: 99dvh !important;
+    }
+}

@@ -346,7 +346,7 @@ const Header = memo(() => {
   return (
     <header 
       ref={headerRef}
-      className="relative h-[99dvh] flex flex-col text-main-brown overflow-hidden"
+      className="relative h-screen md:h-[99dvh] flex flex-col text-main-brown overflow-hidden"
       role="banner"
       aria-label={t('header.ariaLabels.heroSection')}
     >
@@ -398,7 +398,7 @@ const Header = memo(() => {
       {/* Active Step Container - Stack Approach */}
       <div 
         ref={activeStepRef}
-        className="flex-1 relative z-10 min-h-0"
+        className="flex-1 relative z-10 min-h-0 h-full"
       >
         {renderStepContent()}
       </div>
