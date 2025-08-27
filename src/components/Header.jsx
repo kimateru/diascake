@@ -14,8 +14,40 @@ const Header = memo(() => {
   
   const headerRef = useRef(null);
   const activeStepRef = useRef(null);
+  
+  // Touch gesture states
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
 
+  // Touch event handlers
+  const onTouchStart = (e) => {
+    setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && currentStep < 2) {
+      // Swipe left = next step
+      goNext();
+    }
+    if (isRightSwipe && currentStep > 0) {
+      // Swipe right = previous step
+      goBack();
+    }
+  };
 
   // Two-phase slide transition animation
   const animateStepTransition = (direction, targetStep) => {
@@ -137,14 +169,14 @@ const Header = memo(() => {
                   <img 
                     src="/header/header1.svg" 
                     alt="Header decoration 1" 
-                    className="w-32 h-32 md:w-40 md:h-40 object-contain opacity-80"
+                    className="w-32 h-32 md:w-40 md:h-40 object-contain opacity-80 relative -top-25 md:static"
                   />
                 </div>
                 <div className="relative">
                   <img 
                     src="/header/header2.svg" 
                     alt="Header decoration 2" 
-                    className="w-32 h-32 md:w-40 md:h-40 object-contain opacity-80"
+                    className="w-32 h-32 md:w-40 md:h-40 object-contain opacity-80 relative -top-13 md:static"
                   />
                 </div>
               </div>
@@ -399,13 +431,16 @@ const Header = memo(() => {
       <div 
         ref={activeStepRef}
         className="flex-1 relative z-10 min-h-0 h-full"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
       >
         {renderStepContent()}
       </div>
 
 
-      {/* Navigation buttons - Normal flow, not fixed */}
-      <div className="navigation-container relative z-20 py-4 bg-white border-t border-main-brown/10">
+      {/* Navigation buttons - Desktop only */}
+      <div className="navigation-container hidden md:block relative z-20 py-4 bg-white border-t border-main-brown/10">
         <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="flex items-center space-x-2 sm:space-x-4 justify-center">
             {/* Previous button */}

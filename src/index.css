@@ -136,6 +136,44 @@ circle[fill="none"] {
     transform-origin: center;
 }
 
+/* Desktop RangePicker - Make it bigger */
+@media (min-width: 769px) {
+    .range-picker-mobile svg {
+        width: 230px !important;
+        max-height: 230px !important;
+    }
+    
+    .range-picker-mobile .circular-input {
+        transform: scale(1);
+        transform-origin: center;
+    }
+    
+    .range-picker-mobile h3 {
+        font-size: 1.5rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .range-picker-mobile .order-summary {
+        padding: 1.5rem !important;
+        font-size: 1rem !important;
+    }
+    
+    .range-picker-mobile .order-summary h3 {
+        font-size: 1.25rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+    
+    .range-picker-mobile .order-summary .text-xl {
+        font-size: 1.5rem !important;
+    }
+    
+    .range-picker-mobile .cta-button {
+        padding: 1rem 2rem !important;
+        font-size: 1rem !important;
+        margin-top: 2rem !important;
+    }
+}
+
 /* Responsive CircularInput for different screen sizes */
 @media (max-width: 640px) {
     .range-picker-mobile svg {
@@ -256,19 +294,9 @@ circle[fill="none"] {
         transform: translateZ(0);
     }
     
-    /* iOS Safari bottom navigation fix */
-    header[role="banner"] .navigation-container {
-        position: sticky !important;
-        bottom: 0;
-        padding-bottom: env(safe-area-inset-bottom, 0px) !important;
-        background: white;
-        border-top: 1px solid rgba(107, 66, 38, 0.1);
-        z-index: 30;
-    }
-    
-    /* Adjust content padding to account for sticky navigation */
+    /* Remove extra padding since no mobile navigation */
     header[role="banner"] .step-content {
-        padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
+        padding-bottom: env(safe-area-inset-bottom, 0px) !important;
     }
 }
 
