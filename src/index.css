@@ -250,10 +250,25 @@ circle[fill="none"] {
         overscroll-behavior: contain;
     }
     
-    /* Prevent viewport height jumps from browser UI */
-    header[role="banner"] * {
+    /* Hardware acceleration for smooth scrolling */
+    header[role="banner"] {
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
+    }
+    
+    /* iOS Safari bottom navigation fix */
+    header[role="banner"] .navigation-container {
+        position: sticky !important;
+        bottom: 0;
+        padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+        background: white;
+        border-top: 1px solid rgba(107, 66, 38, 0.1);
+        z-index: 30;
+    }
+    
+    /* Adjust content padding to account for sticky navigation */
+    header[role="banner"] .step-content {
+        padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
     }
 }
 

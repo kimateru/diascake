@@ -96,9 +96,9 @@ const Header = memo(() => {
   // Render step content based on display step
   const renderStepContent = () => {
     switch (displayStep) {
-      case 0:
+              case 0:
         return (
-          <div className="flex flex-col lg:flex-row h-full">
+          <div className="step-content flex flex-col lg:flex-row h-full">
             {/* Text Content */}
             <div className="flex-1 flex items-center">
               <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12 mt-[70px]">
@@ -155,8 +155,8 @@ const Header = memo(() => {
       case 1:
         return (
           <>
-            {/* Mobile Layout */}
-            <div className="md:hidden h-full bg-main-white overflow-y-auto">
+                         {/* Mobile Layout */}
+             <div className="step-content md:hidden h-full bg-main-white overflow-y-auto">
               {/* Decorative SVG elements */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
                 <svg className="absolute top-0 right-0 w-96 h-96 text-main-brown/10" fill="currentColor" viewBox="0 0 100 100">
@@ -220,8 +220,8 @@ const Header = memo(() => {
               </div>
             </div>
 
-            {/* Desktop Layout */}
-            <div className="hidden md:flex items-center justify-center h-full bg-main-white">
+                         {/* Desktop Layout */}
+             <div className="step-content hidden md:flex items-center justify-center h-full bg-main-white">
               {/* Decorative SVG elements */}
               <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
                 <svg className="absolute top-0 right-0 w-96 h-96 text-main-brown/10" fill="currentColor" viewBox="0 0 100 100">
@@ -293,8 +293,8 @@ const Header = memo(() => {
           return (
            <>
              {/* Mobile Layout */}
-             <div className="md:hidden h-full bg-white flex flex-col overflow-y-auto">
-               <div className="flex-1 min-h-0">
+             <div className="step-content md:hidden h-full bg-white flex flex-col overflow-y-auto mt-15">
+               <div className="">
                  <div className="main-container w-full px-4 py-6">
                    <div className="text-center space-y-6">
                      <h2 className="text-xl sm:text-2xl font-semibold text-main-brown">
@@ -314,7 +314,7 @@ const Header = memo(() => {
              </div>
 
              {/* Desktop Layout */}
-             <div className="hidden md:flex items-center justify-center h-full bg-white">
+             <div className="step-content hidden md:flex items-center justify-center h-full bg-white">
                <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12">
                  <div className="text-center w-full max-w-6xl mx-auto">
                    <div className="space-y-8">
@@ -405,7 +405,7 @@ const Header = memo(() => {
 
 
       {/* Navigation buttons - Normal flow, not fixed */}
-      <div className="relative z-20 py-4 bg-white border-t border-main-brown/10">
+      <div className="navigation-container relative z-20 py-4 bg-white border-t border-main-brown/10">
         <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="flex items-center space-x-2 sm:space-x-4 justify-center">
             {/* Previous button */}
