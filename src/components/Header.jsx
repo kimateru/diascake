@@ -101,7 +101,7 @@ const Header = memo(() => {
           <div className="flex flex-col lg:flex-row h-full">
             {/* Text Content */}
             <div className="flex-1 flex items-center">
-              <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12 mt-[100px]">
+              <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12 mt-[70px]">
                 <div className="text-left max-w-3xl">
                   <div className="space-y-6">
                     <h1 className="text-[42px] md:text-7xl font-semibold tracking-wide leading-tight">
@@ -346,7 +346,7 @@ const Header = memo(() => {
   return (
     <header 
       ref={headerRef}
-      className="relative h-screen md:h-[99dvh] flex flex-col text-main-brown overflow-hidden"
+      className="relative h-screen md:h-[90dvh] flex flex-col text-main-brown overflow-hidden"
       role="banner"
       aria-label={t('header.ariaLabels.heroSection')}
     >
