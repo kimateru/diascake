@@ -100,7 +100,7 @@ const Header = memo(() => {
             <img 
               src="/header/header1.svg" 
               alt="Header decoration 1" 
-              className="w-32 h-32 md:w-40 md:h-40 object-contain opacity-80 relative -top-25 md:static"
+              className="w-32 h-32 md:w-40 md:h-40 object-contain opacity-80 relative -top-[5px] md:static"
             />
           </div>
           <div className="relative">
@@ -346,10 +346,10 @@ const Header = memo(() => {
   const renderStep3 = () => (
     <>
       {/* Mobile Layout */}
-      <div className="step-content md:hidden h-full bg-white flex flex-col overflow-y-auto mt-15">
-        <div className="">
-          <div className="main-container w-full px-4 py-6">
-            <div className="text-center space-y-6">
+      <div className="step-content md:hidden h-full bg-white flex flex-col justify-center">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="main-container w-full px-4 py-6 z-[200]">
+            <div className="text-center space-y-6 small-container-se">
               <h2 className="text-xl sm:text-2xl font-semibold text-main-brown">
                 {t('header.guestCount') || 'How Many Guests?'}
               </h2>

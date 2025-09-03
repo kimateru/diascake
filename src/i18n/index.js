@@ -46,8 +46,8 @@ const resources = {
             },
             // Header
             header: {
-                title: "Персональные торты с историей",
-                description: "Изготовлено вручную с заботой в наших кафе, кухнях и пекарнях.",
+                title: "Лучшие торты в Кишинёве на заказ",
+                description: "Свадебные торты, торты на день рождения, бенто торты. Изготовлено вручную с заботой в наших кафе, кухнях и пекарнях.",
                 cta: "Закажи торт",
                 buildCake: "Создать торт",
                 back: "Назад",
@@ -67,9 +67,9 @@ const resources = {
             },
             // Meta tags and SEO
             meta: {
-                title: "DiasCake- Премиальная пекарня | Свадебные и праздничные торты",
-                description: "DiasCake- ваша премиальная пекарня для свадебных тортов, тортов на день рождения, кэнди-баров и уникальных начинок. Изготовлено вручную с заботой.",
-                keywords: "торты, свадебные торты, торты на день рождения, пекарня, кэнди-бар, начинки для тортов, ручная работа, премиум"
+                title: "Торт Кишинёв | Торт на заказ | Свадебные торты | DiasCake",
+                description: "Лучшие торты в Кишинёве! Свадебные торты, торты на день рождения, бенто торты на заказ. DiasCake - ручная работа, качественные ингредиенты. Заказ: +373 79 42 66 59",
+                keywords: "торт Кишинёв, торт на заказ, свадебный торт, торт на день рождения, бенто торт, торты Кишинёв, пекарня Кишинёв, заказ торта, торты ручной работы, премиум торты, начинки для тортов, кэнди-бар, DiasCake"
             },
             // Fillings section
             fillings: {
@@ -217,9 +217,9 @@ const resources = {
             },
             // Wedding Cakes section
             weddingCakes: {
-                title: "Свадебные торты",
+                title: "Свадебные торты в Кишинёве на заказ",
                 badge: "Свадебные торты",
-                subtitle: "Создайте волшебство вашего особенного дня",
+                subtitle: "Создайте волшебство вашего особенного дня с нашими свадебными тортами",
                 description: "Наши свадебные торты созданы с любовью и вниманием к каждой детали. От элегантных классических дизайнов до современных художественных шедевров - мы воплотим торт вашей мечты.",
                 galleryTitle: "Наша коллекция свадебных тортов",
                 cta: "Заказать свадебный торт",
@@ -234,9 +234,9 @@ const resources = {
             },
             // Birthday Cakes section
             birthdayCakes: {
-                title: "Торты на день рождения",
+                title: "Торты на день рождения в Кишинёве",
                 badge: "Торты на заказ",
-                subtitle: "Сделайте каждый день рождения особенным",
+                subtitle: "Сделайте каждый день рождения особенным с нашими тортами на день рождения",
                 description: "Яркие, веселые и вкусные торты для празднования дня рождения. От детских праздников до взрослых торжеств.",
                 features: {
                     themes: "Тематические дизайны",
@@ -247,9 +247,9 @@ const resources = {
             },
             // Bento Cakes section
             bentoCakes: {
-                title: "Бенто торты",
+                title: "Бенто торты в Кишинёве на заказ",
                 badge: "Мини торты",
-                subtitle: "Идеальные порции для особых моментов",
+                subtitle: "Идеальные порции для особых моментов с нашими бенто тортами",
                 description: "Бенто торты - это новая тенденция в мире кондитерских изделий. Компактные, стильные и невероятно вкусные мини-торты, идеально подходящие для индивидуального наслаждения или небольших празднований.",
                 price: "Цена Бента торта весом около 500 гр 450 лей, в стоимость входит декор, упаковка, и свечка.Цена Бента торта весом около 1кг гр 850 лей, в стоимость входит декор, упаковка, и свечка",
                 galleryTitle: "Наша коллекция бенто тортов",
@@ -298,7 +298,7 @@ const resources = {
                 email: "Электронная почта",
                 emailAddress: "Пишите: diascakeshop@gmail.com",
                 address: "Адресс",
-                addressText: "Посетите: Бд. Куза Водэ 49/1",
+                addressText: "Посетите: Дурлешты, Григоре Уреке 10/2",
                 socialText: "Кроме того, мы всегда на связи в социальных сетях.",
                 deliveryTitle: "Оплата и доставка",
                 deliverySubtitle: "Ниже вы найдете доступные способы оплаты и доставки.",
@@ -361,8 +361,8 @@ const resources = {
             },
             // Header  
             header: {
-                title: "Torturi personalizate cu poveste",
-                description: "Făcut manual cu grijă în cafenelele, bucătăriile și brutăriile noastre.",
+                title: "Cele mai bune torturi din Chișinău la comandă",
+                description: "Torturi de nuntă, torturi de aniversare, torturi bento. Făcut manual cu grijă în cafenelele, bucătăriile și brutăriile noastre.",
                 cta: "Comandă tort",
                 buildCake: "Creează tortul",
                 back: "Înapoi",
@@ -380,11 +380,11 @@ const resources = {
                     discoverTreats: "Descoperă torturile și dulciurile noastre delicioase"
                 }
             },
-            // Meta tags and anivesare
+            // Meta tags and SEO
             meta: {
-                title: "Dias Cake - Brutărie Premium | Torturi Nuntă și Aniversare",
-                description: "Dias Cake - brutăria ta premium pentru torturi de nuntă, torturi de aniversare, candy bar și umpluturi unice. Făcut manual cu grijă.",
-                keywords: "torturi, torturi nuntă, torturi aniversare, brutărie, candy bar, umpluturi torturi, făcut manual, premium"
+                title: "Tort Chișinău | Tort la comandă | Torturi Nuntă | DiasCake",
+                description: "Cele mai bune torturi din Chișinău! Torturi de nuntă, torturi de aniversare, torturi bento la comandă. DiasCake - lucru manual, ingrediente de calitate. Comandă: +373 79 42 66 59",
+                keywords: "tort Chișinău, tort la comandă, tort pentru nuntă, tort pentru zi de naștere, tort bento, torturi Chișinău, brutărie Chișinău, comandă tort, torturi făcute manual, torturi premium, umpluturi torturi, candy bar, DiasCake"
             },
             // Fillings section
             fillings: {
@@ -532,9 +532,9 @@ const resources = {
             },
             // Wedding Cakes section
             weddingCakes: {
-                title: "Torturi de nuntă",
+                title: "Torturi de nuntă în Chișinău la comandă",
                 badge: "Torturi pentru ocazii speciale",
-                subtitle: "Creați magia zilei voastre speciale",
+                subtitle: "Creați magia zilei voastre speciale cu torturile noastre de nuntă",
                 description: "Torturile noastre de nuntă sunt create cu dragoste și atenție la fiecare detaliu. De la designuri clasice elegante la capodopere artistice moderne - vom realiza tortul visurilor voastre.",
                 galleryTitle: "Colecția noastră de torturi de nuntă",
                 cta: "Comandă tort de nuntă",
@@ -549,9 +549,9 @@ const resources = {
             },
             // Birthday Cakes section
             birthdayCakes: {
-                title: "Torturi de aniversare",
+                title: "Torturi de aniversare în Chișinău",
                 badge: "Torturi la comandă",
-                subtitle: "Faceți fiecare zi de naștere specială",
+                subtitle: "Faceți fiecare zi de naștere specială cu torturile noastre de aniversare",
                 description: "Torturi colorate, vesele și delicioase pentru sărbătorirea zilei de naștere. De la petreceri pentru copii la celebrări pentru adulți.",
                 features: {
                     themes: "Designuri tematice",
@@ -562,9 +562,9 @@ const resources = {
             },
             // Bento Cakes section
             bentoCakes: {
-                title: "Torturi Bento",
+                title: "Torturi Bento în Chișinău la comandă",
                 badge: "Mini Torturi",
-                subtitle: "Porții perfecte pentru momente speciale",
+                subtitle: "Porții perfecte pentru momente speciale cu torturile noastre bento",
                 description: "Torturile Bento sunt noua tendință în lumea produselor de cofetărie. Compacte, stilate și incredibil de gustoase, aceste mini-torturi sunt perfecte pentru plăcerea individuală sau sărbători mici.",
                 price: "Pretul unui tort Bento de aproximativ 500 gr 450 lei, inclusiv decor, ambalaj și candelă. Pretul unui tort Bento de aproximativ 1 kg 850 lei, inclusiv decor, ambalaj și candelă",
                 galleryTitle: "Colecția noastră de torturi Bento",
@@ -613,7 +613,7 @@ const resources = {
                 email: "Email",
                 emailAddress: "Scrie: diascakeshop@gmail.com",
                 address: "Adresă",
-                addressText: "Vizitează: Bd. Cuza Vodă 49/1",
+                addressText: "Vizitează: Durlești, Grigore Ureche 10/2",
                 socialText: "În plus, suntem mereu în contact pe rețelele de socializare.",
                 deliveryTitle: "Plata și livrarea",
                 deliverySubtitle: "Mai jos vedeți modalitățile disponibile de plată și livrare.",

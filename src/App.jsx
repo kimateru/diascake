@@ -2,6 +2,8 @@ import { useState, useEffect, Suspense } from 'react';
 import ErrorBoundary from './components/ErrorBoundary';
 import Loading from './components/Loading';
 import SEOHead from './components/SEOHead';
+import StructuredData from './components/StructuredData';
+import Sitemap from './components/Sitemap';
 import './index.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
@@ -46,6 +48,8 @@ function App() {
   return (
     <ErrorBoundary>
       <SEOHead />
+      <StructuredData />
+      <Sitemap />
       <div className="app">
         {/* Navigation */}
         <Navbar />

@@ -47,6 +47,12 @@ const SEOHead = memo(() => {
     updateOrCreateOGTag('og:description', t('meta.description'));
     updateOrCreateOGTag('og:type', 'website');
     updateOrCreateOGTag('og:locale', i18n.language === 'ru' ? 'ru_RU' : 'ro_RO');
+    updateOrCreateOGTag('og:url', window.location.href);
+    updateOrCreateOGTag('og:site_name', 'DiasCake');
+    updateOrCreateOGTag('og:image', `${window.location.origin}/main_logo.png`);
+    updateOrCreateOGTag('og:image:width', '1200');
+    updateOrCreateOGTag('og:image:height', '630');
+    updateOrCreateOGTag('og:image:alt', 'DiasCake - Premium Bakery Logo');
 
     // Update Twitter Card tags
     const updateOrCreateTwitterTag = (name, content) => {
@@ -64,6 +70,10 @@ const SEOHead = memo(() => {
     updateOrCreateTwitterTag('twitter:card', 'summary_large_image');
     updateOrCreateTwitterTag('twitter:title', t('meta.title'));
     updateOrCreateTwitterTag('twitter:description', t('meta.description'));
+    updateOrCreateTwitterTag('twitter:image', `${window.location.origin}/main_logo.png`);
+    updateOrCreateTwitterTag('twitter:image:alt', 'DiasCake - Premium Bakery');
+    updateOrCreateTwitterTag('twitter:site', '@diascake');
+    updateOrCreateTwitterTag('twitter:creator', '@diascake');
 
     // Update HTML lang attribute
     document.documentElement.lang = i18n.language;
@@ -99,6 +109,48 @@ const SEOHead = memo(() => {
     xDefault.hreflang = 'x-default';
     xDefault.href = `${baseUrl}${window.location.pathname}`;
     document.head.appendChild(xDefault);
+
+    // Add additional SEO meta tags
+    const addOrUpdateMetaTag = (name, content) => {
+      let tag = document.querySelector(`meta[name="${name}"]`);
+      if (tag) {
+        tag.setAttribute('content', content);
+      } else {
+        tag = document.createElement('meta');
+        tag.name = name;
+        tag.content = content;
+        document.head.appendChild(tag);
+      }
+    };
+
+    // Add robots meta tag
+    addOrUpdateMetaTag('robots', 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    
+    // Add author meta tag
+    addOrUpdateMetaTag('author', 'DiasCake');
+    
+    // Add viewport meta tag (if not exists)
+    if (!document.querySelector('meta[name="viewport"]')) {
+      const viewport = document.createElement('meta');
+      viewport.name = 'viewport';
+      viewport.content = 'width=device-width, initial-scale=1.0';
+      document.head.appendChild(viewport);
+    }
+    
+    // Add theme-color meta tag
+    addOrUpdateMetaTag('theme-color', '#2b221b');
+    
+    // Add mobile-web-app-capable meta tag
+    addOrUpdateMetaTag('mobile-web-app-capable', 'yes');
+    
+    // Add apple-mobile-web-app-capable meta tag
+    addOrUpdateMetaTag('apple-mobile-web-app-capable', 'yes');
+    
+    // Add apple-mobile-web-app-status-bar-style meta tag
+    addOrUpdateMetaTag('apple-mobile-web-app-status-bar-style', 'default');
+    
+    // Add apple-mobile-web-app-title meta tag
+    addOrUpdateMetaTag('apple-mobile-web-app-title', 'DiasCake');
 
   }, [t, i18n.language]);
 

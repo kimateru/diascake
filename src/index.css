@@ -120,8 +120,9 @@ circle[fill="none"] {
 
 /* Mobile RangePicker Responsive Styles */
 .range-picker-mobile {
-    min-height: auto !important;
+    /* min-height: auto !important; */
     padding: 1rem !important;
+    min-height: 350px !important;
 }
 
 .range-picker-mobile svg {
@@ -226,12 +227,40 @@ circle[fill="none"] {
 }
 
 @media (max-width: 360px) {
-    .range-picker-mobile svg {
-        width: 200px !important;
-        max-height: 200px !important;
+    .range-picker-mobile {
+        min-height: 400px !important;
+        padding: 0.75rem !important;
     }
     
-
+    .range-picker-mobile svg {
+        width: 180px !important;
+        max-height: 180px !important;
+    }
+    
+    .range-picker-mobile h3 {
+        font-size: 0.875rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .range-picker-mobile .order-summary {
+        padding: 0.75rem !important;
+        font-size: 0.7rem !important;
+    }
+    
+    .range-picker-mobile .order-summary h3 {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+    
+    .range-picker-mobile .order-summary .text-xl {
+        font-size: 0.9rem !important;
+    }
+    
+    .range-picker-mobile .cta-button {
+        padding: 0.5rem 0.75rem !important;
+        font-size: 0.7rem !important;
+        margin-top: 0.75rem !important;
+    }
 }
 
 /* Browser compatibility fixes */
@@ -261,6 +290,47 @@ circle[fill="none"] {
 }
 
 
+
+/* iPhone SE and very small screens specific fixes */
+@media (max-width: 375px) and (max-height: 667px) {
+    .small-container-se {
+        margin-top: 50px;
+    }
+    .range-picker-mobile {
+        min-height: 420px !important;
+        padding: 0.5rem !important;
+    }
+    
+    .range-picker-mobile svg {
+        width: 160px !important;
+        max-height: 160px !important;
+    }
+    
+    .range-picker-mobile h3 {
+        font-size: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .range-picker-mobile .order-summary {
+        padding: 1rem !important;
+        font-size: 1rem !important;
+    }
+    
+    .range-picker-mobile .order-summary h3 {
+        font-size: 1.25rem !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .range-picker-mobile .order-summary .text-xl {
+        font-size: 1rem !important;
+    }
+    
+    .range-picker-mobile .cta-button {
+        padding: 0.4rem 0.6rem !important;
+        font-size: 2 !important;
+        margin-top: 1rem !important;
+    }
+}
 
 /* Mobile Header Scroll Fix */
 @media (max-width: 768px) {

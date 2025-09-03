@@ -73,7 +73,7 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
   const totalPrice = calculatePrice();
 
   return (
-    <div className="range-picker-mobile flex flex-col items-center justify-center min-h-[300px] sm:min-h-[400px] p-4 sm:p-6">
+    <div className="range-picker-mobile flex flex-col items-center justify-center min-h-[350px] sm:min-h-[400px] p-4 sm:p-6">
       {/* Guest Count Selection */}
       <div className="w-full max-w-md mb-6 sm:mb-8">
         <h3 className="text-lg sm:text-xl font-semibold text-main-brown mb-6 sm:mb-10 text-center">
