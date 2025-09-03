@@ -288,6 +288,12 @@ const resources = {
                     tiktok: "ТикТок"
                 }
             },
+            // Testimonials section
+            testimonials: {
+                badge: "Отзывы",
+                title: "Что говорят наши клиенты",
+                subtitle: "Отзывы довольных клиентов о наших тортах и услугах"
+            },
             // Contacts section
             contacts: {
                 subtitle: "Dias Cakes",
@@ -602,6 +608,12 @@ const resources = {
                     instagram: "Instagram",
                     tiktok: "TikTok"
                 }
+            },
+            // Testimonials section
+            testimonials: {
+                badge: "Testimoniale",
+                title: "Ce spun clienții noștri",
+                subtitle: "Recenzii de la clienții mulțumiți despre torturile și serviciile noastre"
             },
             // Contacts section
             contacts: {

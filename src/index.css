@@ -370,3 +370,37 @@ circle[fill="none"] {
         height: 99dvh !important;
     }
 }
+
+/* Testimonials Slider Styles */
+.testimonials-swiper {
+    padding-bottom: 60px;
+}
+
+.testimonials-swiper .swiper-pagination {
+    position: relative;
+    margin-top: 20px;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+    background: #2b221b;
+    opacity: 0.3;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #2b221b;
+}
+
+.testimonials-swiper .swiper-button-disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Hide default Swiper navigation */
+.testimonials-swiper .swiper-button-prev,
+.testimonials-swiper .swiper-button-next {
+    display: none !important;
+}
