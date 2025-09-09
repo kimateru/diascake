@@ -82,7 +82,7 @@ const Fillings = memo(() => {
                   <img
                     src={cake.image}
                     alt={t(`fillings.cakes.${cake.key}.name`)}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover object-[15%_40%] group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                 </div>

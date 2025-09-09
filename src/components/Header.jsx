@@ -64,10 +64,10 @@ const Header = memo(() => {
     <div className="step-content flex flex-col lg:flex-row h-full">
       {/* Text Content */}
       <div className="flex-1 flex items-center">
-        <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12 mt-[70px]">
-          <div className="text-left max-w-3xl">
-            <div className="space-y-6">
-              <h1 className="text-[42px] md:text-7xl font-semibold tracking-wide leading-tight">
+        <div className="main-container w-[90%] px-4 sm:px-6 lg:px-8 xl:px-12 mt-[70px]">
+          <div className="text-left w-full flex flex-col md:flex-row items-center gap-8">
+            <div className="space-y-6 flex-1">
+              <h1 className="text-[42px] md:text-6xl lg:text-7xl font-semibold tracking-wide leading-tight">
               {t('header.title')}
               </h1>
               
@@ -89,29 +89,19 @@ const Header = memo(() => {
                 </button>
               </div>
             </div>
+            
+            {/* Desktop decorative image */}
+            <div className="hidden md:block flex-shrink-0">
+              <img 
+                src="/header/header1.svg" 
+                alt="Header decoration 1" 
+                className="w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
       
-      {/* Mobile decorative images */}
-      <div className="md:hidden flex-shrink-0 px-4 pb-8">
-        <div className="flex justify-center items-center space-x-4 mt-8">
-          <div className="relative">
-            <img 
-              src="/header/header1.svg" 
-              alt="Header decoration 1" 
-              className="w-32 h-32 md:w-40 md:h-40 object-contain opacity-80 relative -top-[5px] md:static"
-            />
-          </div>
-          <div className="relative">
-            <img 
-              src="/header/header2.svg" 
-              alt="Header decoration 2" 
-              className="w-32 h-32 md:w-40 md:h-40 object-contain opacity-80 relative -top-13 md:static"
-            />
-          </div>
-        </div>
-      </div>
 
     </div>
   );
@@ -367,11 +357,11 @@ const Header = memo(() => {
       </div>
 
       {/* Desktop Layout */}
-      <div className="step-content hidden md:flex items-center justify-center h-full bg-white">
+      <div className="step-content hidden md:flex flex-col justify-center h-full bg-white py-16">
         <div className="main-container w-full px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="text-center w-full max-w-6xl mx-auto">
-            <div className="space-y-8">
-              <div className="mt-[100px]">
+            <div className="space-y-12">
+              <div>
                 <h2 className="text-3xl md:text-4xl font-semibold text-main-brown">
                   {t('header.guestCount') || 'How Many Guests?'}
                 </h2>
@@ -394,7 +384,7 @@ const Header = memo(() => {
   return (
     <header 
       ref={headerRef}
-      className="relative h-screen md:h-[90dvh] flex flex-col text-main-brown overflow-hidden"
+      className="relative h-screen md:h-[100vh] flex flex-col text-main-brown overflow-hidden"
       role="banner"
       aria-label={t('header.ariaLabels.heroSection')}
     >
@@ -425,24 +415,40 @@ const Header = memo(() => {
         </div>
       </div>
       
-      {/* Decorative images - responsive positioning (only show on desktop for step 1) */}
-      {currentStep === 0 && (
-        <div className="hidden md:block absolute right-0 top-10 h-full w-full pointer-events-none">
-          <div className="w-full h-full flex items-center justify-center">
-            <img 
-              src="/header/header1.svg" 
-              alt="Header decoration 1" 
-              className="absolute bottom-13 lg:bottom-1/4 right-1/4 w-52 h-52 object-contain"
-            />
-            <img 
-              src="/header/header2.svg" 
-              alt="Header decoration 2" 
-              className="absolute top-1/17 left-1/3 w-52 h-52 object-contain"
-            />
-          </div>
-        </div>
-      )}
       
+      {/* Desktop Navigation Arrows - Only for lg screens and above */}
+      <div className="hidden lg:block absolute inset-0 z-20 pointer-events-none">
+        {/* Left Arrow */}
+        <button
+          onClick={goBack}
+          disabled={currentStep === 0}
+          className={`absolute left-4 top-1/2 -translate-y-1/2 pointer-events-auto flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-all duration-200 border border-main-brown cursor-pointer ${
+            currentStep === 0
+              ? 'opacity-50 cursor-not-allowed text-main-brown/50 bg-white'
+              : 'text-main-brown bg-white hover:bg-main-brown hover:text-white'
+          }`}
+          aria-label="Previous step"
+        >
+          <ChevronLeft className="w-4 h-4" />
+          <span>Înapoi</span>
+        </button>
+
+        {/* Right Arrow */}
+        <button
+          onClick={goNext}
+          disabled={currentStep === 2}
+          className={`absolute right-4 top-1/2 -translate-y-1/2 pointer-events-auto flex items-center space-x-2 px-4 py-2 text-sm font-medium transition-all duration-200 border border-main-brown cursor-pointer ${
+            currentStep === 2
+              ? 'opacity-50 cursor-not-allowed text-main-brown/50 bg-white'
+              : 'text-main-brown bg-white hover:bg-main-brown hover:text-white'
+          }`}
+          aria-label="Next step"
+        >
+          <span>Următorul</span>
+          <ChevronRight className="w-4 h-4" />
+        </button>
+      </div>
+
       {/* Swiper Container */}
       <div className="flex-1 relative z-10">
         <Swiper
@@ -472,8 +478,8 @@ const Header = memo(() => {
         </Swiper>
       </div>
 
-      {/* Navigation buttons - Desktop only */}
-      <div className="navigation-container hidden md:block relative z-20 py-4 bg-white border-t border-main-brown/10">
+      {/* Navigation buttons - Medium screens only */}
+      <div className="navigation-container hidden md:block lg:hidden relative z-20 py-4 bg-white border-t border-main-brown/10">
         <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
           <div className="flex items-center space-x-2 sm:space-x-4 justify-center">
             {/* Previous button */}
@@ -511,6 +517,15 @@ const Header = memo(() => {
               <span className="sm:inline">{t('header.next') || 'Next'} →</span>
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* Step indicator - Large screens only */}
+      <div className="hidden lg:block absolute bottom-4 left-1/2 -translate-x-1/2 z-20">
+        <div className="bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full border border-main-brown/20">
+          <span className="text-main-brown text-xs font-medium">
+            {currentStep + 1} / 3
+          </span>
         </div>
       </div>
     </header>

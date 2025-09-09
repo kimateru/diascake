@@ -136,36 +136,50 @@ circle[fill="none"] {
 
 /* Desktop RangePicker - Make it bigger */
 @media (min-width: 769px) {
-    .range-picker-mobile svg {
-        width: 230px !important;
-        max-height: 230px !important;
+    .range-picker-mobile {
+        min-height: 280px !important;
+        padding: 1rem !important;
     }
     
-
-    
+    .range-picker-mobile svg {
+        width: 200px !important;
+        max-height: 200px !important;
+    }
+        
     .range-picker-mobile h3 {
-        font-size: 1.5rem !important;
-        margin-bottom: 2rem !important;
+        font-size: 1.25rem !important;
+        margin-bottom: 1.5rem !important;
     }
     
     .range-picker-mobile .order-summary {
-        padding: 1.5rem !important;
-        font-size: 1rem !important;
+        padding: 1rem !important;
+        font-size: 0.9rem !important;
+        margin-top: 1rem !important;
     }
     
     .range-picker-mobile .order-summary h3 {
-        font-size: 1.25rem !important;
-        margin-bottom: 1.25rem !important;
+        font-size: 1.1rem !important;
+        margin-bottom: 1rem !important;
     }
     
     .range-picker-mobile .order-summary .text-xl {
-        font-size: 1.5rem !important;
+        font-size: 1.25rem !important;
     }
     
     .range-picker-mobile .cta-button {
-        padding: 1rem 2rem !important;
-        font-size: 1rem !important;
-        margin-top: 2rem !important;
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.9rem !important;
+        margin-top: 1rem !important;
+    }
+    
+    /* Reduce spacing between elements */
+    .range-picker-mobile .space-y-3 > * + * {
+        margin-top: 0.5rem !important;
+    }
+    
+    /* Make the circular input section more compact */
+    .range-picker-mobile .w-full.max-w-md {
+        margin-bottom: 1rem !important;
     }
 }
 
@@ -380,6 +394,26 @@ circle[fill="none"] {
     position: relative;
     margin-top: 20px;
 }
+/* style swiper bullet accros all page to be main bronw */
+.swiper-pagination-bullet {
+    background: #2b221b !important;
+    opacity: 0.3;
+    width: 12px;
+    height: 12px;
+    margin: 0 6px;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #2b221b !important;
+}
+
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #2b221b !important;
+}
+
+
 
 .testimonials-swiper .swiper-pagination-bullet {
     background: #2b221b;
