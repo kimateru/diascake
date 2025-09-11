@@ -36,24 +36,25 @@ const BirthdayCakes = memo(() => {
     <section className="py-12 bg-white" id="BirthdayCakes">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
-        {/* Header Section */}
-        <div className="mb-12" data-aos="fade-up">
-          <SectionHeader
-            badge={t('birthdayCakes.badge')}
-            title={t('birthdayCakes.title')}
-            subtitle={t('birthdayCakes.subtitle')}
-          />
-          <p className="text-gray-700 max-w-2xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
-            {t('birthdayCakes.description')}
-          </p>
-        </div>
-
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 h-full">
           
-          {/* Left: Features */}
-          <div data-aos="fade-right">
-            <div className="space-y-8">
+          {/* Left: Header + Features */}
+          <div className="flex flex-col justify-center" data-aos="fade-right">
+            {/* Header Section */}
+            <div className="mb-8">
+              <SectionHeader
+                badge={t('birthdayCakes.badge')}
+                title={t('birthdayCakes.title')}
+                subtitle={t('birthdayCakes.subtitle')}
+              />
+              <p className="text-gray-700 max-w-2xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
+                {t('birthdayCakes.description')}
+              </p>
+            </div>
+
+            {/* Features */}
+            <div className="space-y-8 mb-8">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-4">
                   <div className="flex-shrink-0">
@@ -62,7 +63,7 @@ const BirthdayCakes = memo(() => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-1">{feature.title}</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-1">{feature.title}</h3>
                     <p className="text-gray-600 text-sm">{feature.description}</p>
                   </div>
                 </div>
@@ -70,25 +71,21 @@ const BirthdayCakes = memo(() => {
             </div>
 
             {/* CTA */}
-            <div className="mt-8">
-              <CTAButton />
+            <div>
+              <CTAButton className="bg-main-brown! text-white hover:bg-white! hover:text-main-brown!" />
             </div>
           </div>
 
-          {/* Right: Gallery */}
-          <div className="grid grid-cols-1">
-            {birthdayGallery.map((cake) => (
-              <div key={cake.id} className="group relative overflow-hidden rounded-lg">
-                <div className="overflow-hidden h-[400px]">
-                  <img
-                    src={cake.image}
-                    alt="Birthday cake"
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            ))}
+          {/* Right: Single Gallery Image - Full Height */}
+          <div className="h-full" data-aos="fade-left">
+            <div className="group relative overflow-hidden h-full">
+              <img
+                src={birthdayGallery[0].image}
+                alt="Birthday cake"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
 

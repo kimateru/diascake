@@ -30,48 +30,48 @@ const WeddingsCakes = memo(() => {
     <section className="py-16 bg-main-brown text-white" id="WeddingsCakes">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
-        {/* Header Section */}
-        <div className="mb-16" data-aos="fade-up">
-          <SectionHeader
-            badge={t('weddingCakes.badge')}
-            title={t('weddingCakes.title')}
-            subtitle={t('weddingCakes.subtitle')}
-            textColor="text-white"
-            badgeColor="text-white/80"
-            subtitleColor="text-white/90"
-          />
-          <p className="text-lg text-white/80 max-w-3xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
-            {t('weddingCakes.description')}
-          </p>
-        </div>
-        
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 h-full mb-16">
+          
+          {/* Left: Text Info */}
+          <div className="flex flex-col" data-aos="fade-right">
+            {/* Header Section */}
+            <div className="mb-8">
+              <SectionHeader
+                badge={t('weddingCakes.badge')}
+                title={t('weddingCakes.title')}
+                subtitle={t('weddingCakes.subtitle')}
+                textColor="text-white"
+                badgeColor="text-white/80"
+                subtitleColor="text-white/90"
+              />
+              <p className="text-base text-white/80 max-w-2xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
+                {t('weddingCakes.description')}
+              </p>
+            </div>
 
-        {/* Gallery Section */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-semibold text-center mb-12" data-aos="fade-up">
-            {t('weddingCakes.galleryTitle')}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {weddingGallery.map((cake) => (
-              <div 
-                key={cake.id} 
-                className="group relative overflow-hidden bg-white/10 rounded-lg"
-              >
-                <div className="aspect-square overflow-hidden">
-                  <img
-                    src={cake.image}
-                    alt={t(`weddingCakes.gallery.${cake.category}`)}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    loading="lazy"
-                  />
+      
+          </div>
+
+          {/* Right: Two Gallery Images */}
+          <div className="h-full" data-aos="fade-left">
+            <div className="grid grid-cols-2 gap-4 h-full">
+              {weddingGallery.slice(0, 2).map((cake) => (
+                <div 
+                  key={cake.id} 
+                  className="group relative overflow-hidden bg-white"
+                >
+                  <div className="overflow-hidden">
+                    <img
+                      src={cake.image}
+                      alt={t(`weddingCakes.gallery.${cake.category}`)}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="text-white font-semibold text-lg">
-                    {t(`weddingCakes.gallery.${cake.category}`)}
-                  </span>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
 

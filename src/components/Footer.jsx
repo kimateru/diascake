@@ -15,32 +15,35 @@ const Footer = memo(() => {
   return (
     <footer className="bg-black text-white py-16">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        
+
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-12">
-          
+
           {/* Left Links */}
           <div className="flex flex-col space-y-4 items-center lg:items-start lg:justify-start">
             <button
-              onClick={() => scrollToSection('Fillings')}
-              className="text-center lg:text-left text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+              onClick={() => scrollToSection('WeddingsCakes')}
+              className="relative text-center lg:text-right text-white hover:text-white transition-colors duration-200 cursor-pointer font-medium text-base tracking-wider uppercase focus:outline-none focus:ring-0 group"
               type="button"
             >
-              {t('navbar.fillings')}
+              {t('navbar.weddingCakes')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </button>
             <button
               onClick={() => scrollToSection('Candybar')}
-              className="text-center lg:text-left text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+              className="relative text-center lg:text-left text-white hover:text-white transition-colors duration-200 cursor-pointer font-medium text-base tracking-wider uppercase focus:outline-none focus:ring-0 group"
               type="button"
             >
               {t('navbar.candybar')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </button>
             <button
               onClick={() => scrollToSection('PartnerProjects')}
-              className="text-center lg:text-left text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+              className="relative text-center lg:text-left text-white hover:text-white transition-colors duration-200 cursor-pointer font-medium text-base tracking-wider uppercase focus:outline-none focus:ring-0 group"
               type="button"
             >
               {t('navbar.partnerProjects')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </button>
           </div>
 
@@ -84,33 +87,30 @@ const Footer = memo(() => {
 
           {/* Right Links */}
           <div className="flex flex-col space-y-4 items-center lg:items-end">
-            <button
-              onClick={() => scrollToSection('WeddingsCakes')}
-              className="text-center lg:text-right text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
-              type="button"
-            >
-              {t('navbar.weddingCakes')}
-            </button>
+
             <button
               onClick={() => scrollToSection('BirthdayCakes')}
-              className="text-center lg:text-right text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+              className="relative text-center lg:text-right text-white hover:text-white transition-colors duration-200 cursor-pointer font-medium text-base tracking-wider uppercase focus:outline-none focus:ring-0 group"
               type="button"
             >
               {t('navbar.birthdayCakes')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </button>
             <button
               onClick={() => scrollToSection('BentoCakes')}
-              className="text-center lg:text-right text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+              className="relative text-center lg:text-right text-white hover:text-white transition-colors duration-200 cursor-pointer font-medium text-base tracking-wider uppercase focus:outline-none focus:ring-0 group"
               type="button"
             >
               {t('navbar.bentoCakes')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </button>
             <button
               onClick={() => scrollToSection('Contacts')}
-              className="text-center lg:text-right text-white hover:text-gray-300 transition-colors duration-200 cursor-pointer"
+              className="relative text-center lg:text-right text-white hover:text-white transition-colors duration-200 cursor-pointer font-medium text-base tracking-wider uppercase focus:outline-none focus:ring-0 group"
               type="button"
             >
               {t('navbar.contacts')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
             </button>
           </div>
         </div>

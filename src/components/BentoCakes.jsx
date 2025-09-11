@@ -30,13 +30,13 @@ const BentoCakes = memo(() => {
       id: 4,
       image: 'bento/bento4.jpg',
       category: 'elegant',
-      size: 'small'
+      size: 'medium'
     },
     {
       id: 5,
       image: 'bento/bento5.jpg',
       category: 'colorful',
-      size: 'small'
+      size: 'medium'
     },
   ];
 
@@ -139,82 +139,74 @@ const BentoCakes = memo(() => {
   return (
     <section className="py-12 bg-main-white" id="BentoCakes">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        {/* Header Section */}
-        <div className="mb-12" data-aos="fade-up">
-          <SectionHeader
-            badge={t('bentoCakes.badge')}
-            title={t('bentoCakes.title')}
-            subtitle={t('bentoCakes.subtitle')}
-          />
-          <p className="text-lg text-gray-700 max-w-2xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
-            {t('bentoCakes.description')}
-          </p>
-          <p className="font-semibold text-lg text-gray-900 max-w-2xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
-            {t('bentoCakes.price')}
-          </p>
-        </div>
-
-   
-
-                {/* Bento Grid Gallery */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-semibold text-center mb-12 text-gray-900" data-aos="fade-up">
-            {t('bentoCakes.galleryTitle')}
-          </h3>
+        
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 h-full">
           
-          {/* Desktop Bento Grid */}
-          <div className="hidden md:grid grid-cols-4 grid-rows-4 gap-4 h-[900px]">
-             {bentoGallery.map((cake) => (
-               <div
-                 key={cake.id}
-                 className={`group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${getGridClass(cake.size)}`}
-               >
-                 <div className="absolute inset-0">
-                   <MediaItem
-                     src={cake.image}
-                     alt={t(`bentoCakes.gallery.${cake.category}`)}
-                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                     itemId={cake.id}
-                   />
-                 </div>
-               </div>
-             ))}
-           </div>
+          {/* Left: Text Info */}
+          <div className="flex flex-col" data-aos="fade-right">
+            {/* Header Section */}
+            <div className="mb-8">
+              <SectionHeader
+                badge={t('bentoCakes.badge')}
+                title={t('bentoCakes.title')}
+                subtitle={t('bentoCakes.subtitle')}
+              />
+              <p className="text-base text-gray-700 max-w-2xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
+                {t('bentoCakes.description')}
+              </p>
+              <div className="font-semibold text-lg text-gray-900 max-w-2xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
+                <p>{t('bentoCakes.priceOne')}</p>
+                <p>{t('bentoCakes.priceTwo')}</p>
+              </div>
+            </div>
 
-                     {/* Mobile/Tablet Grid */}
-           <div className="md:hidden grid grid-cols-1 md:grid-cols-3 gap-4">
-             {bentoGallery.slice(0, 6).map((cake) => (
-               <div
-                 key={cake.id}
-                 className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 aspect-square"
-               >
-                 <MediaItem
-                   src={cake.image}
-                   alt={t(`bentoCakes.gallery.${cake.category}`)}
-                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                   itemId={`mobile-${cake.id}`}
-                 />
-                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                   <span className="text-white font-semibold text-sm text-center px-2">
-                     {t(`bentoCakes.gallery.${cake.category}`)}
-                   </span>
-                 </div>
-               </div>
-             ))}
-           </div>
-        </div>
+            {/* CTA */}
+            <div>
+              <CTAButton className="bg-main-brown! text-white hover:bg-white! hover:text-main-brown!" />
+            </div>
+          </div>
 
-        {/* CTA Section */}
-        <div className="text-center bg-white p-8 md:p-12 rounded-2xl shadow-lg" data-aos="fade-up">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="text-3xl font-semibold mb-4 text-gray-900">
-              {t('bentoCakes.ctaTitle')}
-            </h3>
-            <p className="text-gray-600 mb-8 leading-relaxed">
-              {t('bentoCakes.ctaDescription')}
-            </p>
-            <div className="flex justify-center">
-              <CTAButton />
+          {/* Right: Smaller Bento Grid */}
+          <div className="h-full" data-aos="fade-left">
+            {/* Desktop Bento Grid - Smaller */}
+            <div className="hidden md:grid grid-cols-3 grid-rows-3 gap-3 h-[600px]">
+               {bentoGallery.slice(0, 6).map((cake) => (
+                 <div
+                   key={cake.id}
+                   className={`group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
+                     cake.size === 'large' ? 'col-span-2 row-span-2' : 
+                     cake.size === 'medium' ? 'col-span-1 row-span-2' : 
+                     'col-span-1 row-span-1'
+                   }`}
+                 >
+                   <div className="absolute inset-0">
+                     <MediaItem
+                       src={cake.image}
+                       alt={t(`bentoCakes.gallery.${cake.category}`)}
+                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                       itemId={cake.id}
+                     />
+                   </div>
+                 </div>
+               ))}
+             </div>
+
+            {/* Mobile/Tablet Grid */}
+            <div className="md:hidden grid grid-cols-2 gap-3">
+              {bentoGallery.slice(0, 4).map((cake) => (
+                <div
+                  key={cake.id}
+                  className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 aspect-square"
+                >
+                  <MediaItem
+                    src={cake.image}
+                    alt={t(`bentoCakes.gallery.${cake.category}`)}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    itemId={`mobile-${cake.id}`}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
