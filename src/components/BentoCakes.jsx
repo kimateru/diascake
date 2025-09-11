@@ -82,7 +82,7 @@ const BentoCakes = memo(() => {
                     src={cake.src}
                     type={cake.type}
                     alt={t(`bentoCakes.gallery.${cake.category}`)}
-                    className="w-full h-full transition-transform duration-300 group-hover:scale-105"
+                    className="w-full h-full transition-transform duration-300 group-hover:scale-105 object-cover"
                     priority={cake.id <= 2}
                   />
                 </div>
