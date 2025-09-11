@@ -4,55 +4,55 @@ export const cakeFillings = [
     id: 1,
     key: 'plombirCapsuni',
     image:
-      'fillings/plombir.jpg',
+      'fillings/plombir-min.webp',
   },
   {
     id: 2,
     key: 'snikers',
     image:
-      'fillings/snikers.jpg',
+      'fillings/snikers-min.webp',
   },
   {
     id: 3,
     key: 'mangoMaracuia',
     image:
-      'fillings/mango.jpg',
+      'fillings/mango-min.webp',
   },
   {
     id: 4,
     key: 'oreo',
     image:
-      'fillings/oreo.jpg',
+      'fillings/oreo-min.webp',
   },
   {
     id: 5,
     key: 'padureaNeagra',
     image:
-      'fillings/padure.jpg',
+      'fillings/padure-min.webp',
   },
   {
     id: 6,
     key: 'redVelvetZmeura',
     image:
-      'fillings/velvet.jpg',
+      'fillings/velvet-min.webp',
   },
   {
     id: 7,
     key: 'medovic',
     image:
-      'fillings/medovic.jpg',
+      'fillings/medovic-min.webp',
   },
   {
     id: 8,
     key: 'napoleon',
     image:
-      'fillings/napoleon.jpg',
+      'fillings/napoleon-min.webp',
   },
   {
     id: 9,
     key: 'fisticZmeura',
     image:
-      'fillings/fistic.jpg',
+      'fillings/fistic-min.webp',
   },
 ];
 
