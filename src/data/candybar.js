@@ -3,62 +3,62 @@ export const candyBarMenuKeys = [
     {
       id: 1,
       key: 'moussePlombirCapsuni',
-      image: 'candybar/cake1.jpg',
+      image: 'candybar/capsuniPlombir.jpg',
     },
     {
       id: 2,
       key: 'musseMangoMaracuia',
-      image: 'candybar/cake2.jpg',
+      image: 'candybar/mango.jpg',
     },
     {
       id: 3,
       key: 'tiramisu',
-      image: 'candybar/cake3.jpg',
+      image: 'candybar/tiramisu.jpg',
     },
     {
       id: 4,
       key: 'cakePops',
-      image: 'candybar/cake4.jpg',
+      image: 'candybar/cakePops.jpg',
     },
     {
       id: 5,
       key: 'cartoscaInghetata',
-      image: 'candybar/cake5.jpg',
+      image: 'candybar/cartosca.jpg',
     },
     {
       id: 6,
       key: 'tarteInAsortiment',
-      image: 'candybar/cake6.jpg',
+      image: 'candybar/tart.jpg',
     },
     {
       id: 7,
       key: 'eclereleChoux',
-      image: 'candybar/cake1.jpg',
+      image: 'candybar/choux.jpg',
     },
     {
       id: 8,
       key: 'briose',
-      image: 'candybar/cake2.jpg',
+      image: 'candybar/briose.jpg',
     },
     {
       id: 9,
       key: 'zefir',
-      image: 'candybar/cake3.jpg',
+      image: 'candybar/zefir.jpg',
     },
     {
       id: 10,
       key: 'prajituraMusseSemisfera',
-      image: 'candybar/cake4.jpg',
+      image: 'candybar/semisfera.jpg',
     },
     {
       id: 11,
       key: 'pavlova',
-      image: 'candybar/cake5.jpg',
+      image: 'candybar/pavlova.jpg',
     },
     {
       id: 12,
       key: 'macarons',
-      image: 'candybar/cake6.jpg',
+      image: 'candybar/macarons.jpg',
     },
   ];
   

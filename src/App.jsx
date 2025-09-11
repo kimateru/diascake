@@ -52,11 +52,16 @@ function App() {
       <StructuredData />
       <Sitemap />
       <div className="app">
+        {/* Skip link for accessibility */}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
+        
         {/* Navigation */}
         <Navbar />
 
         {/* Main Content */}
-        <main className="main-content">
+        <main id="main-content" className="main-content" role="main">
           <Header />
 
           <LazySection loader={Fillings} fallback={<Loading message="Loading Fillings..." />} />

@@ -257,7 +257,8 @@ const Navbar = memo(() => {
              {/* Navigation Links */}
              <div className="flex-1 px-6 py-8 overflow-y-auto">
                <nav className="space-y-6" role="menubar" aria-label={t('navbar.ariaLabels.mobileNavigationLinks')}>
-                                 <button
+                 {/* Fillings - matches desktop order 1 */}
+                 <button
                    ref={el => navLinksRef.current[0] = el}
                    onClick={() => scrollToSection('Fillings')}
                    className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
@@ -268,28 +269,34 @@ const Navbar = memo(() => {
                    {t('navbar.fillings')}
                    <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
                  </button>
+                 
+                 {/* Birthday Cakes - matches desktop order 2 */}
                  <button
                    ref={el => navLinksRef.current[1] = el}
-                   onClick={() => scrollToSection('Candybar')}
+                   onClick={() => scrollToSection('BirthdayCakes')}
                    className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
-                   aria-label={t('navbar.ariaLabels.viewCandybar')}
+                   aria-label={t('navbar.ariaLabels.viewBirthdayCakes')}
                    type="button"
                    role="menuitem"
                  >
-                   {t('navbar.candybar')}
+                   {t('navbar.birthdayCakes')}
                    <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
                  </button>
+                 
+                 {/* Bento Cakes - matches desktop order 3 */}
                  <button
                    ref={el => navLinksRef.current[2] = el}
-                   onClick={() => scrollToSection('PartnerProjects')}
+                   onClick={() => scrollToSection('BentoCakes')}
                    className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
-                   aria-label={t('navbar.ariaLabels.viewPartnerProjects')}
+                   aria-label={t('navbar.ariaLabels.viewBentoCakes')}
                    type="button"
                    role="menuitem"
                  >
-                   {t('navbar.partnerProjects')}
+                   {t('navbar.bentoCakes')}
                    <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
                  </button>
+                 
+                 {/* Wedding Cakes - matches desktop order 4 */}
                  <button
                    ref={el => navLinksRef.current[3] = el}
                    onClick={() => scrollToSection('WeddingsCakes')}
@@ -301,41 +308,47 @@ const Navbar = memo(() => {
                    {t('navbar.weddingCakes')}
                    <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
                  </button>
-                                 <button
-                  ref={el => navLinksRef.current[4] = el}
-                  onClick={() => scrollToSection('BirthdayCakes')}
-                  className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
-                  aria-label={t('navbar.ariaLabels.viewBirthdayCakes')}
-                  type="button"
-                  role="menuitem"
-                >
-                  {t('navbar.birthdayCakes')}
-                  <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-                </button>
-                <button
-                  ref={el => navLinksRef.current[5] = el}
-                  onClick={() => scrollToSection('BentoCakes')}
-                  className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
-                  aria-label={t('navbar.ariaLabels.viewBentoCakes')}
-                  type="button"
-                  role="menuitem"
-                >
-                  {t('navbar.bentoCakes')}
-                  <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-                </button>
-                <button
-                  ref={el => navLinksRef.current[6] = el}
-                  onClick={() => scrollToSection('Contacts')}
-                  className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
-                  aria-label={t('navbar.ariaLabels.viewContacts')}
-                  type="button"
-                  role="menuitem"
-                >
-                  {t('navbar.contacts')}
-                  <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-                </button>
-              </nav>
-            </div>
+                 
+                 {/* Candybar - matches desktop order 5 */}
+                 <button
+                   ref={el => navLinksRef.current[4] = el}
+                   onClick={() => scrollToSection('Candybar')}
+                   className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
+                   aria-label={t('navbar.ariaLabels.viewCandybar')}
+                   type="button"
+                   role="menuitem"
+                 >
+                   {t('navbar.candybar')}
+                   <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
+                 </button>
+                 
+                 {/* Partner Projects - matches desktop order 6 */}
+                 <button
+                   ref={el => navLinksRef.current[5] = el}
+                   onClick={() => scrollToSection('PartnerProjects')}
+                   className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
+                   aria-label={t('navbar.ariaLabels.viewPartnerProjects')}
+                   type="button"
+                   role="menuitem"
+                 >
+                   {t('navbar.partnerProjects')}
+                   <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
+                 </button>
+                 
+                 {/* Contacts - matches desktop order 7 */}
+                 <button
+                   ref={el => navLinksRef.current[6] = el}
+                   onClick={() => scrollToSection('Contacts')}
+                   className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
+                   aria-label={t('navbar.ariaLabels.viewContacts')}
+                   type="button"
+                   role="menuitem"
+                 >
+                   {t('navbar.contacts')}
+                   <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
+                 </button>
+               </nav>
+             </div>
 
                                      {/* Footer with Phone */}
             <div

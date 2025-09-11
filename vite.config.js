@@ -10,6 +10,10 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom'],
+          swiper: ['swiper'],
+          i18n: ['i18next', 'react-i18next', 'i18next-browser-languagedetector'],
+          animations: ['aos', 'gsap'],
+          ui: ['lucide-react'],
         },
       },
     },
@@ -21,9 +25,36 @@ export default defineConfig({
     sourcemap: false,
     // Enable CSS code splitting
     cssCodeSplit: true,
+    // Target modern browsers for better performance
+    target: 'esnext',
+    // Enable tree shaking
+    treeshake: true,
   },
   // Optimize dependencies
   optimizeDeps: {
-    include: ['react', 'react-dom'],
+    include: [
+      'react', 
+      'react-dom', 
+      'swiper/react', 
+      'swiper/modules',
+      'i18next',
+      'react-i18next',
+      'aos',
+      'lucide-react'
+    ],
+  },
+  // Performance optimizations
+  esbuild: {
+    target: 'esnext',
+    minifyIdentifiers: true,
+    minifySyntax: true,
+    minifyWhitespace: true,
+  },
+  // Enable compression
+  server: {
+    compress: true,
+  },
+  preview: {
+    compress: true,
   },
 })

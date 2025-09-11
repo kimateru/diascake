@@ -2,9 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/main_logo.png" />
+    <link rel="icon" type="image/png" href="/main_logo.png" />
+    <link rel="apple-touch-icon" href="/main_logo.png" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2b221b" />
+    <meta name="color-scheme" content="light" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="DiasCake" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/main_logo.png" as="image" type="image/png" />
+    <link rel="preload" href="/big_logo.svg" as="image" type="image/svg+xml" />
+    
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    
     <title>Tort Chișinău | Tort la comandă | DiasCake - Brutărie Premium</title>
+    
+    <!-- Critical CSS inline for above-the-fold content -->
+    <style>
+      /* Critical CSS for initial render */
+      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+      .app { min-height: 100vh; }
+      .main-content { position: relative; }
+      #root { overflow-x: hidden; }
+    </style>
   </head>
   <body>
     <div id="root" class="overflow-x-hidden"></div>

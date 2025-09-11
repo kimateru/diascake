@@ -5,6 +5,69 @@
     --color-main-white: #f7f2ed;
 }
 
+/* Accessibility improvements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus styles for better accessibility */
+*:focus {
+    outline: 2px solid var(--color-main-brown);
+    outline-offset: 2px;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--color-main-brown);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .bg-white {
+        background-color: white !important;
+    }
+    .text-gray-900 {
+        color: black !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    [data-aos] {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
 circle[fill="none"] {
     fill: white !important;
 }

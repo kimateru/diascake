@@ -1,6 +1,5 @@
 import { memo, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Heart, Sparkles, Clock, Palette } from 'lucide-react';
 import CTAButton from './CTAButton';
 import SectionHeader from './SectionHeader';
 

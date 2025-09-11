@@ -71,7 +71,7 @@ const Contacts = memo(() => {
               <h3 className="text-xl font-semibold text-white">
                 {t('contacts.address')}:
               </h3>
-              <p className="text-white text-xl font-semibold">
+              <p className="text-white text-base lg:text-xl font-semibold">
                 Durleşti, Grigore Ureche 10/2
               </p>
             </div>
@@ -88,11 +88,7 @@ const Contacts = memo(() => {
               >
               </iframe>
             </div>
-            <div className='mt-4 text-white text-lg space-y-2'>
-              {/* <p>{t('contacts.workingHours')}:</p>
-              <p>{t('contacts.workingHours.weekdays')}</p>
-              <p>{t('contacts.workingHours.weekends')}</p> */}
-            </div>
+
           </div>
         </div>
 

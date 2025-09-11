@@ -46,7 +46,7 @@ export const cakeFillings = [
     id: 8,
     key: 'napoleon',
     image:
-      'fillings/test.jpg',
+      'fillings/napoleon.jpg',
   },
   {
     id: 9,

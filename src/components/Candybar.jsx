@@ -32,7 +32,12 @@ const Candybar = memo(() => {
   }, [t, i18n.language]);
 
   return (
-    <section className="py-16 bg-white" id="Candybar">
+    <section 
+      className="py-16 bg-white" 
+      id="Candybar"
+      aria-labelledby="candybar-title"
+      aria-describedby="candybar-description"
+    >
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-10 items-start">
           {/* Left text column */}
@@ -45,7 +50,12 @@ const Candybar = memo(() => {
           </div>
 
           {/* Right slider */}
-          <div className="relative w-full lg:col-span-2" data-aos="fade-left">
+          <div 
+            className="relative w-full lg:col-span-2" 
+            data-aos="fade-left"
+            role="region"
+            aria-label={t('candybar.sliderLabel', 'Candybar items slider')}
+          >
             <Swiper
               modules={[Navigation, Scrollbar]}
               spaceBetween={24}
@@ -57,6 +67,8 @@ const Candybar = memo(() => {
                 1024: { slidesPerView: 3, spaceBetween: 24 },
               }}
               className="pb-16"
+              watchSlidesProgress={true}
+              watchSlidesVisibility={true}
               onSwiper={(swiper) => {
                 swiperRef.current = swiper;
                 setTimeout(() => {
@@ -69,32 +81,42 @@ const Candybar = memo(() => {
               }}
             >
               {items.map((item) => (
-                <SwiperSlide key={item.id} className="lg:min-w-[410px]">
+                <SwiperSlide key={item.id}>
                   <CandybarCard item={item} onReadMore={(it) => setActiveItem(it)} />
                 </SwiperSlide>
               ))}
             </Swiper>
 
             {/* Custom nav + scrollbar */}
-            <div className="flex justify-center items-center gap-4 mt-8">
+            <div className="flex justify-center items-center gap-4 mt-8" role="toolbar" aria-label={t('candybar.navigation.toolbar', 'Slider navigation controls')}>
               <button
                 ref={prevRef}
-                className="cursor-pointer flex items-center justify-center w-12 h-12 bg-white border-2 border-main-brown text-main-brown hover:bg-main-brown hover:text-white transition-all duration-200"
+                className="cursor-pointer flex items-center justify-center w-12 h-12 bg-white border-2 border-main-brown text-main-brown hover:bg-main-brown hover:text-white focus:outline-none focus:ring-2 focus:ring-main-brown focus:ring-offset-2 transition-all duration-200"
                 aria-label={t('candybar.navigation.previous', 'Previous')}
+                type="button"
               >
-                <ChevronLeft className="w-6 h-6" />
+                <ChevronLeft className="w-6 h-6" aria-hidden="true" />
               </button>
 
-              <div className="swiper-scrollbar-candy flex-1 max-w-xs h-2 bg-gray-200 rounded-full mx-4 relative">
-                <div className="swiper-scrollbar-drag bg-main-brown rounded-full h-full transition-all duration-200"></div>
+              <div 
+                className="swiper-scrollbar-candy flex-1 max-w-xs h-2 bg-gray-200 rounded-full mx-4 relative"
+                role="scrollbar"
+                aria-label={t('candybar.navigation.scrollbar', 'Scroll through items')}
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                tabIndex="0"
+              >
+                <div className="swiper-scrollbar-drag bg-main-brown rounded-full h-full transition-all duration-200" aria-hidden="true"></div>
               </div>
 
               <button
                 ref={nextRef}
-                className="cursor-pointer flex items-center justify-center w-12 h-12 bg-white border-2 border-main-brown text-main-brown hover:bg-main-brown hover:text-white transition-all duration-200"
+                className="cursor-pointer flex items-center justify-center w-12 h-12 bg-white border-2 border-main-brown text-main-brown hover:bg-main-brown hover:text-white focus:outline-none focus:ring-2 focus:ring-main-brown focus:ring-offset-2 transition-all duration-200"
                 aria-label={t('candybar.navigation.next', 'Next')}
+                type="button"
               >
-                <ChevronRight className="w-6 h-6" />
+                <ChevronRight className="w-6 h-6" aria-hidden="true" />
               </button>
             </div>
           </div>
