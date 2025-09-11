@@ -11,7 +11,6 @@ import Footer from './components/Footer';
 
 
 // Lazy load heavy sections
-const Fillings = () => import('./components/Fillings');
 const Candybar = () => import('./components/Candybar');
 const PartnerProjects = () => import('./components/PartnerProjects');
 const WeddingsCakes = () => import('./components/WeddingsCakes');
@@ -64,7 +63,6 @@ function App() {
         <main id="main-content" className="main-content" role="main">
           <Header />
 
-          <LazySection loader={Fillings} fallback={<Loading message="Loading Fillings..." />} />
           <LazySection loader={BirthdayCakes} fallback={<Loading message="Loading Birthday Cakes..." />} />
           <LazySection loader={BentoCakes} fallback={<Loading message="Loading Bento Cakes..." />} />
           <LazySection loader={WeddingsCakes} fallback={<Loading message="Loading Wedding Cakes..." />} />

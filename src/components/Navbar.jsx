@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { Phone } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from './LanguageSwitcher';
+import CakesDropdown from './CakesDropdown';
 
 const Navbar = memo(() => {
   const { t } = useTranslation();
@@ -79,99 +80,29 @@ const Navbar = memo(() => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-main-white shadow-sm z-50" role="navigation" aria-label={t('navbar.ariaLabels.mainNavigation')}>
-      <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+    <nav className="fixed top-0 left-0 right-0 bg-main-white shadow-sm z-50 py-4" role="navigation" aria-label={t('navbar.ariaLabels.mainNavigation')}>
+      <div className="main-container mx-auto px-12">
         <div className="flex justify-between items-center h-[60px]">
-          {/* Center Logo */}
-          <div className="flex-shrink-0">
+          {/* Logo and Cakes Dropdown */}
+          <div className="flex items-center space-x-6">
             <a 
               href="/" 
-              className="flex items-center gap-1" 
+              className="flex flex-col items-center gap-1" 
               aria-label={t('navbar.ariaLabels.home')}
               title={t('navbar.ariaLabels.goToHomepage')}
             >
               <img
                 src="/main_logo.png"
                 alt={t('navbar.ariaLabels.logoAlt')}
-                className="h-10 w-auto"
+                className="h-12 w-auto"
                 width="auto"
                 height="40"
                 loading="eager"
               />
-              <span className="text-main-brown font-semibold text-lg md:hidden">Dia's Cakes</span>
             </a>
+            <CakesDropdown />
           </div>
-          {/* Left Navigation */}
-          <div className="hidden xl:flex items-center space-x-6 2xl:space-x-8" role="menubar">
-            <button
-              onClick={() => scrollToSection('Fillings')}
-              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
-              aria-label={t('navbar.ariaLabels.viewFillings')}
-              title={t('navbar.ariaLabels.exploreFillings')}
-              type="button"
-              role="menuitem"
-            >
-              {t('navbar.fillings')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection('BirthdayCakes')}
-              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
-              aria-label={t('navbar.ariaLabels.viewBirthdayCakes')}
-              title={t('navbar.ariaLabels.exploreBirthdayCakes')}
-              type="button"
-              role="menuitem"
-            >
-              {t('navbar.birthdayCakes')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection('BentoCakes')}
-              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
-              aria-label={t('navbar.ariaLabels.viewBentoCakes')}
-              title={t('navbar.ariaLabels.exploreBentoCakes')}
-              type="button"
-              role="menuitem"
-            >
-              {t('navbar.bentoCakes')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection('WeddingsCakes')}
-              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
-              aria-label={t('navbar.ariaLabels.viewWeddingCakes')}
-              title={t('navbar.ariaLabels.browseWeddingCakes')}
-              type="button"
-              role="menuitem"
-            >
-              {t('navbar.weddingCakes')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection('Candybar')}
-              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
-              aria-label={t('navbar.ariaLabels.viewCandybar')}
-              title={t('navbar.ariaLabels.discoverCandybar')}
-              type="button"
-              role="menuitem"
-            >
-              {t('navbar.candybar')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-            </button>
-            <button
-              onClick={() => scrollToSection('PartnerProjects')}
-              className="relative text-gray-800 hover:cursor-pointer font-medium text-sm tracking-wider uppercase transition-colors duration-200 group"
-              aria-label={t('navbar.ariaLabels.viewPartnerProjects')}
-              title={t('navbar.ariaLabels.seeCollaborations')}
-              type="button"
-              role="menuitem"
-            >
-              {t('navbar.partnerProjects')}
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-            </button>
           
-          </div>
-
 
           {/* Right Navigation */}
           <div className="hidden md:flex items-center space-x-6 2xl:space-x-8">
@@ -309,33 +240,21 @@ const Navbar = memo(() => {
                    <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
                  </button>
                  
-                 {/* Candybar - matches desktop order 5 */}
+                 {/* Fillings */}
                  <button
                    ref={el => navLinksRef.current[4] = el}
-                   onClick={() => scrollToSection('Candybar')}
+                   onClick={() => scrollToSection('Fillings')}
                    className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
-                   aria-label={t('navbar.ariaLabels.viewCandybar')}
+                   aria-label={t('navbar.ariaLabels.viewFillings')}
                    type="button"
                    role="menuitem"
                  >
-                   {t('navbar.candybar')}
+                   {t('navbar.fillings')}
                    <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
                  </button>
                  
-                 {/* Partner Projects - matches desktop order 6 */}
-                 <button
-                   ref={el => navLinksRef.current[5] = el}
-                   onClick={() => scrollToSection('PartnerProjects')}
-                   className="relative block w-full text-left text-2xl font-light text-gray-800 hover:text-amber-700 transition-colors duration-200 py-3 border-b border-gray-200 group"
-                   aria-label={t('navbar.ariaLabels.viewPartnerProjects')}
-                   type="button"
-                   role="menuitem"
-                 >
-                   {t('navbar.partnerProjects')}
-                   <span className="absolute bottom-3 left-0 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
-                 </button>
                  
-                 {/* Contacts - matches desktop order 7 */}
+                 {/* Contacts */}
                  <button
                    ref={el => navLinksRef.current[6] = el}
                    onClick={() => scrollToSection('Contacts')}

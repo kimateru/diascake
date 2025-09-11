@@ -66,17 +66,17 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
     } catch (error) {
       console.error('Error calculating price:', error);
       return 0;
-    }
+  }
   };
 
   const recommendedWeight = calculateRecommendedWeight(scaledGuestCount);
   const totalPrice = calculatePrice();
 
   return (
-    <div className="range-picker-mobile flex flex-col items-center justify-center min-h-[350px] sm:min-h-[400px] p-4 sm:p-6">
+    <div className="range-picker-mobile flex flex-col items-center justify-center min-h-[350px] sm:min-h-[400px]">
       {/* Guest Count Selection */}
       <div className="w-full max-w-md mb-6 sm:mb-8">
-        <h3 className="text-lg sm:text-xl font-semibold text-main-brown mb-6 sm:mb-10 text-center">
+        <h3 className="text-lg sm:text-xl font-semibold text-main-brown py-4 text-center">
           {t('fillings.guestCount') || 'Number of Guests'}
         </h3>
         <div className="flex flex-col items-center justify-center">
@@ -178,7 +178,7 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
       {/* Price Summary */}
       {selectedCake && (
         <div className="w-full max-w-md text-center">
-          <div className="order-summary bg-main-brown/10 rounded-lg p-4 sm:p-6 border border-main-brown/20">
+          <div className="order-summary bg-main-brown/10 p-4 sm:p-6 border border-main-brown/20">
             <h3 className="text-base sm:text-lg font-semibold text-main-brown mb-3 sm:mb-4">
               {t('fillings.orderSummary') || 'Order Summary'}
             </h3>
@@ -196,7 +196,7 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
                 <span>{recommendedWeight} kg</span>
               </div>
               <hr className="border-main-brown/20" />
-              <div className="flex justify-between text-xl font-semibold text-main-brown">
+              <div className="flex justify-between font-semibold text-main-brown">
                 <span>{t('fillings.totalPrice') || 'Total Price'}:</span>
                 <span>{totalPrice.toFixed(0)} {t('fillings.currency') || 'lei'}</span>
               </div>

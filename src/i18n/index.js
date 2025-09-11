@@ -8,6 +8,7 @@ const resources = {
         translation: {
             // Navbar
             navbar: {
+                ourCakes: "Наши торты",
                 fillings: "Начинки",
                 candybar: "Кэнди-бар",
                 partnerProjects: "Партнерские проекты",
@@ -48,13 +49,15 @@ const resources = {
             header: {
                 title: "Лучшие торты в Кишинёве на заказ",
                 description: "Свадебные торты, торты на день рождения, бенто торты. Изготовлено вручную с заботой в наших кафе, кухнях и пекарнях.",
-                cta: "Закажи торт",
+                cta: "Закажите торт",
                 buildCake: "Создать торт",
                 back: "Назад",
                 previous: "Предыдущий",
                 next: "Следующий",
                 chooseFilling: "Выберите начинку",
                 guestCount: "Сколько гостей?",
+                selectFillingFirst: "Выберите начинку",
+                selectFillingDescription: "Выберите предпочитаемую начинку для торта из вариантов слева, чтобы продолжить оформление заказа.",
                 orderNow: "Заказать сейчас",
                 orderSubmitted: "Заказ отправлен!",
                 ariaLabels: {
@@ -329,6 +332,7 @@ const resources = {
         translation: {
             // Navbar
             navbar: {
+                ourCakes: "Torturile noastre",
                 fillings: "Umpluturi",
                 candybar: "Candy Bar",
                 partnerProjects: "Proiecte Parteneri",
@@ -369,13 +373,15 @@ const resources = {
             header: {
                 title: "Cele mai bune torturi din Chișinău la comandă",
                 description: "Torturi de nuntă, torturi de aniversare, torturi bento. Făcut manual cu grijă în cafenelele, bucătăriile și brutăriile noastre.",
-                cta: "Comandă tort",
-                buildCake: "Creează tortul",
+                cta: "Comandați tortul",
+                buildCake: "Creați tortul",
                 back: "Înapoi",
                 previous: "Anterior",
                 next: "Următorul",
-                chooseFilling: "Alege umplutura",
+                chooseFilling: "Alegeți umplutura",
                 guestCount: "Câți oaspeți?",
+                selectFillingFirst: "Selecteazăți umplutura",
+                selectFillingDescription: "Alege umplutura preferată pentru tort din opțiunile din stânga pentru a continua cu comanda.",
                 orderNow: "Comandă acum",
                 orderSubmitted: "Comanda trimisă!",
                 ariaLabels: {

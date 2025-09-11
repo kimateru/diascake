@@ -9,7 +9,7 @@ const PartnerProjects = memo(() => {
     <section className="py-16 bg-main-white relative" id="PartnerProjects">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative" data-aos="fade-up">
         {/*  dark this image a bit */}
-        <img src="/projects/projc3.jpg" alt="Partner projects" className="w-full h-full object-cover absolute top-0 left-0 brightness-50" />
+        <img src="/projects/projc3.webp" alt="Partner projects" className="w-full h-full object-cover absolute top-0 left-0 brightness-50" />
         {/* Main content block - centered white card */}
         <div className="relative text-white! py-[110px] px-8 md:p-12 lg:p-16 max-w-6xl mx-auto flex flex-col items-center justify-center" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-semibold text-white mb-4 text-center">
@@ -29,7 +29,7 @@ const PartnerProjects = memo(() => {
           <div className="absolute -bottom-12 left-9 lg:left-8 w-34 h-34 transform -rotate-12 ">
             <div className="w-full h-full bg-white ">
               <img
-                src="/projects/projc1.jpg"
+                src="/projects/projc1.webp"
                 alt="Partner collaboration"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -42,7 +42,7 @@ const PartnerProjects = memo(() => {
             {/* First image */}
             <div className="md:absolute w-32 h-32 bg-white transform -rotate-6 right-32 md:-top-8">
               <img
-                src="/projects/projc4.jpg"
+                src="/projects/projc4.webp"
                 alt="Partnership project"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -51,7 +51,7 @@ const PartnerProjects = memo(() => {
             {/* Second image - overlapping */}
             <div className="absolute -top-8 -right-12 w-32 h-32 bg-white transform rotate-12 md:right-16">
               <img
-                src="/projects/projc2.jpg"
+                src="/projects/projc2.webp"
                 alt="Collaboration event"
                 className="w-full h-full object-cover"
                 loading="lazy"
