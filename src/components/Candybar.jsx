@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import CandybarCard from './CandybarCard';
 import CandybarModal from './CandybarModal';
 import SectionHeader from './SectionHeader';
+import SkeletonLoader from './SkeletonLoader';
 
 import 'swiper/css';
 import 'swiper/css/navigation';

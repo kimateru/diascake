@@ -3,62 +3,62 @@ export const candyBarMenuKeys = [
     {
       id: 1,
       key: 'moussePlombirCapsuni',
-      image: 'candybar/capsuniPlombir-min.jpg',
+      image: 'capsuniPlombir-min_zholim',
     },
     {
       id: 2,
       key: 'musseMangoMaracuia',
-      image: 'candybar/mango-min.jpg',
+      image: 'mango-min_a6plev',
     },
     {
       id: 3,
       key: 'tiramisu',
-      image: 'candybar/tiramisu-min.jpg',
+      image: 'tiramisu-min_a3p74d',
     },
     {
       id: 4,
       key: 'cakePops',
-      image: 'candybar/cakePops-min.jpg',
+      image: 'cakePops-min_wejig9',
     },
     {
       id: 5,
       key: 'cartoscaInghetata',
-      image: 'candybar/cartosca-min.jpg',
+      image: 'cartosca-min_meiqlq',
     },
     {
       id: 6,
       key: 'tarteInAsortiment',
-      image: 'candybar/tart-min.jpg',
+      image: 'tart-min_vcafyo',
     },
     {
       id: 7,
       key: 'eclereleChoux',
-      image: 'candybar/choux-min.jpg',
+      image: 'choux-min_a0oxz4',
     },
     {
       id: 8,
       key: 'briose',
-      image: 'candybar/briose-min.jpg',
+      image: 'briose-min_fqxdwo',
     },
     {
       id: 9,
       key: 'zefir',
-      image: 'candybar/zefir-min.jpg',
+      image: 'zefir-min_kic5rf',
     },
     {
       id: 10,
       key: 'prajituraMusseSemisfera',
-      image: 'candybar/semisfera-min.jpg',
+      image: 'semisfera-min_c1fg2e',
     },
     {
       id: 11,
       key: 'pavlova',
-      image: 'candybar/pavlova-min.jpg',
+      image: 'pavlova-min_a4fy2m',
     },
     {
       id: 12,
       key: 'macarons',
-      image: 'candybar/macarons-min.jpg',
+      image: 'macarons-min_hci0v9',
     },
   ];
   

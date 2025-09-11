@@ -152,6 +152,66 @@ const SEOHead = memo(() => {
     // Add apple-mobile-web-app-title meta tag
     addOrUpdateMetaTag('apple-mobile-web-app-title', 'DiasCake');
 
+    // Preload critical resources
+    const preloadCriticalResources = () => {
+      // Preload critical images
+      const criticalImages = [
+        '/bento/bento1.jpg', // First bento image
+        '/fillings/plombir-min.webp', // First filling image
+        '/candybar/capsuniPlombir-min.jpg', // First candybar image
+        '/main_logo.png' // Logo
+      ];
+
+      // Preload critical videos (metadata only for faster loading)
+      const criticalVideos = [
+        '/bento/bento7_optimized.mp4', // First bento video (optimized)
+        '/bento/bento8_optimized.mp4'  // Second bento video (optimized)
+      ];
+
+      criticalImages.forEach(src => {
+        if (!document.querySelector(`link[rel="preload"][href="${src}"]`)) {
+          const link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'image';
+          link.href = src;
+          link.crossOrigin = 'anonymous';
+          document.head.appendChild(link);
+        }
+      });
+
+      // Preload video metadata for faster loading
+      criticalVideos.forEach(src => {
+        if (!document.querySelector(`link[rel="preload"][href="${src}"]`)) {
+          const link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'video';
+          link.href = src;
+          link.crossOrigin = 'anonymous';
+          // Add type attribute for better browser handling
+          link.type = 'video/mp4';
+          document.head.appendChild(link);
+        }
+      });
+
+      // Preload critical fonts (if any)
+      const fontPreloads = [
+        // Add any custom fonts here
+      ];
+
+      fontPreloads.forEach(href => {
+        if (!document.querySelector(`link[rel="preload"][href="${href}"]`)) {
+          const link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'font';
+          link.href = href;
+          link.crossOrigin = 'anonymous';
+          document.head.appendChild(link);
+        }
+      });
+    };
+
+    preloadCriticalResources();
+
   }, [t, i18n.language]);
 
   // This component doesn't render anything

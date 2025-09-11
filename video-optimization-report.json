@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-09-11T20:54:17.113Z",
+  "videos": {
+    "bento7.mp4": {
+      "currentSize": "2.4M",
+      "targetSize": "1.2M",
+      "compression": "50%",
+      "quality": "medium",
+      "resolution": "720p"
+    },
+    "bento8.mp4": {
+      "currentSize": "4.1M",
+      "targetSize": "2.0M",
+      "compression": "50%",
+      "quality": "medium",
+      "resolution": "720p"
+    }
+  },
+  "recommendations": [
+    "Compress videos to 50% of current size",
+    "Use H.264 codec with CRF 28",
+    "Add poster images for faster loading",
+    "Implement progressive video loading",
+    "Consider WebM format for better compression"
+  ],
+  "tools": {
+    "ffmpeg": "Video compression and optimization",
+    "handbrake": "GUI video compression tool",
+    "online": "CloudConvert, Clipchamp, etc."
+  }
+}

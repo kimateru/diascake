@@ -1,9 +1,23 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { compression } from 'vite-plugin-compression2'
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(), 
+    tailwindcss(),
+    compression({
+      algorithm: 'gzip',
+      threshold: 1024,
+      minRatio: 0.8,
+    }),
+    compression({
+      algorithm: 'brotliCompress',
+      threshold: 1024,
+      minRatio: 0.8,
+    }),
+  ],
   build: {
     // Enable code splitting
     rollupOptions: {
@@ -15,6 +29,10 @@ export default defineConfig({
           animations: ['aos', 'gsap'],
           ui: ['lucide-react'],
         },
+        // Optimize chunk naming for better caching
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
       },
     },
     // Optimize chunk size warnings
@@ -29,6 +47,12 @@ export default defineConfig({
     target: 'esnext',
     // Enable tree shaking
     treeshake: true,
+    // Optimize asset handling
+    assetsInlineLimit: 4096, // Inline assets smaller than 4KB
+    // Enable compression
+    reportCompressedSize: true,
+    // Optimize for production
+    minifyInternalExports: true,
   },
   // Optimize dependencies
   optimizeDeps: {

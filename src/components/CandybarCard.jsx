@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import OptimizedImage from './OptimizedImage';
 
 const CandybarCard = memo(({ item, onReadMore }) => {
     const { t } = useTranslation();
@@ -19,14 +20,11 @@ const CandybarCard = memo(({ item, onReadMore }) => {
         >
             {/* Image */}
             <div className="relative h-[320px] sm:h-[360px] md:h-[400px] lg:h-[420px] overflow-hidden shrink-0">
-                <img
+                <OptimizedImage
                     src={item.image}
                     alt={`${item.name} - ${t('candybar.imageAlt', 'Delicious dessert')}`}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
-                    decoding="async"
-                    width="400"
-                    height="420"
+                    className="w-full h-full transition-transform duration-300 group-hover:scale-105 object-cover"
+                    priority={item.id <= 3} // First 3 items get priority loading
                 />
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors" aria-hidden="true" />
             </div>

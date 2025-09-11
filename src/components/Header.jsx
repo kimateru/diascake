@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { cakeFillings } from '../data/cakes';
 import RangePicker from './RangePicker';
 import SectionHeader from './SectionHeader';
+import OptimizedImage from './OptimizedImage';
 
 const Header = memo(() => {
   const { t } = useTranslation();
@@ -125,10 +126,11 @@ const Header = memo(() => {
                   >
                     {/* Image */}
                     <div className="w-32 h-full flex-shrink-0 overflow-hidden">
-                      <img 
+                      <OptimizedImage 
                         src={`/${cake.image}`}
                         alt={t(`fillings.cakes.${cake.key}.name`)}
                         className="w-full h-full object-cover"
+                        priority={cake.id <= 4} // First 4 images get priority
                       />
                     </div>
 

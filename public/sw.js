@@ -1,40 +1,46 @@
-// Service Worker for DiasCake - Performance and Caching
-const CACHE_NAME = 'diascake-v1.0.0';
-const STATIC_CACHE = 'diascake-static-v1.0.0';
-const DYNAMIC_CACHE = 'diascake-dynamic-v1.0.0';
+const CACHE_NAME = 'diascake-v1';
+const STATIC_CACHE = 'diascake-static-v1';
+const DYNAMIC_CACHE = 'diascake-dynamic-v1';
 
-// Assets to cache immediately
-const STATIC_ASSETS = [
+// Critical resources to cache immediately
+const CRITICAL_RESOURCES = [
   '/',
   '/index.html',
   '/main_logo.png',
-  '/big_logo.svg',
-  '/manifest.json'
+  '/bento/bento1.jpg',
+  '/fillings/plombir-min.webp',
+  '/candybar/capsuniPlombir-min.jpg'
 ];
 
-// Install event - cache static assets
+// Install event - cache critical resources
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => {
-        return cache.addAll(STATIC_ASSETS);
+        return cache.addAll(CRITICAL_RESOURCES);
       })
-      .then(() => self.skipWaiting())
+      .then(() => {
+        return self.skipWaiting();
+      })
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    }).then(() => self.clients.claim())
+    caches.keys()
+      .then((cacheNames) => {
+        return Promise.all(
+          cacheNames.map((cacheName) => {
+            if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
+              return caches.delete(cacheName);
+            }
+          })
+        );
+      })
+      .then(() => {
+        return self.clients.claim();
+      })
   );
 });
 
@@ -69,44 +75,42 @@ self.addEventListener('fetch', (event) => {
               return response;
             }
 
-            // Clone the response
+            // Clone the response for caching
             const responseToCache = response.clone();
 
-            // Determine cache type based on request
-            const cacheType = isStaticAsset(request.url) ? STATIC_CACHE : DYNAMIC_CACHE;
+            // Determine which cache to use
+            const cacheName = isStaticResource(request.url) ? STATIC_CACHE : DYNAMIC_CACHE;
 
-            // Cache the response
-            caches.open(cacheType)
+            caches.open(cacheName)
               .then((cache) => {
                 cache.put(request, responseToCache);
               });
 
             return response;
           })
-          .catch((error) => {
-            // Return offline page or fallback for navigation requests
-            if (request.destination === 'document') {
+          .catch(() => {
+            // Return offline page for navigation requests
+            if (request.mode === 'navigate') {
               return caches.match('/index.html');
             }
-            throw error;
           });
       })
   );
 });
 
-// Helper function to determine if an asset is static
-function isStaticAsset(url) {
-  const staticExtensions = ['.js', '.css', '.png', '.jpg', '.jpeg', '.svg', '.ico', '.woff', '.woff2'];
-  const staticPaths = ['/static/', '/assets/', '/public/'];
-  
-  return staticExtensions.some(ext => url.includes(ext)) || 
-         staticPaths.some(path => url.includes(path));
+// Helper function to determine if a resource is static
+function isStaticResource(url) {
+  const staticExtensions = ['.js', '.css', '.png', '.jpg', '.jpeg', '.webp', '.svg', '.woff', '.woff2'];
+  return staticExtensions.some(ext => url.includes(ext));
 }
 
-// Background sync for offline form submissions
+// Background sync for offline actions
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
-    // Handle offline form submissions here
+    event.waitUntil(
+      // Handle background sync tasks here
+      console.log('Background sync triggered')
+    );
   }
 });
 
@@ -124,7 +128,7 @@ self.addEventListener('push', (event) => {
         primaryKey: 1
       }
     };
-    
+
     event.waitUntil(
       self.registration.showNotification(data.title, options)
     );
