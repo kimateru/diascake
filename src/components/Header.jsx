@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { cakeFillings } from '../data/cakes';
 import RangePicker from './RangePicker';
@@ -17,6 +17,33 @@ const Header = memo(() => {
     }
   };
 
+  // Scroll to range picker on mobile when cake is selected
+  const scrollToRangePicker = () => {
+    // Check if it's mobile (screen width < 1024px)
+    if (window.innerWidth < 1024) {
+      // Target the right half section containing the range picker
+      const rangePickerSection = document.querySelector('#cake-builder-section .grid .space-y-8:last-child');
+      if (rangePickerSection) {
+        rangePickerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        // Fallback: scroll to the entire cake builder section
+        const cakeBuilderSection = document.getElementById('cake-builder-section');
+        if (cakeBuilderSection) {
+          cakeBuilderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+  };
+
+  // Handle cake selection
+  const handleCakeSelection = (cakeKey) => {
+    setSelectedCake(cakeKey);
+    // Scroll to range picker on mobile after a short delay
+    setTimeout(() => {
+      scrollToRangePicker();
+    }, 100);
+  };
+
   return (
     <div className="relative">
       {/* First Section - Hero with Create Cake Button */}
@@ -30,17 +57,17 @@ const Header = memo(() => {
           <div className="text-left max-w-5xl">
             <div className="space-y-8">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-wide leading-tight text-main-brown">
-                {t('header.title')}
+              {t('header.title')}
               </h1>
-
-              <p
+              
+              <p 
                 className="text-lg md:text-xl font-medium mt-8 leading-relaxed text-main-brown"
                 role="text"
                 aria-label={t('header.ariaLabels.missionStatement')}
               >
                 {t('header.description')}
               </p>
-
+              
               <div className="mt-12">
                 <button
                   onClick={scrollToSecondSection}
@@ -68,37 +95,37 @@ const Header = memo(() => {
             <div className="lg:col-span-1" data-aos="fade-up">
               <SectionHeader
                 textColor="text-white"
-                badgeColor="text-white/80"
+                badgeColor="text-white"
                 subtitleColor="text-white/90"
                 badge={t('fillings.badge')}
                 title={t('fillings.title')}
               />
             </div>
-          </div>
-
+        </div>
+        
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Half - Cake Fillings */}
             <div className="space-y-8">
               <div className="text-center lg:text-left">
                 <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
-                  {t('header.chooseFilling') || 'Choose Your Filling'}
+                {t('header.chooseFilling') || 'Choose Your Filling'}
                 </h3>
               </div>
-
+              
               {/* Fillings Grid - Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {cakeFillings.map((cake) => (
                   <button
                     key={cake.id}
-                    onClick={() => setSelectedCake(cake.key)}
-                    className={`p-0 border-2 transition-all duration-200 text-left flex items-center h-50 bg-white overflow-hidden ${selectedCake === cake.key
+                    onClick={() => handleCakeSelection(cake.key)}
+                    className={`p-0 border-2 transition-all duration-200 text-left flex items-center h-40 md:h-50 bg-white overflow-hidden ${selectedCake === cake.key
                       ? ' bg-white/90 text-main-brown shadow-lg'
                       : ' hover:border-white/60 text-main-brown bg-white hover:bg-white/85 cursor-pointer'
                       }`}
                   >
                     {/* Image */}
                     <div className="w-32 h-full flex-shrink-0 overflow-hidden">
-                      <img
+                      <img 
                         src={`/${cake.image}`}
                         alt={t(`fillings.cakes.${cake.key}.name`)}
                         className="w-full h-full object-cover"
@@ -133,35 +160,35 @@ const Header = memo(() => {
                     <div className="space-y-4">
                       <div className="w-16 h-16 mx-auto bg-white/20 rounded-full flex items-center justify-center">
                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
-                      </div>
+              </div>
                       <h3 className="text-2xl font-semibold text-white">
                         {t('header.selectFillingFirst')}
                       </h3>
                       <p className="text-white/80">
                         {t('header.selectFillingDescription')}
                       </p>
-                    </div>
-                  </div>
-                </div>
+            </div>
+          </div>
+        </div>
               ) : (
                 /* Show range picker and order summary when filling is selected */
                 <>
                   <div className="text-center lg:text-left">
                     <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
-                      {t('header.guestCount') || 'How Many Guests?'}
+                  {t('header.guestCount') || 'How Many Guests?'}
                     </h3>
-                  </div>
-
+              </div>
+              
                   {/* Range Picker Container */}
                   <div className="bg-white">
-                    <RangePicker
-                      selectedCake={selectedCake}
-                      onGuestCountChange={setGuestCount}
-                      guestCount={guestCount}
-                    />
-                  </div>
+                <RangePicker 
+                  selectedCake={selectedCake}
+                  onGuestCountChange={setGuestCount}
+                  guestCount={guestCount}
+                />
+              </div>
 
                   {/* Order Summary */}
 
@@ -171,7 +198,7 @@ const Header = memo(() => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
   );
 });
 

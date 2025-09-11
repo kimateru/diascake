@@ -5,6 +5,10 @@
     --color-main-white: #f7f2ed;
 }
 
+button:focus {
+    outline: none;
+}
+
 /* Accessibility improvements */
 .sr-only {
     position: absolute;

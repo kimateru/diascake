@@ -129,7 +129,7 @@ const Testimonials = memo(() => {
           >
             {testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial.id}>
-                <div className="bg-main-white rounded-lg p-6 shadow-lg border border-main-brown/10 h-full flex flex-col">
+                <div className="bg-main-white  p-6 shadow-lg border border-main-brown/10 h-full flex flex-col">
                   {/* Quote icon */}
                   <div className="mb-4">
                     <svg 

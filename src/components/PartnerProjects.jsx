@@ -1,61 +1,84 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import CTAButton from './CTAButton';
+import SectionHeader from './SectionHeader';
 
 const PartnerProjects = memo(() => {
   const { t } = useTranslation();
 
   return (
-    <section className="py-16 bg-main-white relative" id="PartnerProjects">
-      <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative" data-aos="fade-up">
-        {/*  dark this image a bit */}
-        <img src="/projects/projc3.webp" alt="Partner projects" className="w-full h-full object-cover absolute top-0 left-0 brightness-50" />
-        {/* Main content block - centered white card */}
-        <div className="relative text-white! py-[110px] px-8 md:p-12 lg:p-16 max-w-6xl mx-auto flex flex-col items-center justify-center" data-aos="fade-up">
-          <h2 className="text-4xl md:text-5xl font-semibold text-white mb-4 text-center">
-            {t('partnerProjects.title')}
-          </h2>
-          <h3 className="text-xl md:text-2xl text-white mb-6 text-center font-light">
-            {t('partnerProjects.subtitle')}
-          </h3>
-          <p className="text-lg text-white leading-relaxed mb-8 text-center max-w-xl mx-auto">
-            {t('partnerProjects.description')}
-          </p>
-          <div className="text-center">
-            <CTAButton />
-          </div>
-
-          {/* Bottom left decorative image - rotated */}
-          <div className="absolute -bottom-12 left-9 lg:left-8 w-34 h-34 transform -rotate-12 ">
-            <div className="w-full h-full bg-white ">
-              <img
-                src="/projects/projc1.webp"
-                alt="Partner collaboration"
-                className="w-full h-full object-cover"
-                loading="lazy"
+    <section className="py-32 bg-main-white relative" id="PartnerProjects">
+      {/* Background Image with Darken Effect */}
+      <div className="absolute inset-0">
+        <img 
+          src="/projects/projc3.webp" 
+          alt="Partner projects background" 
+          className="w-full h-full object-cover brightness-35"
+          loading="lazy"
+        />
+      </div>
+      
+      <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
+        
+        {/* Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 h-full">
+          
+          {/* Left: Text Info */}
+          <div className="flex flex-col justify-center" data-aos="fade-right">
+            {/* Header Section */}
+            <div className="mb-8">
+              <SectionHeader
+                badge={t('partnerProjects.badge')}
+                title={t('partnerProjects.title')}
+                subtitle={t('partnerProjects.subtitle')}
+                textColor="text-white"
+                badgeColor="text-white/80"
+                subtitleColor="text-white/90"
               />
+              <p className="text-base text-white/80 max-w-2xl leading-relaxed mt-4" data-aos="fade-up" data-aos-delay="200">
+                {t('partnerProjects.description')}
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div>
+              <CTAButton className="bg-white! text-main-brown hover:bg-main-brown! hover:text-white!" />
             </div>
           </div>
 
-          {/* Top right decorative images - overlapping */}
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 md:right-0 lg:top-12 lg:right-8 z-0">
-            {/* First image */}
-            <div className="md:absolute w-32 h-32 bg-white transform -rotate-6 right-32 md:-top-8">
-              <img
-                src="/projects/projc4.webp"
-                alt="Partnership project"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            {/* Second image - overlapping */}
-            <div className="absolute -top-8 -right-12 w-32 h-32 bg-white transform rotate-12 md:right-16">
-              <img
-                src="/projects/projc2.webp"
-                alt="Collaboration event"
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+          {/* Right: Project Images Grid */}
+          <div className="h-full" data-aos="fade-left">
+            <div className="grid grid-cols-3 gap-4 h-full">
+              {/* Top Left Image */}
+              <div className="group relative overflow-hidden top-5">
+                <img
+                  src="/projects/projc1.webp"
+                  alt="Partner collaboration"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              
+              {/* Top Right Image */}
+              <div className="group relative overflow-hidden">
+                <img
+                  src="/projects/projc2.webp"
+                  alt="Collaboration event"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+
+              
+              {/* Bottom Right Image */}
+              <div className="group relative overflow-hidden top-5">
+                <img
+                  src="/projects/projc4.webp"
+                  alt="Partnership project"
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
         </div>

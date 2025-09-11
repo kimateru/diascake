@@ -22,6 +22,14 @@ const Footer = memo(() => {
           {/* Left Links */}
           <div className="flex flex-col space-y-4 items-center lg:items-start lg:justify-start">
             <button
+              onClick={() => scrollToSection('cake-builder-section')}
+              className="relative text-center lg:text-right text-white hover:text-white transition-colors duration-200 cursor-pointer font-medium text-base tracking-wider uppercase focus:outline-none focus:ring-0 group"
+              type="button"
+            >
+              {t('navbar.cakeConstructor')}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full" aria-hidden="true"></span>
+            </button>
+            <button
               onClick={() => scrollToSection('WeddingsCakes')}
               className="relative text-center lg:text-right text-white hover:text-white transition-colors duration-200 cursor-pointer font-medium text-base tracking-wider uppercase focus:outline-none focus:ring-0 group"
               type="button"

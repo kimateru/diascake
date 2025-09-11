@@ -9,6 +9,7 @@ const resources = {
             // Navbar
             navbar: {
                 ourCakes: "Наши торты",
+                cakeConstructor: "Конструктор тортов",
                 fillings: "Начинки",
                 candybar: "Кэнди-бар",
                 partnerProjects: "Партнерские проекты",
@@ -213,6 +214,7 @@ const resources = {
             },
             // Partner Projects section
             partnerProjects: {
+                badge: "Партнерство",
                 title: "Партнерские проекты",
                 subtitle: "Сотрудничество с лучшими",
                 description: "Мы гордимся партнерством с ведущими компаниями и организациями. Наши совместные проекты создают незабываемые впечатления и высококачественные продукты для особых мероприятий.",
@@ -334,6 +336,7 @@ const resources = {
             // Navbar
             navbar: {
                 ourCakes: "Torturile noastre",
+                cakeConstructor: "Constructor Torturi",
                 fillings: "Umpluturi",
                 candybar: "Candy Bar",
                 partnerProjects: "Proiecte Parteneri",
@@ -538,6 +541,7 @@ const resources = {
             },
             // Partner Projects section
             partnerProjects: {
+                badge: "Parteneriat",
                 title: "Proiecte Parteneri",
                 subtitle: "Colaborări de excepție",
                 description: "Ne mândrim cu parteneriatele noastre cu companii și organizații de top. Proiectele noastre comune creează experiențe memorabile și produse de înaltă calitate pentru evenimente speciale.",

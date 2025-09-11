@@ -36,6 +36,7 @@ const CakesDropdown = () => {
   }, []);
 
   const cakeLinks = [
+    { key: 'constructor', href: '#cake-builder-section', label: 'navbar.cakeConstructor', section: 'cake-builder-section' },
     { key: 'birthday', href: '#birthday-cakes', label: 'navbar.birthdayCakes', section: 'BirthdayCakes' },
     { key: 'bento', href: '#bento-cakes', label: 'navbar.bentoCakes', section: 'BentoCakes' },
     { key: 'wedding', href: '#wedding-cakes', label: 'navbar.weddingCakes', section: 'WeddingsCakes' },
@@ -95,7 +96,7 @@ const CakesDropdown = () => {
             className="relative block w-full text-left px-4 py-3 text-sm font-medium text-gray-800 hover:text-main-brown transition-colors duration-200 group tracking-wider uppercase cursor-pointer"
             role="menuitem"
             tabIndex={isOpen ? 0 : -1}
-            aria-label={t(`navbar.ariaLabels.view${link.section}`)}
+            aria-label={t(link.label)}
           >
             {t(link.label)}
             <span className="absolute bottom-1 left-4 w-0 h-0.5 bg-main-brown transition-all duration-300 group-hover:w-[calc(100%-2rem)]" aria-hidden="true"></span>

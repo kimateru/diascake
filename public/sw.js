@@ -14,11 +14,9 @@ const STATIC_ASSETS = [
 
 // Install event - cache static assets
 self.addEventListener('install', (event) => {
-  console.log('Service Worker: Installing...');
   event.waitUntil(
     caches.open(STATIC_CACHE)
       .then((cache) => {
-        console.log('Service Worker: Caching static assets');
         return cache.addAll(STATIC_ASSETS);
       })
       .then(() => self.skipWaiting())
@@ -27,13 +25,11 @@ self.addEventListener('install', (event) => {
 
 // Activate event - clean up old caches
 self.addEventListener('activate', (event) => {
-  console.log('Service Worker: Activating...');
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
           if (cacheName !== STATIC_CACHE && cacheName !== DYNAMIC_CACHE) {
-            console.log('Service Worker: Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
@@ -62,7 +58,6 @@ self.addEventListener('fetch', (event) => {
       .then((cachedResponse) => {
         // Return cached version if available
         if (cachedResponse) {
-          console.log('Service Worker: Serving from cache:', request.url);
           return cachedResponse;
         }
 
@@ -83,14 +78,12 @@ self.addEventListener('fetch', (event) => {
             // Cache the response
             caches.open(cacheType)
               .then((cache) => {
-                console.log('Service Worker: Caching new resource:', request.url);
                 cache.put(request, responseToCache);
               });
 
             return response;
           })
           .catch((error) => {
-            console.log('Service Worker: Fetch failed:', error);
             // Return offline page or fallback for navigation requests
             if (request.destination === 'document') {
               return caches.match('/index.html');
@@ -113,7 +106,6 @@ function isStaticAsset(url) {
 // Background sync for offline form submissions
 self.addEventListener('sync', (event) => {
   if (event.tag === 'background-sync') {
-    console.log('Service Worker: Background sync triggered');
     // Handle offline form submissions here
   }
 });

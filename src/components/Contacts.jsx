@@ -134,7 +134,7 @@ const Contacts = memo(() => {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22515.294198137417!2d28.74574730330879!3d47.01991097001267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cbd5f619422b07%3A0x9e0f1282890c881e!2zMiwgU3RyYWRhIEdyaWdvcmUgVXJlY2hlIDEwLCBNRC0yMDAzLCBEdXJsZcWfdGksINCc0L7Qu9C00L7QstCw!5e1!3m2!1sru!2s!4v1755971678881!5m2!1sru!2s"
             width="100%"
             height="400"
-            allowFullscreen=""
+            allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
             title="Durlesti Grigore Ureche 10/2"
