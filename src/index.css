@@ -24,6 +24,22 @@
     outline-offset: 2px;
 }
 
+/* Remove focus outline for navigation buttons */
+nav button:focus,
+nav button:active,
+nav a:focus,
+nav a:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Keep focus for keyboard navigation only */
+nav button:focus-visible,
+nav a:focus-visible {
+    outline: 2px solid var(--color-main-brown);
+    outline-offset: 2px;
+}
+
 /* Skip link for keyboard navigation */
 .skip-link {
     position: absolute;
