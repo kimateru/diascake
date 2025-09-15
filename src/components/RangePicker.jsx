@@ -113,26 +113,31 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
 
         <div className="flex flex-col items-center justify-center">
           {/* Container to layer image + circular input */}
-          <div className="relative" style={{ width: 190, height: 190 }}>
+          <div 
+            className="relative" 
+            style={{ width: 190, height: 190, touchAction: 'none' }}
+            onTouchStart={(e) => e.preventDefault()}
+            onTouchMove={(e) => e.preventDefault()}
+          >
             {selectedCake && (
-               <div className="absolute inset-2 rounded-full overflow-hidden z-50 pointer-events-none">
-                 <OptimizedImage
-                   src={`/${selectedCake === 'plombirCapsuni' ? 'plombir-min_tqjeph' :
-                       selectedCake === 'snikers' ? 'snikers-min_ahh7ab' :
-                         selectedCake === 'mangoMaracuia' ? 'mango-min_okctnu' :
-                           selectedCake === 'oreo' ? 'oreo-min_wekoom' :
-                             selectedCake === 'padureaNeagra' ? 'padure-min_bqhvsg' :
-                               selectedCake === 'redVelvetZmeura' ? 'velvet-min_puiyvv' :
-                                 selectedCake === 'medovic' ? 'medovic-min_ohkkqa' :
-                                   selectedCake === 'napoleon' ? 'napoleon-min_lmc5vt' :
-                                     selectedCake === 'fisticZmeura' ? 'fistic-min_ordqfz' :
-                                       'plombir-min_tqjeph'
-                     }`}
-                   alt={t(`fillings.cakes.${selectedCake}.name`)}
-                   className="w-full h-full object-cover brightness-50"
-                   style={{ objectPosition: 'center center' }}
-                 />
-               </div>
+              <div className="absolute inset-2.5 rounded-full overflow-hidden z-50 pointer-events-none">
+                <OptimizedImage
+                  src={`/${selectedCake === 'plombirCapsuni' ? 'plombir-min_tqjeph' :
+                    selectedCake === 'snikers' ? 'snikers-min_ahh7ab' :
+                      selectedCake === 'mangoMaracuia' ? 'mango-min_okctnu' :
+                        selectedCake === 'oreo' ? 'oreo-min_wekoom' :
+                          selectedCake === 'padureaNeagra' ? 'padure-min_bqhvsg' :
+                            selectedCake === 'redVelvetZmeura' ? 'velvet-min_puiyvv' :
+                              selectedCake === 'medovic' ? 'medovic-min_ohkkqa' :
+                                selectedCake === 'napoleon' ? 'napoleon-min_lmc5vt' :
+                                  selectedCake === 'fisticZmeura' ? 'fistic-min_ordqfz' :
+                                    'plombir-min_tqjeph'
+                    }`}
+                  alt={t(`fillings.cakes.${selectedCake}.name`)}
+                  className="w-full h-full object-cover brightness-50"
+                  style={{ objectPosition: 'center center' }}
+                />
+              </div>
 
             )}
 
@@ -142,6 +147,7 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
               onChange={setGuestCount}
               radius={radius}
               className="relative z-30"
+              style={{ touchAction: 'none' }}
             >
               <CircularTrack stroke="#ddd" strokeWidth={8} />
               <CircularProgress stroke="#6b4226" strokeWidth={8} />
