@@ -24,10 +24,10 @@ const BentoCakes = memo(() => {
     );
 
   return (
-    <section className="py-12 bg-main-white" id="BentoCakes">
+    <section className="bg-main-white" id="BentoCakes">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 h-full">
-          <div className="flex flex-col" data-aos="fade-right">
+        <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
+          <div className="flex flex-col py-12" data-aos="fade-right">
             <div className="mb-8">
               <SectionHeader
                 badge={t('bentoCakes.badge')}
@@ -37,12 +37,20 @@ const BentoCakes = memo(() => {
               <p className="text-base text-gray-700 max-w-2xl leading-relaxed mt-4">
                 {t('bentoCakes.description')}
               </p>
-              <div className="font-semibold text-lg text-gray-900 max-w-2xl leading-relaxed mt-4">
-                <p>{t('bentoCakes.priceOne')}</p>
-                <p>{t('bentoCakes.priceTwo')}</p>
+              <div className="mt-4">
+                <div className="inline-flex border border-main-brown overflow-hidden">
+                  <a href="tel:+37369123456" className="px-6 py-4 text-center border-r border-main-brown hover:bg-main-brown cursor-pointer transition-all duration-200 group block">
+                    <div className="text-sm text-gray-600 mb-1 group-hover:text-white">{t('bentoCakes.priceOneGr')}</div>
+                    <div className="font-semibold text-lg text-gray-900 group-hover:text-white">{t('bentoCakes.priceOneValue')}</div>
+                  </a>
+                  <a href="tel:+37369123456" className="px-6 py-4 text-center hover:bg-main-brown cursor-pointer transition-all duration-200 group block">
+                    <div className="text-sm text-gray-600 mb-1 group-hover:text-white">{t('bentoCakes.priceTwoGr')}</div>
+                    <div className="font-semibold text-lg text-gray-900 group-hover:text-white">{t('bentoCakes.priceTwoValue')}</div>
+                  </a>
+                </div>
               </div>
             </div>
-            
+
             {/* CTA Button */}
             <div className="mt-8 flex justify-start">
               <CTAButton className="bg-main-brown! text-white hover:bg-white! hover:text-main-brown!" />
@@ -51,15 +59,14 @@ const BentoCakes = memo(() => {
 
           <div className="h-full" data-aos="fade-left">
             {/* Desktop */}
-            <div className="hidden md:grid grid-cols-3 grid-rows-3 gap-3 h-[600px]">
+            <div className="hidden md:grid grid-cols-3 grid-rows-3 h-full">
               {bentoGallery.slice(0, 6).map(cake => (
                 <div
                   key={cake.id}
-                  className={`group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
-                    cake.size === 'large' ? 'col-span-2 row-span-2' :
-                    cake.size === 'medium' ? 'col-span-1 row-span-2' :
-                    'col-span-1 row-span-1'
-                  }`}
+                  className={`group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${cake.size === 'large' ? 'col-span-2 row-span-2' :
+                      cake.size === 'medium' ? 'col-span-1 row-span-2' :
+                        'col-span-1 row-span-1'
+                    }`}
                 >
                   <div className="absolute inset-0">
                     <MediaItem
@@ -75,14 +82,14 @@ const BentoCakes = memo(() => {
             </div>
 
             {/* Mobile */}
-            <div className="md:hidden grid grid-cols-2 gap-3">
+            <div className="md:hidden grid grid-cols-2 h-full">
               {bentoGallery.slice(0, 4).map(cake => (
-                <div key={cake.id} className="group relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 aspect-square">
+                <div key={cake.id} className="group relative overflow-hidden bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                   <MediaItem
                     src={cake.src}
                     type={cake.type}
                     alt={t(`bentoCakes.gallery.${cake.category}`)}
-                    className="w-full h-full transition-transform duration-300 group-hover:scale-105 object-cover"
+                    className="w-full h-full transition-transform duration-500 group-hover:scale-110 object-cover"
                     priority={cake.id <= 2}
                   />
                 </div>

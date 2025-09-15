@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   CircularInput,
   CircularTrack,
@@ -6,10 +6,14 @@ import {
   CircularThumb
 } from 'react-circular-input';
 import { useTranslation } from 'react-i18next';
+import OptimizedImage from './OptimizedImage';
 
 const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGuestCount }) => {
   const { t } = useTranslation();
   const [guestCount, setGuestCount] = useState(initialGuestCount || 0.1); // 0 - 1
+  const [isEditing, setIsEditing] = useState(false);
+  const [inputValue, setInputValue] = useState('');
+  const inputRef = useRef(null);
 
   // Update parent component when guest count changes
   useEffect(() => {
@@ -21,6 +25,46 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
   const min = 2;
   const max = 200;
   const scaledGuestCount = Math.round(min + guestCount * (max - min));
+
+  // Handle direct input editing
+  const handleInputClick = () => {
+    setIsEditing(true);
+    setInputValue(scaledGuestCount.toString());
+  };
+
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    // Only allow numbers
+    if (/^\d*$/.test(value)) {
+      setInputValue(value);
+    }
+  };
+
+  const handleInputSubmit = () => {
+    const numValue = parseInt(inputValue);
+    if (numValue >= 1 && numValue <= 200) {
+      const normalizedValue = (numValue - min) / (max - min);
+      setGuestCount(Math.max(0, Math.min(1, normalizedValue)));
+    }
+    setIsEditing(false);
+  };
+
+  const handleInputKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleInputSubmit();
+    } else if (e.key === 'Escape') {
+      setIsEditing(false);
+      setInputValue('');
+    }
+  };
+
+  // Focus input when editing starts
+  useEffect(() => {
+    if (isEditing && inputRef.current) {
+      inputRef.current.focus();
+      inputRef.current.select();
+    }
+  }, [isEditing]);
 
   const radius = 120;
   const stepValues = [2, 24, 46, 68, 90, 112, 134, 156, 178, 200];
@@ -87,18 +131,83 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
             <CircularProgress stroke="#6b4226" strokeWidth={8} />
             <CircularThumb fill="#6b4226" r={12} />
 
-            {/* Floating label in center */}
-            <text
-              x="50%"
-              y="50%"
-              textAnchor="middle"
-              dy="0.3em"
-              fontSize="24"
-              fill="#6b4226"
-              fontWeight="bold"
-            >
-              {scaledGuestCount}
-            </text>
+            {/* Cake image background - slightly smaller to avoid slider interference */}
+            {selectedCake && (
+              <foreignObject x="6" y="6" width={radius * 2 - 12} height={radius * 2 - 12}>
+                <div className="w-full h-full rounded-full overflow-hidden">
+                  <OptimizedImage
+                    src={`/${selectedCake === 'plombirCapsuni' ? 'plombir-min_tqjeph' :
+                           selectedCake === 'snikers' ? 'snikers-min_ahh7ab' :
+                           selectedCake === 'mangoMaracuia' ? 'mango-min_okctnu' :
+                           selectedCake === 'oreo' ? 'oreo-min_wekoom' :
+                           selectedCake === 'padureaNeagra' ? 'padure-min_bqhvsg' :
+                           selectedCake === 'redVelvetZmeura' ? 'velvet-min_puiyvv' :
+                           selectedCake === 'medovic' ? 'medovic-min_ohkkqa' :
+                           selectedCake === 'napoleon' ? 'napoleon-min_lmc5vt' :
+                           selectedCake === 'fisticZmeura' ? 'fistic-min_ordqfz' : 'plombir-min_tqjeph'}`}
+                    alt={t(`fillings.cakes.${selectedCake}.name`)}
+                    className="w-full h-full object-cover brightness-50"
+                  />
+                </div>
+              </foreignObject>
+            )}
+
+            
+
+            {/* Clickable inner circle area - smaller to avoid interfering with slider */}
+            <circle
+              cx="50%"
+              cy="50%"
+              r="60"
+              fill="transparent"
+              style={{ cursor: 'pointer' }}
+              onClick={handleInputClick}
+            />
+
+            {/* Floating label in center - editable with white color */}
+            {isEditing ? (
+              <>
+                {/* Hint text when editing */}
+                <text
+                  x="50%"
+                  y="50%"
+                  textAnchor="middle"
+                  dy="-0.8em"
+                  fontSize="20"
+                  fill="#ffffff"
+                  fontWeight="500"
+                >
+                  Type here the value
+                </text>
+                <foreignObject x={radius - 30} y={radius - 15} width="60" height="30">
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    onBlur={handleInputSubmit}
+                    onKeyPress={handleInputKeyPress}
+                    className="w-full h-full text-center text-2xl font-bold text-white bg-transparent border-none outline-none"
+                    style={{ fontSize: '20px' }}
+                    placeholder="1-200"
+                  />
+                </foreignObject>
+              </>
+            ) : (
+              <text
+                x="50%"
+                y="50%"
+                textAnchor="middle"
+                dy="0.3em"
+                fontSize="24"
+                fill="white"
+                fontWeight="bold"
+                style={{ cursor: 'pointer' }}
+                onClick={handleInputClick}
+              >
+                {scaledGuestCount}
+              </text>
+            )}
 
             {/* Step marks */}
             {stepValues.map((step) => {
@@ -177,8 +286,8 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
 
       {/* Price Summary */}
       {selectedCake && (
-        <div className="w-full max-w-md text-center">
-          <div className="order-summary bg-main-brown/10 p-4 sm:p-6 border border-main-brown/20">
+        <div className="w-full max-w-md">
+          <div className="order-summary bg-main-brown/10 p-2 border border-main-brown/20">
             <h3 className="text-base sm:text-lg font-semibold text-main-brown mb-3 sm:mb-4">
               {t('fillings.orderSummary') || 'Order Summary'}
             </h3>

@@ -33,14 +33,14 @@ const BirthdayCakes = memo(() => {
   ];
 
   return (
-    <section className="py-12 bg-white" id="BirthdayCakes">
+    <section className="bg-white" id="BirthdayCakes">
       <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 h-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 h-full">
           
           {/* Left: Header + Features */}
-          <div className="flex flex-col justify-center" data-aos="fade-right">
+          <div className="flex flex-col justify-center py-12" data-aos="fade-right">
             {/* Header Section */}
             <div className="mb-8">
               <SectionHeader

@@ -77,7 +77,7 @@ const resources = {
             },
             // Fillings section
             fillings: {
-                title: "Наши восхитительные начинки",
+                title: "Постройте свой торт выбрав начинку из нашего ассортимента !",
                 badge: "Начинки",
                 subtitle: "Откройте для себя уникальные вкусы наших премиальных тортов",
                 navigation: {
@@ -90,6 +90,11 @@ const resources = {
                 orderSummary: "Сводка заказа",
                 totalPrice: "Общая цена",
                 currency: "лей",
+                badges: {
+                    mostPopular: "Самый популярный",
+                    customerFavorite: "Любимец клиентов",
+                    veryTasty: "Очень вкусный"
+                },
                 cakes: {
                     plombirCapsuni: {
                         name: "Клубничный пломбир",
@@ -256,8 +261,11 @@ const resources = {
                 badge: "Мини торты",
                 subtitle: "Идеальные порции для особых моментов с нашими бенто тортами",
                 description: "Бенто торты - это новая тенденция в мире кондитерских изделий. Компактные, стильные и невероятно вкусные мини-торты, идеально подходящие для индивидуального наслаждения или небольших празднований. В стоимость входит декор, упаковка, и свечка",
-                priceOne: "Цена: 500 гр 450 лей",
-                priceTwo: "Цена: 1кг гр 850 лей",
+                priceTag: "Цена",
+                priceOneGr: "500 гр",
+                priceOneValue: "450 лей",
+                priceTwoGr: "1кг",
+                priceTwoValue: "850 лей",
                 galleryTitle: "Наша коллекция бенто тортов",
                 perfectFor: "Идеально для особых моментов",
                 ctaTitle: "Готовы попробовать бенто торт?",
@@ -404,7 +412,7 @@ const resources = {
             },
             // Fillings section
             fillings: {
-                title: "Umpluturile noastre delicioase",
+                title: "Construiți tortul dumneavoastră prin alegerea umpluturii din opțiunile propuse! ",
                 badge: "Umpluturi",
                 subtitle: "Descoperă gusturile unice ale torturilor noastre premium",
                 navigation: {
@@ -417,6 +425,11 @@ const resources = {
                 orderSummary: "Sumar comandă",
                 totalPrice: "Preț total",
                 currency: "lei",
+                badges: {
+                    mostPopular: "Cel mai popular",
+                    customerFavorite: "Preferatul clienților",
+                    veryTasty: "Foarte gustos"
+                },
                 cakes: {
                     plombirCapsuni: {
                         name: "Plombir căpșuni",
@@ -583,8 +596,11 @@ const resources = {
                 badge: "Mini Torturi",
                 subtitle: "Porții perfecte pentru momente speciale cu torturile noastre bento",
                 description: "Torturile Bento sunt noua tendință în lumea produselor de cofetărie. Compacte, stilate și incredibil de gustoase, aceste mini-torturi sunt perfecte pentru plăcerea individuală sau sărbători mici. Inclusiv decor, ambalaj și candelă",
-                priceOne: "Pretul: 500 gr 450 lei",
-                priceTwo: "Pretul: 1 kg 850 lei",
+                priceTag: "Prețul",
+                priceOneGr: "500 gr",
+                priceOneValue: "450 lei",
+                priceTwoGr: "1 kg",
+                priceTwoValue: "850 lei",
                 galleryTitle: "Colecția noastră de torturi Bento",
                 perfectFor: "Perfect pentru momente speciale",
                 ctaTitle: "Gata să încercați un tort Bento?",

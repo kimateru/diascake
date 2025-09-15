@@ -4,34 +4,32 @@ import { cakeFillings } from '../data/cakes';
 import RangePicker from './RangePicker';
 import SectionHeader from './SectionHeader';
 import OptimizedImage from './OptimizedImage';
+import CTAButton from './CTAButton';
 
 const Header = memo(() => {
   const { t } = useTranslation();
   const [selectedCake, setSelectedCake] = useState('');
   const [guestCount, setGuestCount] = useState(0.1);
 
-  // Scroll to second section
-  const scrollToSecondSection = () => {
-    const secondSection = document.getElementById('cake-builder-section');
-    if (secondSection) {
-      secondSection.scrollIntoView({ behavior: 'smooth' });
+  // Scroll to constructor section
+  const scrollToConstructor = () => {
+    const constructorSection = document.getElementById('cake-builder-section');
+    if (constructorSection) {
+      constructorSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  // Scroll to range picker on mobile when cake is selected
+  // Scroll to range picker when cake is selected
   const scrollToRangePicker = () => {
-    // Check if it's mobile (screen width < 1024px)
-    if (window.innerWidth < 1024) {
-      // Target the right half section containing the range picker
-      const rangePickerSection = document.querySelector('#cake-builder-section .grid .space-y-8:last-child');
-      if (rangePickerSection) {
-        rangePickerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        // Fallback: scroll to the entire cake builder section
-        const cakeBuilderSection = document.getElementById('cake-builder-section');
-        if (cakeBuilderSection) {
-          cakeBuilderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+    // Target the range picker section
+    const rangePickerSection = document.querySelector('.range-picker-mobile');
+    if (rangePickerSection) {
+      rangePickerSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    } else {
+      // Fallback: scroll to the entire cake builder section
+      const cakeBuilderSection = document.getElementById('cake-builder-section');
+      if (cakeBuilderSection) {
+        cakeBuilderSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
   };
@@ -47,86 +45,66 @@ const Header = memo(() => {
 
   return (
     <div className="relative">
-      {/* First Section - Hero with Create Cake Button */}
-      <section
-        className="relative bg-white py-24 pt-32"
-        role="banner"
-        aria-label={t('header.ariaLabels.heroSection')}
-      >
-        {/* Decorative background elements */}
-        <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-          <div className="text-left max-w-5xl">
-            <div className="space-y-8">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-wide leading-tight text-main-brown">
-              {t('header.title')}
-              </h1>
-              
-              <p 
-                className="text-lg md:text-xl font-medium mt-8 leading-relaxed text-main-brown"
-                role="text"
-                aria-label={t('header.ariaLabels.missionStatement')}
-              >
-                {t('header.description')}
-              </p>
-              
-              <div className="mt-12">
-                <button
-                  onClick={scrollToSecondSection}
-                  className="inline-block bg-main-brown text-white px-8 py-4 text-lg font-medium tracking-wider uppercase transition-all duration-200 border border-main-brown transform hover:-translate-y-1 hover:shadow-lg cursor-pointer hover:bg-main-brown hover:text-white"
-                  aria-label={t('header.ariaLabels.exploreMenu')}
-                >
-                  {t('header.buildCake') || 'Build Your Cake'}
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Second Section - Cake Builder with Fillings */}
+      {/* Cake Builder Section with Welcome Text */}
       <section
         id="cake-builder-section"
-        className="relative min-h-screen bg-main-brown py-16"
+        className="relative min-h-screen bg-main-brown py-32"
         role="main"
         aria-label="Cake Builder Section"
       >
         <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
-          <div className="grid grid-cols-1 gap-10 items-start">
-            {/* Left text column */}
-            <div className="lg:col-span-1" data-aos="fade-up">
+          {/* Welcome Text Section */}
+          <div className="text-left mb-16" data-aos="fade-up">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-wide leading-tight text-white mb-8">
+              {t('header.title')}
+            </h1>
+
+            <p
+              className="text-lg md:text-xl font-medium leading-relaxed text-white/90 max-w-4xl"
+              role="text"
+              aria-label={t('header.ariaLabels.missionStatement')}
+            >
+              {t('header.description')}
+            </p>
+            <CTAButton className="bg-white! text-main-brown! mt-8" />
+          </div>
+
+          {/* Constructor Section */}
+          <div className="space-y-12">
+            {/* Section Header */}
+            <div className="text-left" data-aos="fade-up">
               <SectionHeader
                 textColor="text-white"
                 badgeColor="text-white"
                 subtitleColor="text-white/90"
+                alignment="text-left"
                 badge={t('fillings.badge')}
                 title={t('fillings.title')}
               />
             </div>
-        </div>
-        
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Left Half - Cake Fillings */}
+
+            {/* Cards Row */}
             <div className="space-y-8">
-              <div className="text-center lg:text-left">
-                <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
-                {t('header.chooseFilling') || 'Choose Your Filling'}
+              <div className="text-left">
+                <h3 className="text-xl lg:text-2xl font-semibold text-white mb-6">
+                  {t('header.chooseFilling') || 'Choose Your Filling'}
                 </h3>
               </div>
-              
-              {/* Fillings Grid - Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              {/* Fillings Grid - Cards in Row */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-3 gap-2 ">
                 {cakeFillings.map((cake) => (
                   <button
                     key={cake.id}
                     onClick={() => handleCakeSelection(cake.key)}
-                    className={`p-0 border-2 transition-all duration-200 text-left flex items-center h-40 md:h-50 bg-white overflow-hidden ${selectedCake === cake.key
+                    className={`p-0 border-2 transition-all duration-200 text-left flex items-center ${cake.id === 7 ? 'lg:col-span-2 lg:row-span-2 h-auto!' : 'h-50'} bg-white overflow-hidden ${selectedCake === cake.key
                       ? ' bg-white/90 text-main-brown shadow-lg'
                       : ' hover:border-white/60 text-main-brown bg-white hover:bg-white/85 cursor-pointer'
                       }`}
                   >
                     {/* Image */}
-                    <div className="w-32 h-full flex-shrink-0 overflow-hidden">
-                      <OptimizedImage 
+                    <div className={`h-full flex-shrink-0 overflow-hidden ${cake.id === 7 ? 'w-32 md:w-1/2' : 'w-32'}`}>
+                      <OptimizedImage
                         src={`/${cake.image}`}
                         alt={t(`fillings.cakes.${cake.key}.name`)}
                         className="w-full h-full object-cover"
@@ -143,6 +121,32 @@ const Header = memo(() => {
                         <div className="text-xs text-gray-600 leading-tight">
                           {t(`fillings.cakes.${cake.key}.description`)}
                         </div>
+                        {cake.id === 7 && (
+                          <div className="space-y-3 mt-4">
+                            {/* Most Popular Badge */}
+                            <div className="inline-flex items-center bg-gradient-to-r from-yellow-400 to-yellow-500 text-yellow-900 px-3 py-1.5 text-sm font-bold shadow-sm">
+                              <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                              </svg>
+                              {t('fillings.badges.mostPopular')}
+                            </div>
+                            {/* Feature Icons */}
+                            <div className="flex flex-wrap items-center gap-3 mb-2">
+                              <div className="flex items-center space-x-1.5 bg-gray-100 px-2 py-1">
+                                <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clipRule="evenodd" />
+                                </svg>
+                                <span className="text-xs font-medium text-gray-700">{t('fillings.badges.customerFavorite')}</span>
+                              </div>
+                              <div className="items-center space-x-1.5 bg-gray-100 px-2 py-1 hidden md:flex">
+                                <svg className="w-4 h-4 text-main-brown" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                </svg>
+                                <span className="text-xs font-medium text-gray-700">{t('fillings.badges.veryTasty')}</span>
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </div>
                       <div className="text-main-brown font-semibold text-sm mt-auto">
                         {t(`fillings.cakes.${cake.key}.price`)}
@@ -153,8 +157,8 @@ const Header = memo(() => {
               </div>
             </div>
 
-            {/* Right Half - Range Picker or Selection Prompt */}
-            <div className="space-y-8">
+            {/* Calculator Logic Below Cards */}
+            <div className="flex justify-center">
               {!selectedCake ? (
                 /* Show selection prompt when no filling is selected */
                 <div className="flex flex-col items-center justify-center min-h-[400px] text-center">
@@ -164,43 +168,44 @@ const Header = memo(() => {
                         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                         </svg>
-              </div>
+                      </div>
                       <h3 className="text-2xl font-semibold text-white">
                         {t('header.selectFillingFirst')}
                       </h3>
                       <p className="text-white/80">
                         {t('header.selectFillingDescription')}
                       </p>
-            </div>
-          </div>
-        </div>
+                    </div>
+                  </div>
+                </div>
               ) : (
                 /* Show range picker and order summary when filling is selected */
-                <>
-                  <div className="text-center lg:text-left">
-                    <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
-                  {t('header.guestCount') || 'How Many Guests?'}
-                    </h3>
-              </div>
-              
-                  {/* Range Picker Container */}
-                  <div className="bg-white">
-                <RangePicker 
-                  selectedCake={selectedCake}
-                  onGuestCountChange={setGuestCount}
-                  guestCount={guestCount}
-                />
-              </div>
+                <div className="w-full">
+                  <div>
+                    <div className="text-center mb-6">
+                      <h3 className="text-xl lg:text-2xl font-semibold text-white mb-4">
+                        {t('header.guestCount') || 'How Many Guests?'}
+                      </h3>
+                    </div>
+
+                    {/* Range Picker Container */}
+                    <div className="bg-white">
+                      <RangePicker
+                        selectedCake={selectedCake}
+                        onGuestCountChange={setGuestCount}
+                        guestCount={guestCount}
+                      />
+                    </div>
+                  </div>
 
                   {/* Order Summary */}
-
-                </>
+                </div>
               )}
             </div>
           </div>
         </div>
       </section>
-      </div>
+    </div>
   );
 });
 
