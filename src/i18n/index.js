@@ -250,8 +250,11 @@ const resources = {
                 description: "Яркие, веселые и вкусные торты для празднования дня рождения. От детских праздников до взрослых торжеств.",
                 features: {
                     themes: "Тематические дизайны",
+                    themesDesc: "Любимые персонажи и темы",
                     sizes: "Любые размеры",
-                    quick: "Быстрое изготовление"
+                    sizesDesc: "От мини до больших тортов",
+                    quick: "Быстрое изготовление",
+                    quickDesc: "Готов за 24-48 часов"
                 },
                 cta: "Заказать торт"
             },
@@ -585,8 +588,11 @@ const resources = {
                 description: "Torturi colorate, vesele și delicioase pentru sărbătorirea zilei de naștere. De la petreceri pentru copii la celebrări pentru adulți.",
                 features: {
                     themes: "Designuri tematice",
+                    themesDesc: "Personaje și teme preferate",
                     sizes: "Orice dimensiuni",
-                    quick: "Realizare rapidă"
+                    sizesDesc: "De la mini la torturi mari",
+                    quick: "Realizare rapidă",
+                    quickDesc: "Gata în 24-48 ore"
                 },
                 cta: "Comandă tort"
             },

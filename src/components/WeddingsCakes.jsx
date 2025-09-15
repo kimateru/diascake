@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Heart, Star, Users, Truck } from 'lucide-react';
 import CTAButton from './CTAButton';
 import SectionHeader from './SectionHeader';
+import OptimizedImage from './OptimizedImage';
 
 const WeddingsCakes = memo(() => {
   const { t } = useTranslation();
@@ -10,19 +11,12 @@ const WeddingsCakes = memo(() => {
   const weddingGallery = [
     {
       id: 1,
-      image: 'https://www.womangettingmarried.com/wp-content/uploads/2024/11/elegant-winter-wedding-cake.jpg',
-      category: 'classic'
+      image: 'wed1_w6wcgf',
     },
     {
       id: 2,
-      image: 'https://cdn0.hitched.co.uk/article/1360/original/1280/jpg/160631-1-simple-wedding-cake-with-flowers.jpeg',
-      category: 'modern'
+      image: 'wed2_x6t4ii',
     },
-    {
-      id: 3,
-      image: 'https://amycakesbakes.com/wp-content/uploads/2024/03/white-wedding-cake-flavor-by-Amycakes-Bakery.jpg',
-      category: 'floral'
-    }
   ];
 
 
@@ -62,7 +56,7 @@ const WeddingsCakes = memo(() => {
                   className="group relative overflow-hidden bg-white"
                 >
                   <div className="overflow-hidden">
-                    <img
+                    <OptimizedImage
                       src={cake.image}
                       alt={t(`weddingCakes.gallery.${cake.category}`)}
                       className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"

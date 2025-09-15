@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import CTAButton from './CTAButton';
+import OptimizedImage from './OptimizedImage';
 
 const CandybarModal = memo(({ item, onClose }) => {
     const { t } = useTranslation();
@@ -57,7 +58,7 @@ const CandybarModal = memo(({ item, onClose }) => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                     <div className="h-[360px]">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                        <OptimizedImage src={item.image} alt={item.name} className="w-full h-full object-cover" />
                     </div>
                     <div className="p-6 md:p-10 flex flex-col">
                         <h3 className="text-2xl font-semibold text-gray-900 mb-3">{item.name}</h3>
