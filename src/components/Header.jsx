@@ -52,7 +52,7 @@ const Header = memo(() => {
         role="main"
         aria-label="Cake Builder Section"
       >
-        <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
+        <div className="main-container mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 py-10">
           {/* Welcome Text Section */}
           <div className="text-left mb-16" data-aos="fade-up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-wide leading-tight text-white mb-8">

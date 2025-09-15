@@ -5,45 +5,25 @@ import SEOHead from './components/SEOHead';
 import StructuredData from './components/StructuredData';
 import Sitemap from './components/Sitemap';
 import PerformanceMonitor from './components/PerformanceMonitor';
-import BentoCakes from './components/BentoCakes';
-import BirthdayCakes from './components/BirthdayCakes';
-import WeddingsCakes from './components/WeddingsCakes';
 import Candybar from './components/Candybar';
 import Testimonials from './components/Testimonials';
-import Contacts from './components/Contacts';
+import BentoCakes from './components/BentoCakes';
 import './index.css';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import BirthdayCakes from './components/BirthdayCakes';
+import WeddingsCakes from './components/WeddingsCakes';
+import Contacts from './components/Contacts';
+import PartnerProjects from './components/PartnerProjects';
 
 
 // Lazy load only the heaviest sections
-const PartnerProjects = () => import('./components/PartnerProjects');
+// const PartnerProjects = () => import('./components/PartnerProjects');
+// const BirthdayCakes = () => import('./components/BirthdayCakes');
+// const WeddingsCakes = () => import('./components/WeddingsCakes');
+// const Contacts = () => import('./components/Contacts');
 
-function LazySection({ loader, fallback }) {
-  const [Component, setComponent] = useState(null);
-
-  useEffect(() => {
-    const element = document.getElementById(loader.name);
-    if (!element) return;
-
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        loader().then(module => setComponent(() => module.default));
-        observer.disconnect();
-      }
-    }, { threshold: 0.25 });
-
-    observer.observe(element);
-    return () => observer.disconnect();
-  }, [loader]);
-
-  return (
-    <div id={loader.name}>
-      {Component ? <Component /> : fallback}
-    </div>
-  );
-}
 
 function App() {
   return (
@@ -53,11 +33,6 @@ function App() {
       <StructuredData />
       <Sitemap />
       <div className="app">
-        {/* Skip link for accessibility */}
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-
         {/* Navigation */}
         <Navbar />
 
@@ -69,9 +44,7 @@ function App() {
           <BentoCakes />
           <WeddingsCakes />
           <Candybar />
-          <Suspense fallback={<Loading message="Loading Projects..." type="grid" />}>
-            <PartnerProjects />
-          </Suspense>
+          <PartnerProjects />
           <Testimonials />
           <Contacts />
         </main>
