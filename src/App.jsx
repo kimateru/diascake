@@ -57,7 +57,7 @@ function App() {
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
-        
+
         {/* Navigation */}
         <Navbar />
 
@@ -69,14 +69,16 @@ function App() {
           <BentoCakes />
           <WeddingsCakes />
           <Candybar />
-          <LazySection loader={PartnerProjects} fallback={<Loading message="Loading Projects..." type="grid" />} />
+          <Suspense fallback={<Loading message="Loading Projects..." type="grid" />}>
+            <PartnerProjects />
+          </Suspense>
           <Testimonials />
           <Contacts />
         </main>
 
         {/* Footer */}
         <Footer />
-    </div>
+      </div>
     </ErrorBoundary>
   );
 }
