@@ -131,10 +131,10 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
             <CircularProgress stroke="#6b4226" strokeWidth={8} />
             <CircularThumb fill="#6b4226" r={12} />
 
-            {/* Cake image background - centered properly */}
+            {/* Cake image background - perfectly centered */}
             {selectedCake && (
-              <foreignObject x="8" y="8" width={radius * 2 - 16} height={radius * 2 - 16}>
-                <div className="w-full h-full rounded-full overflow-hidden flex items-center justify-center">
+              <foreignObject x="10" y="10" width={radius * 2 - 20} height={radius * 2 - 20}>
+                <div className="w-full h-full rounded-full overflow-hidden">
                   <OptimizedImage
                     src={`/${selectedCake === 'plombirCapsuni' ? 'plombir-min_tqjeph' :
                            selectedCake === 'snikers' ? 'snikers-min_ahh7ab' :
@@ -147,6 +147,7 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
                            selectedCake === 'fisticZmeura' ? 'fistic-min_ordqfz' : 'plombir-min_tqjeph'}`}
                     alt={t(`fillings.cakes.${selectedCake}.name`)}
                     className="w-full h-full object-cover brightness-50"
+                    style={{ objectPosition: 'center center' }}
                   />
                 </div>
               </foreignObject>
