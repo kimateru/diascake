@@ -153,15 +153,6 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
               <CircularProgress stroke="#6b4226" strokeWidth={8} />
               <CircularThumb fill="#6b4226" r={12} />
 
-              {/* Clickable inner circle */}
-              <circle
-                cx="50%"
-                cy="50%"
-                r="60"
-                fill="transparent"
-                style={{ cursor: 'pointer' }}
-                onClick={handleInputClick}
-              />
 
 
               {/* Step marks */}
@@ -236,11 +227,18 @@ const RangePicker = ({ selectedCake, onGuestCountChange, guestCount: initialGues
               </div>
             ) : (
               <div
-                className="absolute inset-0 flex items-center justify-center pointer-events-auto cursor-pointer"
-                style={{ zIndex: 100 }}
+                className="absolute flex items-center justify-center pointer-events-auto cursor-pointer"
+                style={{ 
+                  zIndex: 100,
+                  left: '50%',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: '50px',
+                  height: '50px'
+                }}
                 onClick={handleInputClick}
               >
-                <div className="text-white text-2xl font-bold flex items-center gap-2">
+                <div className="text-white text-2xl font-bold flex items-center justify-center gap-2">
                   <img src="group.png" alt="group icon" className='w-10 h-10 filter brightness-0 invert' />
                   <span>
                     {scaledGuestCount}
