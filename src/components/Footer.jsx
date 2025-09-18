@@ -123,6 +123,13 @@ const Footer = memo(() => {
           </div>
         </div>
 
+        <a href="https://www.instagram.com/marketing_expert_olga_jitaru/" className='flex items-center justify-center gap-2 bg-white text-black text-center py-3 px-6'>
+          <p className="">
+            Created by
+          </p>
+          <span className='font-semibold'>Olga Marketing Expert</span>
+        </a>
+
         {/* Copyright */}
         <div className="border-t border-gray-700 pt-8 text-center">
           <p className="text-gray-400 text-sm">

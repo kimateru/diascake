@@ -160,7 +160,8 @@ const Testimonials = memo(() => {
           {/* Custom Navigation */}
           <div className="flex justify-center items-center mt-8 gap-4">
             <button
-              className="cursor-pointer flex items-center justify-center w-12 h-12 bg-white border-2 border-main-brown text-main-brown hover:bg-main-brown hover:text-white focus:outline-none focus:ring-2 focus:ring-main-brown focus:ring-offset-2 transition-all duration-200 flex-shrink-0"
+              type="button"
+              className="testimonials-prev cursor-pointer flex items-center justify-center w-12 h-12 bg-white border-2 border-main-brown text-main-brown hover:bg-main-brown hover:text-white focus:outline-none focus:ring-2 focus:ring-main-brown focus:ring-offset-2 transition-all duration-200 flex-shrink-0"
               aria-label="Previous testimonial"
             >
               <ChevronLeft className="w-6 h-6" />
@@ -170,7 +171,8 @@ const Testimonials = memo(() => {
             <div className="testimonials-pagination flex justify-center space-x-2"></div>
 
             <button
-              className="cursor-pointer flex items-center justify-center w-12 h-12  bg-white border-2 border-main-brown text-main-brown hover:bg-main-brown hover:text-white focus:outline-none focus:ring-2 focus:ring-main-brown focus:ring-offset-2 transition-all duration-200 flex-shrink-0"
+              type="button"
+              className="testimonials-next cursor-pointer flex items-center justify-center w-12 h-12  bg-white border-2 border-main-brown text-main-brown hover:bg-main-brown hover:text-white focus:outline-none focus:ring-2 focus:ring-main-brown focus:ring-offset-2 transition-all duration-200 flex-shrink-0"
               aria-label="Next testimonial"
             >
               <ChevronRight className="w-6 h-6" />
